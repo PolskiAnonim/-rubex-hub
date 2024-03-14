@@ -1,0 +1,272 @@
+{
+  "id":"701"
+ ,"Identification":{
+    "Name":"Dod_kl"
+   ,"Alias":"DOD-KL"
+   ,"Title":"Klient"
+   ,"Page Group":"Klienci (25684233891869746)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Drawer (127720327755451391)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-dialog-class-t-Drawer--pullOutEnd"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Page Items":[
+    {
+      "id":"25634123683513236"
+     ,"Identification":{
+        "Name":"P701_TYP"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Typ klienta"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"Submit Page"
+       ,"Execute Validations":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Static Values"
+       ,"Static Values":"STATIC:Osoby prywatne;o,Firmy;f"
+       ,"Display Extra Values":true
+       ,"Display Null Value":true
+       ,"Null Display Value":"-Wybierz-"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"25634267506513237"
+     ,"Identification":{
+        "Name":"P701_ID"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"25634589705513240"
+     ,"Identification":{
+        "Name":"Edycja"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P701_ID"
+        ]
+      }
+     ,"Client-side Condition":{
+        "Type":"Item is not null"
+       ,"Item":"P701_ID"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"25634604593513241"
+         ,"Identification":{
+            "Action":"Set Value"
+          }
+         ,"Settings":{
+            "Set Type":"SQL Statement"
+           ,"SQL Statement":"SELECT\nCASE \nWHEN SUBSTR(:P701_ID,1,1)=\u0027P\u0027 THEN \u0027o\u0027\nELSE \u0027f\u0027 END FROM DUAL"
+           ,"Items to Submit":[
+              "P701_TYP"
+            ]
+           ,"Escape Special Characters":true
+           ,"Suppress Change Event":false
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Item(s)"
+           ,"Item(s)":[
+              "P701_TYP"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Edycja (25634589705513240)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+           ,"Stop Execution On Error":true
+           ,"Wait For Result":true
+          }
+        }
+      ]
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"29533740004908384"
+     ,"Identification":{
+        "Name":"Close Dialog"
+       ,"Type":"Close Dialog"
+       ,"Execution Chain":"None"
+      }
+     ,"Execution":{
+        "Sequence":50
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "Type":"Request is contained in Value"
+       ,"Value":"CREATE,SAVE,DELETE"
+      }
+    }
+  ]
+ ,"Branches":[
+    {
+      "id":"25634712124513242"
+     ,"Identification":{
+        "Name":"711"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"After Submit"
+      }
+     ,"Behavior":{
+        "Type":"Page or URL (Redirect)"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:711:\u0026SESSION.::\u0026DEBUG.:711:P711_ID_KLIENTA:\u0026P701_ID.\u0026success_msg=#SUCCESS_MSG#"
+         ,"Page":"711"
+         ,"Clear Cache":"711"
+         ,"Values":{
+            "P711_ID_KLIENTA":"\u0026P701_ID."
+          }
+        }
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P701_TYP"
+       ,"Value":"o"
+      }
+    }
+   ,{
+      "id":"25634915665513244"
+     ,"Identification":{
+        "Name":"721"
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"After Submit"
+      }
+     ,"Behavior":{
+        "Type":"Page or URL (Redirect)"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:721:\u0026SESSION.::\u0026DEBUG.:721:P721_ID_KLIENTA:\u0026P701_ID.\u0026success_msg=#SUCCESS_MSG#"
+         ,"Page":"721"
+         ,"Clear Cache":"721"
+         ,"Values":{
+            "P721_ID_KLIENTA":"\u0026P701_ID."
+          }
+        }
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P701_TYP"
+       ,"Value":"f"
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "id":"21822720291562748"
+   ,"Identification":{
+      "File Name":"icons\/app-icon-32.png"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/png"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"21823070906562748"
+   ,"Identification":{
+      "File Name":"icons\/app-icon-144-rounded.png"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/png"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"21823357089562749"
+   ,"Identification":{
+      "File Name":"icons\/app-icon-192.png"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/png"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"21823666467562749"
+   ,"Identification":{
+      "File Name":"icons\/app-icon-256-rounded.png"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/png"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"21823933824562749"
+   ,"Identification":{
+      "File Name":"icons\/app-icon-512.png"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/png"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"119070336985911505"
+   ,"Identification":{
+      "File Name":"icons\/screw.svg"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/svg+xml"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"119070811199913279"
+   ,"Identification":{
+      "File Name":"icons\/nut.svg"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/svg+xml"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"119071233329919152"
+   ,"Identification":{
+      "File Name":"icons\/questionMark.svg"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/svg+xml"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"127720131418436604"
+   ,"Identification":{
+      "File Name":"icons\/all.css"
+    }
+   ,"Attributes":{
+      "Mime Type":"text\/css"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"128163645401526153"
+   ,"Identification":{
+      "File Name":"icons\/all.min.css"
+    }
+   ,"Attributes":{
+      "Mime Type":"text\/css"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+ ,{
+    "id":"264165837993792588"
+   ,"Identification":{
+      "File Name":"icons\/sruby.jpg"
+    }
+   ,"Attributes":{
+      "Mime Type":"image\/jpeg"
+     ,"File Character Set":"Unicode UTF-8"
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id":"21827579128562753"
+   ,"Identification":{
+      "Name":"Administration"
+    }
+  }
+ ,{
+    "id":"25684233891869746"
+   ,"Identification":{
+      "Name":"Klienci"
+    }
+  }
+ ,{
+    "id":"62444942272771816"
+   ,"Identification":{
+      "Name":"Sruby"
+    }
+  }
+ ,{
+    "id":"64799221816860008"
+   ,"Identification":{
+      "Name":"Dodatki"
+    }
+  }
+ ,{
+    "id":"188167373563904633"
+   ,"Identification":{
+      "Name":"Certyfikaty"
+    }
+  }
+]

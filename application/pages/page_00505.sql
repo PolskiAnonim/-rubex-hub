@@ -1,0 +1,319 @@
+prompt --application/pages/page_00505
+begin
+--   Manifest
+--     PAGE: 00505
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.5'
+,p_default_workspace_id=>8358547342345319
+,p_default_application_id=>120
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_WS151783'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>505
+,p_name=>unistr('Pozycja zam\00F3wienia')
+,p_alias=>unistr('POZYCJA-ZAM\00D3WIENIA')
+,p_page_mode=>'MODAL'
+,p_step_title=>unistr('Pozycja zam\00F3wienia')
+,p_autocomplete_on_off=>'OFF'
+,p_step_template=>wwv_flow_imp.id(127720327755451391)
+,p_page_template_options=>'#DEFAULT#:js-dialog-class-t-Drawer--pullOutEnd'
+,p_dialog_chained=>'N'
+,p_protection_level=>'C'
+,p_page_component_map=>'02'
+,p_last_updated_by=>'KACPER.KURAS@STUDENT.PUT.POZNAN.PL'
+,p_last_upd_yyyymmddhh24miss=>'20240109223051'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(65461470124211378)
+,p_plug_name=>unistr('Pozycja zam\00F3wienia')
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_imp.id(127831620256451483)
+,p_plug_display_sequence=>30
+,p_query_type=>'TABLE'
+,p_query_table=>'POZYCJA_W_ZAMOWIENIU'
+,p_include_rowid_column=>false
+,p_is_editable=>true
+,p_edit_operations=>'i:u:d'
+,p_lost_update_check_type=>'VALUES'
+,p_plug_source_type=>'NATIVE_FORM'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(65465629579211382)
+,p_plug_name=>'Buttons'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(127783730784451445)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'REGION_POSITION_03'
+,p_attribute_01=>'N'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(65468277654211384)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_imp.id(65465629579211382)
+,p_button_name=>'CREATE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(127896059539451539)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Dodaj'
+,p_button_position=>'NEXT'
+,p_database_action=>'INSERT'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(64880272993374938)
+,p_name=>'P505_ID_DODSR'
+,p_source_data_type=>'VARCHAR2'
+,p_is_primary_key=>true
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_item_source_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_prompt=>unistr('Dodatek/\015Aruba')
+,p_source=>'ID_DODATKU/SRUBY'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov_language=>'PLSQL'
+,p_lov=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'CASE WHEN :P505_TYP=''A'' THEN RETURN q''~SELECT nazwa_dodatku, id_dodatku FROM dodatek WHERE id_dodatku NOT IN (SELECT "ID_DODATKU/SRUBY" FROM pozycja_w_zamowieniu p WHERE p.id_zamowienia=:P505_ID_ZAMOWIENIA ) ORDER BY nazwa_dodatku~'';',
+'WHEN :P505_TYP=''S'' THEN RETURN q''~SELECT ',
+unistr('NAZWA_SRUBY || '' Kl. ''  || KLASA_WYTRZYMALOSCI || '' Materia\0142: '' ||'),
+unistr(' MATERIAL || '' '' || KOLOR || '' \0141eb: '' || RODZAJ_LBA || '' Gniazdo: '' || GNIAZDO, '),
+' ID_SRUBY FROM sruba WHERE id_sruby NOT IN (SELECT "ID_DODATKU/SRUBY" FROM pozycja_w_zamowieniu p WHERE p.id_zamowienia=:P505_ID_ZAMOWIENIA) ORDER BY nazwa_sruby~'';',
+'ELSE RETURN q''~SELECT nazwa_dodatku, id_dodatku FROM dodatek WHERE id_dodatku=''1''~'';',
+' END CASE;'))
+,p_lov_display_null=>'YES'
+,p_lov_null_text=>'-Wybierz-'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_imp.id(127893514922451536)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_lov_display_extra=>'NO'
+,p_protection_level=>'S'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(64880355045374939)
+,p_name=>'P505_TYP'
+,p_item_sequence=>10
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(65461884677211378)
+,p_name=>'P505_ID_ZAMOWIENIA'
+,p_source_data_type=>'VARCHAR2'
+,p_is_primary_key=>true
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_item_source_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_source=>'ID_ZAMOWIENIA'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_is_persistent=>'N'
+,p_protection_level=>'S'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(65462954439211379)
+,p_name=>'P505_ILOSC'
+,p_source_data_type=>'NUMBER'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_item_source_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_prompt=>unistr('Ilo\015B\0107')
+,p_source=>'ILOSC'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_NUMBER_FIELD'
+,p_cSize=>32
+,p_cMaxlength=>255
+,p_field_template=>wwv_flow_imp.id(127893514922451536)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_01=>'1'
+,p_attribute_03=>'left'
+,p_attribute_04=>'decimal'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(65463375805211380)
+,p_name=>'P505_CZY_ZAWARTE_NARZEDZIA'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_item_source_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_prompt=>'Czy Zawarte Narzedzia'
+,p_source=>'CZY_ZAWARTE_NARZEDZIA'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'STATIC:Tak;Y,Nie;N'
+,p_lov_display_null=>'YES'
+,p_lov_null_text=>'-Wybierz-'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_imp.id(127893514922451536)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(65463728182211380)
+,p_name=>'P505_DODATKOWA_GWARANCJA'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_item_source_plug_id=>wwv_flow_imp.id(65461470124211378)
+,p_prompt=>'Dodatkowa Gwarancja'
+,p_source=>'DODATKOWA_GWARANCJA'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'STATIC:Tak;Y,Nie;N'
+,p_lov_display_null=>'YES'
+,p_lov_null_text=>'-Wybierz-'
+,p_cHeight=>1
+,p_field_template=>wwv_flow_imp.id(127893514922451536)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_lov_display_extra=>'NO'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_imp_page.create_page_validation(
+ p_id=>wwv_flow_imp.id(184741761000587024)
+,p_validation_name=>'ILOSC'
+,p_validation_sequence=>10
+,p_validation=>'P505_ILOSC'
+,p_validation2=>'^[0-9]{1,}$'
+,p_validation_type=>'REGULAR_EXPRESSION'
+,p_error_message=>unistr('Ilo\015B\0107 musi by\0107 dodatni\0105 liczb\0105 ca\0142kowit\0105')
+,p_when_button_pressed=>wwv_flow_imp.id(65468277654211384)
+,p_associated_item=>wwv_flow_imp.id(65462954439211379)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_validation(
+ p_id=>wwv_flow_imp.id(190335722972366213)
+,p_validation_name=>'ILOSC_1'
+,p_validation_sequence=>20
+,p_validation=>'P505_ILOSC'
+,p_validation_type=>'ITEM_NOT_NULL'
+,p_error_message=>unistr('Ilo\015B\0107 musi by\0107 dodatni\0105 liczb\0105 ca\0142kowit\0105')
+,p_when_button_pressed=>wwv_flow_imp.id(65468277654211384)
+,p_associated_item=>wwv_flow_imp.id(65462954439211379)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_validation(
+ p_id=>wwv_flow_imp.id(184741859033587025)
+,p_validation_name=>'NARZEDZIA'
+,p_validation_sequence=>30
+,p_validation=>':P505_CZY_ZAWARTE_NARZEDZIA IS NOT NULL'
+,p_validation2=>'PLSQL'
+,p_validation_type=>'EXPRESSION'
+,p_error_message=>unistr('Nale\017Cy wybra\0107 dodanie narz\0119dzi.')
+,p_when_button_pressed=>wwv_flow_imp.id(65468277654211384)
+,p_associated_item=>wwv_flow_imp.id(65463375805211380)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_validation(
+ p_id=>wwv_flow_imp.id(184741987703587026)
+,p_validation_name=>'GWARANCJA'
+,p_validation_sequence=>40
+,p_validation=>':P505_DODATKOWA_GWARANCJA is not null'
+,p_validation2=>'PLSQL'
+,p_validation_type=>'EXPRESSION'
+,p_error_message=>unistr('Nale\017Cy wybra\0107 dodanie gwarancji.')
+,p_when_button_pressed=>wwv_flow_imp.id(65468277654211384)
+,p_associated_item=>wwv_flow_imp.id(65463728182211380)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_validation(
+ p_id=>wwv_flow_imp.id(184742012344587027)
+,p_validation_name=>'New'
+,p_validation_sequence=>50
+,p_validation=>':P505_ID_DODSR IS NOT NULL'
+,p_validation2=>'PLSQL'
+,p_validation_type=>'EXPRESSION'
+,p_error_message=>unistr('Nale\017Cy wybra\0107 dodatek/\015Brub\0119.')
+,p_when_button_pressed=>wwv_flow_imp.id(65468277654211384)
+,p_associated_item=>wwv_flow_imp.id(64880272993374938)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(64880502557374941)
+,p_name=>'Zmiana'
+,p_event_sequence=>10
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P505_TYP'
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'change'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(64880633128374942)
+,p_event_id=>wwv_flow_imp.id(64880502557374941)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_SET_VALUE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P505_ID_DODSR'
+,p_attribute_01=>'STATIC_ASSIGNMENT'
+,p_attribute_09=>'N'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(65469012494211385)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_region_id=>wwv_flow_imp.id(65461470124211378)
+,p_process_type=>'NATIVE_FORM_DML'
+,p_process_name=>unistr('Process form Pozycja zam\00F3wienia')
+,p_attribute_01=>'REGION_SOURCE'
+,p_attribute_05=>'Y'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'N'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_imp.id(65468277654211384)
+,p_internal_uid=>65469012494211385
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(190336213874366218)
+,p_process_sequence=>20
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'Process'
+,p_process_sql_clob=>'UPDATE ZAMOWIENIE SET KOSZT=WARTOSC_ZAMOWIENIA(:P505_ID_ZAMOWIENIA) WHERE ID_ZAMOWIENIA=:P505_ID_ZAMOWIENIA;'
+,p_process_clob_language=>'PLSQL'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_imp.id(65468277654211384)
+,p_internal_uid=>190336213874366218
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(65469446397211385)
+,p_process_sequence=>30
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'Close Dialog'
+,p_attribute_01=>'P505_ID_ZAMOWIENIA,REQUEST'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'CREATE,SAVE,DELETE'
+,p_process_when_type=>'REQUEST_IN_CONDITION'
+,p_internal_uid=>65469446397211385
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(65468693649211385)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_region_id=>wwv_flow_imp.id(65461470124211378)
+,p_process_type=>'NATIVE_FORM_INIT'
+,p_process_name=>unistr('Initialize form Pozycja zam\00F3wienia')
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_internal_uid=>65468693649211385
+);
+wwv_flow_imp.component_end;
+end;
+/

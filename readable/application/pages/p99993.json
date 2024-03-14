@@ -1,0 +1,897 @@
+{
+  "id":"99993"
+ ,"Identification":{
+    "Name":"Dane podstawowe"
+   ,"Alias":"DANE-PODSTAWOWE"
+   ,"Title":"Dane podstawowe"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Wizard Modal Dialog (127731345937451402)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Dialog":{
+    "Height":"1000"
+   ,"Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+  }
+ ,"Security":{
+    "Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"136579177035156104"
+     ,"Identification":{
+        "Title":"Dane podstawowe - osoba prywatna"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (127841453146451491)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P99992_RODZAJ_KLIENTA"
+       ,"Value":"prywaciaz"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"136626383097252371"
+     ,"Identification":{
+        "Title":"Wizard Progress"
+       ,"Type":"List"
+      }
+     ,"Source":{
+        "List":"Rejestracja (136621132222252364)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (127841453146451491)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "List Template":"Wizard Progress (127871633491451517)"
+        }
+      }
+    }
+   ,{
+      "id":"136626442300252371"
+     ,"Identification":{
+        "Title":"Dane podstawowe - firma"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (127841453146451491)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P99992_RODZAJ_KLIENTA"
+       ,"Value":"firma"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"136626570733252371"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_03"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (127783730784451445)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"136579217582156105"
+     ,"Identification":{
+        "Name":"P99993_NAZWA_FIRMY"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Nazwa Firmy"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Dane podstawowe - firma (136626442300252371)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":64
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"136579372920156106"
+     ,"Identification":{
+        "Name":"P99993_IMIE"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Imie"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Dane podstawowe - osoba prywatna (136579177035156104)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"136579421134156107"
+     ,"Identification":{
+        "Name":"P99993_NIP"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"NIP"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Dane podstawowe - firma (136626442300252371)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":13
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"136579545407156108"
+     ,"Identification":{
+        "Name":"P99993_ROZMIAR_FIRMY"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Rozmiar Firmy"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Dane podstawowe - firma (136626442300252371)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Static Values"
+       ,"Static Values":"STATIC2:Mikro;mikro,Ma\u0142a;mala,\u015Arednia;srednia,Du\u017Ca;duza"
+       ,"Display Extra Values":false
+       ,"Display Null Value":true
+       ,"Null Display Value":"-Brak danych o rozmiarze-"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"136579660649156109"
+     ,"Identification":{
+        "Name":"P99993_NAZWISKO"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Nazwisko"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Dane podstawowe - osoba prywatna (136579177035156104)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"136628057423252373"
+     ,"Identification":{
+        "Button Name":"CANCEL"
+       ,"Label":"Cancel"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Buttons (136626570733252371)"
+       ,"Position":"CLOSE"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":true
+      }
+    }
+   ,{
+      "id":"136628296355252373"
+     ,"Identification":{
+        "Button Name":"PREVIOUS"
+       ,"Label":"Previous"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Buttons (136626570733252371)"
+       ,"Position":"PREVIOUS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (127895353284451538)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-chevron-left"
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":false
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"136628367439252373"
+     ,"Identification":{
+        "Button Name":"NEXT"
+       ,"Label":"Next"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Buttons (136626570733252371)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (127896192632451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "t-Button--iconRight"
+        ]
+       ,"Icon":"fa-chevron-right"
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"136582301105156136"
+     ,"Identification":{
+        "Name":"New"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.READY"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"136582478508156137"
+         ,"Identification":{
+            "Action":"Clear"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Item(s)"
+           ,"Item(s)":[
+              "P99993_NAZWA_FIRMY"
+             ,"P99993_IMIE"
+             ,"P99993_NIP"
+             ,"P99993_NAZWISKO"
+             ,"P99993_ROZMIAR_FIRMY"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"New (136582301105156136)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+         ,"Server-side Condition":{
+            "Type":"Request != Value"
+           ,"Value":"PREV"
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"136628496584252373"
+     ,"Identification":{
+        "Name":"Cancel Dialog"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"CANCEL (136628057423252373)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"136629294333252374"
+         ,"Identification":{
+            "Action":"Cancel Dialog"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Cancel Dialog (136628496584252373)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"136581492133156127"
+     ,"Identification":{
+        "Name":"Nie puste"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"Validation":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P99993_IMIE"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy poda\u0107 imi\u0119"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99993_IMIE (136579372920156106)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P99992_RODZAJ_KLIENTA"
+       ,"Value":"prywaciaz"
+      }
+    }
+   ,{
+      "id":"136581577374156128"
+     ,"Identification":{
+        "Name":"Nie puste_n"
+      }
+     ,"Execution":{
+        "Sequence":30
+      }
+     ,"Validation":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P99993_NAZWISKO"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy poda\u0107 nazwisko"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99993_NAZWISKO (136579660649156109)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P99992_RODZAJ_KLIENTA"
+       ,"Value":"prywaciaz"
+      }
+    }
+   ,{
+      "id":"136581692659156129"
+     ,"Identification":{
+        "Name":"New_2"
+      }
+     ,"Execution":{
+        "Sequence":50
+      }
+     ,"Validation":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P99993_NAZWA_FIRMY"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy poda\u0107 nazw\u0119 firmy"
+       ,"Display Location":"Inline with Field and in Notification"
+       ,"Associated Item":"P99993_NAZWA_FIRMY (136579217582156105)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P99992_RODZAJ_KLIENTA"
+       ,"Value":"frima"
+      }
+    }
+   ,{
+      "id":"136581891113156131"
+     ,"Identification":{
+        "Name":"New_3"
+      }
+     ,"Execution":{
+        "Sequence":60
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"SQL"
+       ,"SQL Expression":"REGEXP_LIKE(:P99993_NIP, \u0027^\u005Cd{3}-\u005Cd{3}-\u005Cd{2}-\u005Cd{2}$\u0027)"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"NIP jest w b\u0142\u0119dnym formacie.\n\nPoprawny format to ***-***-**-**\nz u\u017Cyciem tylko cyfr"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99993_NIP (136579421134156107)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P99992_RODZAJ_KLIENTA"
+       ,"Value":"firma"
+      }
+    }
+   ,{
+      "id":"187862629001597211"
+     ,"Identification":{
+        "Name":"Nie numerki"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"Validation":{
+        "Type":"Item matches Regular Expression"
+       ,"Item":"P99993_IMIE"
+       ,"Regular Expression":"^[A-Za-\u0105\u0119\u017A\u017C\u00F3\u0142]+$"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Imi\u0119 nie mo\u017Ce posiada\u0107 cyfr ani odst\u0119p\u00F3w"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99993_IMIE (136579372920156106)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P99992_RODZAJ_KLIENTA"
+       ,"Value":"prywaciaz"
+      }
+    }
+   ,{
+      "id":"187862750240597212"
+     ,"Identification":{
+        "Name":"Nie "
+      }
+     ,"Execution":{
+        "Sequence":40
+      }
+     ,"Validation":{
+        "Type":"Item matches Regular Expression"
+       ,"Item":"P99993_NAZWISKO"
+       ,"Regular Expression":"^[A-Za-\u0105\u0119\u017A\u017C\u00F3\u0142]+$"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nazwisko nie mo\u017Ce posiada\u0107 cyfr ani odst\u0119p\u00F3w"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99993_NAZWISKO (136579660649156109)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P99992_RODZAJ_KLIENTA"
+       ,"Value":"prywaciaz"
+      }
+    }
+  ]
+ ,"Branches":[
+    {
+      "id":"136629951320252374"
+     ,"Identification":{
+        "Name":"Go To Page 99992"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Validating"
+      }
+     ,"Behavior":{
+        "Type":"Page or URL (Redirect)"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:99992:\u0026SESSION.:PREV:\u0026DEBUG.:::\u0026success_msg=#SUCCESS_MSG#"
+         ,"Page":"99992"
+         ,"Request":"PREV"
+        }
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"PREVIOUS (136628296355252373)"
+      }
+    }
+   ,{
+      "id":"136630662143252375"
+     ,"Identification":{
+        "Name":"Go To Page 99994"
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"After Processing"
+      }
+     ,"Behavior":{
+        "Type":"Page or URL (Redirect)"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:99994:\u0026APP_SESSION.::\u0026DEBUG.:::\u0026success_msg=#SUCCESS_MSG#"
+         ,"Page":"99994"
+        }
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"NEXT (136628367439252373)"
+      }
+    }
+  ]
+}

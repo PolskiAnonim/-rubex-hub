@@ -1,0 +1,92 @@
+[
+  {
+    "id":"21825839321562751"
+   ,"Identification":{
+      "Name":"Administrator"
+    }
+   ,"Advanced":{
+      "Static ID":"ADMINISTRATOR"
+    }
+   ,"Description":{
+      "Description":"Role assigned to application administrators."
+    }
+  }
+ ,{
+    "id":"21826055558562751"
+   ,"Identification":{
+      "Name":"Contributor"
+    }
+   ,"Advanced":{
+      "Static ID":"CONTRIBUTOR"
+    }
+   ,"Description":{
+      "Description":"Role assigned to application contributors."
+    }
+  }
+ ,{
+    "id":"21826102565562751"
+   ,"Identification":{
+      "Name":"Reader"
+    }
+   ,"Advanced":{
+      "Static ID":"READER"
+    }
+   ,"Description":{
+      "Description":"Role assigned to application readers."
+    }
+  }
+ ,{
+    "id":"21993196256807393"
+   ,"Identification":{
+      "Name":"wlasciciel_r"
+    }
+   ,"Advanced":{
+      "Static ID":"WLASCICIEL_R"
+    }
+  }
+ ,{
+    "id":"21993213731808994"
+   ,"Identification":{
+      "Name":"manager_r"
+    }
+   ,"Advanced":{
+      "Static ID":"MANAGER_R"
+    }
+  }
+ ,{
+    "id":"21993303265814000"
+   ,"Identification":{
+      "Name":"kierownik_r"
+    }
+   ,"Advanced":{
+      "Static ID":"KIEROWNIK_R"
+    }
+  }
+ ,{
+    "id":"21993464872815908"
+   ,"Identification":{
+      "Name":"pracownik_r"
+    }
+   ,"Advanced":{
+      "Static ID":"PRACOWNIK_R"
+    }
+  }
+ ,{
+    "id":"21993582146816618"
+   ,"Identification":{
+      "Name":"klient_r"
+    }
+   ,"Advanced":{
+      "Static ID":"KLIENT_R"
+    }
+  }
+ ,{
+    "id":"136093508612206526"
+   ,"Identification":{
+      "Name":"gosc_r"
+    }
+   ,"Advanced":{
+      "Static ID":"GOSC_R"
+    }
+  }
+]

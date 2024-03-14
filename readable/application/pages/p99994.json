@@ -1,0 +1,823 @@
+{
+  "id":"99994"
+ ,"Identification":{
+    "Name":"Dane logowania"
+   ,"Alias":"DANE-LOGOWANIA"
+   ,"Title":"Dane logowania"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Wizard Modal Dialog (127731345937451402)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Dialog":{
+    "Height":"1000"
+   ,"Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+  }
+ ,"Security":{
+    "Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"136631355730252375"
+     ,"Identification":{
+        "Title":"Wizard Progress"
+       ,"Type":"List"
+      }
+     ,"Source":{
+        "List":"Rejestracja (136621132222252364)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (127841453146451491)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "List Template":"Wizard Progress (127871633491451517)"
+        }
+      }
+    }
+   ,{
+      "id":"136631400758252375"
+     ,"Identification":{
+        "Title":"Dane logowania"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (127841453146451491)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"136631553390252375"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_03"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (127783730784451445)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"136582990416156142"
+     ,"Identification":{
+        "Name":"P99994_EMAIL"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Email"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Dane logowania (136631400758252375)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":64
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"136583103924156144"
+     ,"Identification":{
+        "Name":"P99994_NR_TELEFONU"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Nr Telefonu"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Dane logowania (136631400758252375)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":13
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"136583310821156146"
+     ,"Identification":{
+        "Name":"P99994_ADRES"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Adres"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Region":"Dane logowania (136631400758252375)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":64
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"136583547705156148"
+     ,"Identification":{
+        "Name":"P99994_PASSWORD"
+       ,"Type":"Password"
+      }
+     ,"Label":{
+        "Label":"Password"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Submit when Enter pressed":false
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Region":"Dane logowania (136631400758252375)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":false
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":64
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"138511982038940907"
+     ,"Identification":{
+        "Name":"P99994_NAZWA_UZYTKOWNIKA"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Nazwa u\u017Cytkownika"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Dane logowania (136631400758252375)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":64
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"136633036662252377"
+     ,"Identification":{
+        "Button Name":"CANCEL"
+       ,"Label":"Cancel"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Buttons (136631553390252375)"
+       ,"Position":"CLOSE"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":true
+      }
+    }
+   ,{
+      "id":"136633212094252377"
+     ,"Identification":{
+        "Button Name":"PREVIOUS"
+       ,"Label":"Previous"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Buttons (136631553390252375)"
+       ,"Position":"PREVIOUS"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (127895353284451538)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-chevron-left"
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":false
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"136633336962252377"
+     ,"Identification":{
+        "Button Name":"NEXT"
+       ,"Label":"Utw\u00F3rz konto!"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Buttons (136631553390252375)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (127896192632451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "t-Button--iconRight"
+        ]
+       ,"Icon":"fa-chevron-right"
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"136583766831156150"
+     ,"Identification":{
+        "Name":"New"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.READY"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+      }
+     ,"Actions":[
+        {
+          "id":"138511307636940901"
+         ,"Identification":{
+            "Action":"Clear"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Item(s)"
+           ,"Item(s)":[
+              "P99994_EMAIL"
+             ,"P99994_NR_TELEFONU"
+             ,"P99994_ADRES"
+             ,"P99994_PASSWORD"
+             ,"P99994_NAZWA_UZYTKOWNIKA"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"New (136583766831156150)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"136633422384252377"
+     ,"Identification":{
+        "Name":"Cancel Dialog"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"CANCEL (136633036662252377)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"136634285627252378"
+         ,"Identification":{
+            "Action":"Cancel Dialog"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Cancel Dialog (136633422384252377)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"136583081406156143"
+     ,"Identification":{
+        "Name":"New"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"SQL"
+       ,"SQL Expression":"REGEXP_LIKE(:P99994_EMAIL, \u0027^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\u005C.[A-Za-z]{2,4}$\u0027)"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy poda\u0107 prawid\u0142owy adres mail"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99994_EMAIL (136582990416156142)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"NEXT (136633336962252377)"
+      }
+    }
+   ,{
+      "id":"136583267636156145"
+     ,"Identification":{
+        "Name":"NRTEL"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"SQL"
+       ,"SQL Expression":"REGEXP_LIKE(:P99994_NR_TELEFONU, \u0027^\u005C+\u005Cd{12}$|^\u005Cd{9}$|^\u005C+\u005Cd{11}$\u0027)"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy poda\u0107 prawid\u0142owy numer telefonu:\n111 111 111\n+11111111111"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99994_NR_TELEFONU (136583103924156144)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"NEXT (136633336962252377)"
+      }
+    }
+   ,{
+      "id":"136583486738156147"
+     ,"Identification":{
+        "Name":"ADRESS NOT NULL"
+      }
+     ,"Execution":{
+        "Sequence":30
+      }
+     ,"Validation":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P99994_ADRES"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy poda\u0107 adres"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99994_ADRES (136583310821156146)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"NEXT (136633336962252377)"
+      }
+    }
+   ,{
+      "id":"136583637061156149"
+     ,"Identification":{
+        "Name":"PASSWORD NOT NULL"
+      }
+     ,"Execution":{
+        "Sequence":40
+      }
+     ,"Validation":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P99994_PASSWORD"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Has\u0142o nie mo\u017Ce by\u0107 puste"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99994_PASSWORD (136583547705156148)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"NEXT (136633336962252377)"
+      }
+    }
+   ,{
+      "id":"138512215151940910"
+     ,"Identification":{
+        "Name":"NAZWA  UZYTKOWNIKA"
+      }
+     ,"Execution":{
+        "Sequence":60
+      }
+     ,"Validation":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P99994_NAZWA_UZYTKOWNIKA"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy poda\u0107 nazw\u0119 u\u017Cytkownika"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P99994_NAZWA_UZYTKOWNIKA (138511982038940907)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"NEXT (136633336962252377)"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"138511746123940905"
+     ,"Identification":{
+        "Name":"Close Dialog"
+       ,"Type":"Close Dialog"
+       ,"Execution Chain":"None"
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Success Message":{
+        "Success Message":"Prawid\u0142owo utworzono konto"
+      }
+     ,"Error":{
+        "Error Message":"Wyst\u0105pi\u0142 b\u0142\u0105d przy tworzeniu konta.\nSpr\u00F3buj ponownie p\u00F3\u017Aniej"
+       ,"Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"NEXT (136633336962252377)"
+      }
+    }
+   ,{
+      "id":"138511823695940906"
+     ,"Identification":{
+        "Name":"New"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"declare\n    found number;\nBEGIN\n  select count(*) into found from USER_QUEUE_OP where username = :P99994_NAZWA_UZYTKOWNIKA;\n  IF found = 0 THEN\n    IF :P99992_RODZAJ_KLIENTA = \u0027firma\u0027 THEN\n        INSERT INTO USER_QUQUE_FIRMA(username, passwd, nazwa, nip, rozmiar_firmy, nr_telefonu, email, adres) VALUES(:P99994_NAZWA_UZYTKOWNIKA, :P99994_PASSWORD, :P99993_NAZWA_FIRMY, :P99993_NIP, :P99993_ROZMIAR_FIRMY,:P99994_NR_TELEFONU, :P99994_EMAIL, :P99994_ADRES);\n    ELSE\n        INSERT INTO USER_QUEUE_OP(username, passwd, imie, nazwisko, nr_telefonu, email, adres) VALUES(:P99994_NAZWA_UZYTKOWNIKA, :P99994_PASSWORD, :P99993_IMIE, :P99993_NAZWISKO, :P99994_NR_TELEFONU, :P99994_EMAIL, :P99994_ADRES);\n    END IF;\n  END IF;\nEND;\n\n"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"NEXT (136633336962252377)"
+      }
+    }
+  ]
+ ,"Branches":[
+    {
+      "id":"136634930819252379"
+     ,"Identification":{
+        "Name":"Go To Page 99993"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Validating"
+      }
+     ,"Behavior":{
+        "Type":"Page or URL (Redirect)"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:99993:\u0026SESSION.:PREV:\u0026DEBUG.:::\u0026success_msg=#SUCCESS_MSG#"
+         ,"Page":"99993"
+         ,"Request":"PREV"
+        }
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"PREVIOUS (136633212094252377)"
+      }
+    }
+  ]
+}

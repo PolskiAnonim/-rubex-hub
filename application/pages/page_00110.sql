@@ -1,0 +1,228 @@
+prompt --application/pages/page_00110
+begin
+--   Manifest
+--     PAGE: 00110
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.5'
+,p_default_workspace_id=>8358547342345319
+,p_default_application_id=>120
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_WS151783'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>110
+,p_name=>'dod-cert'
+,p_alias=>'DOD-CERT'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Dodaj certyfikat'
+,p_autocomplete_on_off=>'OFF'
+,p_group_id=>wwv_flow_imp.id(188167373563904633)
+,p_step_template=>wwv_flow_imp.id(127720327755451391)
+,p_page_template_options=>'#DEFAULT#:js-dialog-class-t-Drawer--pullOutEnd'
+,p_protection_level=>'C'
+,p_page_component_map=>'02'
+,p_last_updated_by=>'KACPER.KURAS@STUDENT.PUT.POZNAN.PL'
+,p_last_upd_yyyymmddhh24miss=>'20240109180933'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(166260010673501023)
+,p_plug_name=>'Dodaj certyfikat'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(127841453146451491)
+,p_plug_display_sequence=>10
+,p_query_type=>'TABLE'
+,p_query_table=>'CERTYFIKAT'
+,p_include_rowid_column=>false
+,p_is_editable=>true
+,p_edit_operations=>'i:u:d'
+,p_lost_update_check_type=>'VALUES'
+,p_plug_source_type=>'NATIVE_FORM'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(166262544622501028)
+,p_plug_name=>'Buttons'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(127783730784451445)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'REGION_POSITION_03'
+,p_attribute_01=>'N'
+,p_attribute_02=>'TEXT'
+,p_attribute_03=>'Y'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(166262915154501029)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_imp.id(166262544622501028)
+,p_button_name=>'CANCEL'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(127896059539451539)
+,p_button_image_alt=>'Cancel'
+,p_button_position=>'CLOSE'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(166265173588501031)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_imp.id(166262544622501028)
+,p_button_name=>'CREATE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(127896059539451539)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Create'
+,p_button_position=>'NEXT'
+,p_button_condition=>'P110_SYMBOL_CERTYFIKATU'
+,p_button_condition_type=>'ITEM_IS_NULL'
+,p_database_action=>'INSERT'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(166260452448501024)
+,p_name=>'P110_SYMBOL_CERTYFIKATU'
+,p_source_data_type=>'VARCHAR2'
+,p_is_required=>true
+,p_is_primary_key=>true
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(166260010673501023)
+,p_item_source_plug_id=>wwv_flow_imp.id(166260010673501023)
+,p_prompt=>'Symbol certyfikatu'
+,p_source=>'SYMBOL_CERTYFIKATU'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_imp.id(127893514922451536)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_protection_level=>'S'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(166260898727501025)
+,p_name=>'P110_KLASYFIKACJE'
+,p_source_data_type=>'VARCHAR2'
+,p_is_required=>true
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(166260010673501023)
+,p_item_source_plug_id=>wwv_flow_imp.id(166260010673501023)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Klasyfikacje'
+,p_source=>'KLASYFIKACJE'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>32
+,p_cMaxlength=>128
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_imp.id(127894844875451538)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_03=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(166261261219501027)
+,p_name=>'P110_OPIS'
+,p_source_data_type=>'VARCHAR2'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_imp.id(166260010673501023)
+,p_item_source_plug_id=>wwv_flow_imp.id(166260010673501023)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Opis'
+,p_source=>'OPIS'
+,p_source_type=>'REGION_SOURCE_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>32
+,p_cMaxlength=>128
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_imp.id(127893514922451536)
+,p_item_template_options=>'#DEFAULT#'
+,p_is_persistent=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_03=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_imp_page.create_page_validation(
+ p_id=>wwv_flow_imp.id(177630112302098024)
+,p_validation_name=>'Klasyfikacje'
+,p_validation_sequence=>10
+,p_validation=>':P110_KLASYFIKACJE IS NOT NULL'
+,p_validation2=>'PLSQL'
+,p_validation_type=>'EXPRESSION'
+,p_error_message=>unistr('Klasyfikacja nie mo\017Ce by\0107 pusta')
+,p_associated_item=>wwv_flow_imp.id(166260898727501025)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_validation(
+ p_id=>wwv_flow_imp.id(177630362843098026)
+,p_validation_name=>'Symbol'
+,p_validation_sequence=>20
+,p_validation=>'SELECT * FROM CERTYFIKAT WHERE SYMBOL_CERTYFIKATU=:P110_SYMBOL_CERTYFIKATU'
+,p_validation_type=>'NOT_EXISTS'
+,p_error_message=>unistr('Symbol certyfikatu nie mo\017Ce by\0107 pusty')
+,p_associated_item=>wwv_flow_imp.id(166260452448501024)
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(166263073184501029)
+,p_name=>'Cancel Dialog'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_imp.id(166262915154501029)
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(166263830858501030)
+,p_event_id=>wwv_flow_imp.id(166263073184501029)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_DIALOG_CANCEL'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(166265992846501032)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_region_id=>wwv_flow_imp.id(166260010673501023)
+,p_process_type=>'NATIVE_FORM_DML'
+,p_process_name=>'Process form dod-cert'
+,p_attribute_01=>'REGION_SOURCE'
+,p_attribute_05=>'Y'
+,p_attribute_06=>'Y'
+,p_attribute_08=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_internal_uid=>166265992846501032
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(166266305686501032)
+,p_process_sequence=>50
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'Close Dialog'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when=>'CREATE,SAVE,DELETE'
+,p_process_when_type=>'REQUEST_IN_CONDITION'
+,p_internal_uid=>166266305686501032
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(166265539836501032)
+,p_process_sequence=>10
+,p_process_point=>'BEFORE_HEADER'
+,p_region_id=>wwv_flow_imp.id(166260010673501023)
+,p_process_type=>'NATIVE_FORM_INIT'
+,p_process_name=>'Initialize form dod-cert'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_internal_uid=>166265539836501032
+);
+wwv_flow_imp.component_end;
+end;
+/

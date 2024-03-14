@@ -1,0 +1,831 @@
+{
+  "id":"801"
+ ,"Identification":{
+    "Name":"Ryneczek_dialog"
+   ,"Alias":"RYNECZEK-DIALOG"
+   ,"Title":"Ile element\u00F3w chcia\u0142by\u015B doda\u0107 do koszyka?"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Dialog":{
+    "Attributes":[
+      "close: function(event"
+     ," ui) {apex.navigation.dialog.close(true"
+     ,"{\"dialogPageId\":801});}"
+    ]
+   ,"Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+  }
+ ,"Security":{
+    "Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"142254105572044908"
+     ,"Identification":{
+        "Title":"sruby"
+       ,"Type":"Cards"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"SELECT * FROM SRUBA WHERE ID_SRUBY = :P801_ID"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"  \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column;\"\u003E\n"
+       ,"Footer Text":"\u003C\/div\u003E"
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"SQL"
+       ,"SQL Expression":"SUBSTR(:P801_ID,1,1) != \u0027A\u0027"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"142254292859044909"
+       ,"Appearance":{
+          "Layout":"Float"
+        }
+       ,"Title":{
+          "Advanced Formatting":true
+         ,"HTML Expression":"  \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column;\"\u003E\n  \u003Cdiv\u003E\n    \u003Ch3\u003E\u0026NAZWA_SRUBY.\u003C\/h3\u003E  \n  \u003C\/div\u003E\n\u003Cdiv style=\"display: flex; column-gap: 60px;\"\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ED\u0142ugo\u015B\u0107 gwintu: \u0026DLUGOSC_GWINTU.\u003C\/h1\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ERodzaj gwintu: \u0026RODZAJ_GWINTU.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ED\u0142ugo\u015B\u0107 trzpienia: \u0026DLUGOSC_TRZPIENIA.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EKlasa wytrzyma\u0142o\u015Bci: \u0026KLASA_WYTRZYMALOSCI.\u003C\/h1\u003E \n    \u003C\/div\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EKolor: \u0026KOLOR.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EMateria\u0142: \u0026MATERIAL.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ERodzaj \u0142ba: \u0026RODZAJ_LBA.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EGniazdo: \u0026GNIAZDO.\u003C\/h1\u003E \n    \u003C\/div\u003E\n\u003C\/div\u003E\n\n\n\n\u003Cdiv style=\"text-align: center;\"\u003E\n  \u003Ch3 id=\"\u0026NAZWA_SRUBY_NARZEDZIA\" style=\"margin-bottom: 1px\"\u003E\u0026ILOSC_W_PUDELKU. sztuk za\u003C\/h3\u003E\n  \u003Ch3 style=\"margin-top: 1px; color: #056ac8;\"\u003E\u0026CENA. z\u0142.\u003C\/h3\u003E\n  \u003Ch3 id=\"aaa\" value=\"\u0026ILOSC_W_PUDELKU.\" style=\"margin-top: 1px; color: #536675;font-size: 0.5rem;\"\u003EPozosta\u0142o \u0026ILOSC_PUDELEK_NA_MAGAZYNIE. opak.\u003C\/h3\u003E\n\u003C\/div\u003E\n\n\n\u003C\/div\u003E"
+        }
+       ,"Subtitle":{
+          "Advanced Formatting":false
+        }
+       ,"Body":{
+          "Advanced Formatting":false
+        }
+       ,"Secondary Body":{
+          "Advanced Formatting":false
+        }
+       ,"Icon and Badge":{
+          "Icon Source":"No Icon"
+        }
+       ,"Media":{
+          "Advanced Formatting":false
+         ,"Source":"No Media"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Count":false
+        }
+      }
+    }
+   ,{
+      "id":"142255076634044917"
+     ,"Identification":{
+        "Title":"dodatki"
+       ,"Type":"Cards"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"SELECT * FROM DODATEK WHERE ID_DODATKU = :P801_ID\n"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"  \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column;\"\u003E\n"
+       ,"Footer Text":"\u003C\/div\u003E"
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"SQL"
+       ,"SQL Expression":"SUBSTR(:P801_ID,1,1) = \u0027A\u0027"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"142255130535044918"
+       ,"Appearance":{
+          "Layout":"Float"
+        }
+       ,"Title":{
+          "Advanced Formatting":true
+         ,"HTML Expression":"  \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column;\"\u003E\n  \u003Cdiv\u003E\n    \u003Ch3\u003E\u0026NAZWA_DODATKU.\u003C\/h3\u003E  \n  \u003C\/div\u003E\n\u003Cdiv style=\"display: flex; column-gap: 60px;\"\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ETyp: \u0026TYP.\u003C\/h1\u003E\n    \u003C\/div\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EMateria\u0142: \u0026MATERIAL.\u003C\/h1\u003E \n    \u003C\/div\u003E\n\u003C\/div\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003E\u0026OPIS.\u003C\/h1\u003E \n\n\n\u003Cdiv style=\"text-align: center;\"\u003E\n  \u003Ch3 style=\"margin-bottom: 1px\"\u003E\u0026ILOSC_W_PUDELKU. sztuk za\u003C\/h3\u003E\n  \u003Ch3 style=\"margin-top: 1px; color: #056ac8;\"\u003E\u0026CENA. z\u0142.\u003C\/h3\u003E\n  \n  \u003Ch3 style=\"margin-top: 1px; color: #536675;font-size: 0.5rem;\"\u003EPozosta\u0142o \u0026ILOSC_PUDELEK_NA_MAGAZYNIE. opak.\u003C\/h3\u003E\n  \n\u003C\/div\u003E\n\n\n\u003C\/div\u003E"
+        }
+       ,"Subtitle":{
+          "Advanced Formatting":false
+        }
+       ,"Body":{
+          "Advanced Formatting":false
+        }
+       ,"Secondary Body":{
+          "Advanced Formatting":false
+        }
+       ,"Icon and Badge":{
+          "Icon Source":"No Icon"
+        }
+       ,"Media":{
+          "Advanced Formatting":false
+         ,"Source":"No Media"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Count":false
+        }
+      }
+    }
+   ,{
+      "id":"159731461487745943"
+     ,"Identification":{
+        "Title":"Uk\u0142adatoInator"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":false
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"  \u003Cdiv style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column;\"\u003E"
+       ,"Footer Text":"\u003C\/div\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"130176416661451941"
+     ,"Identification":{
+        "Name":"P801_KLIENT"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"SQL Query (return single value)"
+       ,"SQL Query":"SELECT ID_KLIENTA FROM KONTO_APEX WHERE ID_APEXA=TO_CHAR(apex_util.get_user_id(p_username =\u003E ( :APP_USER)));"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"139398754163447826"
+     ,"Identification":{
+        "Name":"P801_LICZBA"
+       ,"Type":"Number Field"
+      }
+     ,"Label":{
+        "Label":"Liczba element\u00F3w"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Maximum Value":9999
+       ,"Number Alignment":"Start"
+       ,"Virtual Keyboard":"Numeric"
+      }
+     ,"Layout":{
+        "Sequence":110
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Function Body"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"DECLARE\n  vLiczba INTEGER;\nBEGIN\n    IF SUBSTR(:P801_ID,1,1)=\u0027S\u0027 THEN\n        SELECT LICZBA INTO vLiczba FROM \"KOSZYK_SRUBY\"\n        WHERE ID_KOSZYKA = \u0027T\u0027 || :P801_KLIENT AND ID_SRUBY = :P801_ID;\n    ELSE\n        SELECT LICZBA INTO vLiczba FROM \"KOSZYK_DODATKI\"\n        WHERE ID_KOSZYKA = \u0027T\u0027 || :P801_KLIENT AND ID_DODATKU = :P801_ID;\n    END IF;\n  \n  RETURN vLiczba;\nEXCEPTION\n  WHEN NO_DATA_FOUND THEN RETURN 0;\nEND;"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":APP_USER != \u0027go\u015B\u0107\u0027"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"139400449038447843"
+     ,"Identification":{
+        "Name":"P801_ID"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"142254351757044910"
+     ,"Identification":{
+        "Name":"P801_MAX"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Function Body"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"DECLARE\nvMax INTEGER;\nBEGIN\nCASE WHEN SUBSTR(:P801_ID,1,1)=\u0027A\u0027 THEN \n    SELECT ILOSC_PUDELEK_NA_MAGAZYNIE INTO vMax FROM DODATEK WHERE ID_DODATKU=:P801_ID;\nELSE\n    SELECT ILOSC_PUDELEK_NA_MAGAZYNIE INTO vMax FROM SRUBA WHERE ID_SRUBY=:P801_ID;\nEND CASE;\nRETURN vMax;\nEND;"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"142255309678044920"
+     ,"Identification":{
+        "Name":"P801_CENA"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":80
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Function Body"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"DECLARE\nvMax INTEGER;\nBEGIN\nCASE WHEN SUBSTR(:P801_ID,1,1)=\u0027A\u0027 THEN \n    SELECT CENA INTO vMax FROM DODATEK WHERE ID_DODATKU=:P801_ID;\nELSE\n    SELECT CENA INTO vMax FROM SRUBA WHERE ID_SRUBY=:P801_ID;\nEND CASE;\nRETURN vMax;\nEND;"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"151252934528700841"
+     ,"Identification":{
+        "Name":"P801_NARZEDZIA"
+       ,"Type":"Checkbox"
+      }
+     ,"Label":{
+        "Label":"Narzedzia"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Use Defaults":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Uk\u0142adatoInator (159731461487745943)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Pre Text":"\u003Cdiv data-tooltip=\"Dodanie dodatkowych narz\u0119dzi do poprawnego monta\u017Cu produktu. Us\u0142uga kosztuje 1z\u0142 od pozycji w zam\u00F3wieniu.\"\u003E"
+       ,"Post Text ":"\u003C\/div\u003E"
+       ,"Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Function Body"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"DECLARE\n  vNarzedzia CHAR(1);\nBEGIN\n    IF SUBSTR(:P801_ID,1,1)=\u0027S\u0027 THEN\n        SELECT NARZEDZIA INTO vNarzedzia FROM \"KOSZYK_SRUBY\"\n        WHERE ID_KOSZYKA = \u0027T\u0027 || :P801_KLIENT AND ID_SRUBY = :P801_ID;\n    ELSE\n        SELECT NARZEDZIA INTO vNarzedzia FROM \"KOSZYK_DODATKI\"\n        WHERE ID_KOSZYKA = \u0027T\u0027 || :P801_KLIENT AND ID_DODATKU = :P801_ID;\n    END IF;\n  \n  RETURN vNarzedzia;\nEXCEPTION\n  WHEN NO_DATA_FOUND THEN RETURN \u0027N\u0027;\nEND;"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"151253021136700842"
+     ,"Identification":{
+        "Name":"P801_GWARANCJA"
+       ,"Type":"Checkbox"
+      }
+     ,"Label":{
+        "Label":"Gwarancja"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Use Defaults":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Uk\u0142adatoInator (159731461487745943)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Pre Text":"\u003Cdiv data-tooltip=\"Dodanie dodatkowej gwarancji na produkt. Us\u0142uga kosztuje 21% ceny za opakowanie\"\u003E"
+       ,"Post Text ":"\u003C\/div\u003E"
+       ,"Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Function Body"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"DECLARE\n  vGwarancja CHAR(1);\nBEGIN\n    IF SUBSTR(:P801_ID,1,1)=\u0027S\u0027 THEN\n        SELECT GWARANCJA INTO vGwarancja FROM \"KOSZYK_SRUBY\"\n        WHERE ID_KOSZYKA = \u0027T\u0027 || :P801_KLIENT AND ID_SRUBY = :P801_ID;\n    ELSE\n        SELECT GWARANCJA INTO vGwarancja FROM \"KOSZYK_DODATKI\"\n        WHERE ID_KOSZYKA = \u0027T\u0027 || :P801_KLIENT AND ID_DODATKU = :P801_ID;\n    END IF;\n  \n  RETURN vGwarancja;\nEXCEPTION\n  WHEN NO_DATA_FOUND THEN RETURN \u0027N\u0027;\nEND;"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"139399117104447830"
+     ,"Identification":{
+        "Button Name":"DODAJ_DO_KOSZYKA"
+       ,"Label":"Dodaj do koszyka"
+      }
+     ,"Layout":{
+        "Sequence":120
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Alignment":"Left center"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--stretch"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":APP_USER != \u0027go\u015B\u0107\u0027"
+      }
+     ,"Security":{
+        "Authorization Scheme":"{Not Prawa pracownika} (21995650961848200)"
+      }
+    }
+   ,{
+      "id":"142256724990044934"
+     ,"Identification":{
+        "Button Name":"LOGOWANIE"
+       ,"Label":"Zaloguj si\u0119, aby doda\u0107 przedmiot do koszyka"
+      }
+     ,"Layout":{
+        "Sequence":130
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Alignment":"Left center"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--stretch"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:9999:\u0026SESSION.::\u0026DEBUG.:::"
+         ,"Page":"9999"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":APP_USER = \u0027go\u015B\u0107\u0027"
+      }
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"139399023150447829"
+     ,"Identification":{
+        "Name":"Odpowiednia liczba"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"Validation":{
+        "Type":"Function Body (returning Boolean)"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"IF :P801_LICZBA\u003E:P801_MAX THEN RETURN FALSE;\nEND IF;\nIF :P801_LICZBA\u003C0 then return false;\nend if;\nIF NOT(REGEXP_LIKE(:P801_LICZBA,\u0027^\u005Cd+$\u0027)) THEN RETURN FALSE;\nEND IF;\nreturn true;"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy poda\u0107 nieujemn\u0105 ca\u0142kowit\u0105 liczb\u0119 mniejsz\u0105 b\u0105d\u017A r\u00F3wn\u0105 stanowi magazynowemu"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P801_LICZBA (139398754163447826)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DODAJ_DO_KOSZYKA (139399117104447830)"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"184744171933587048"
+     ,"Identification":{
+        "Name":"DODANIE KOSZYKA"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"INSERT INTO KOSZYK_ZAMOWIENIA \nVALUES (\u0027T\u0027 || :P801_KLIENT, :P801_KLIENT, 0);"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DODAJ_DO_KOSZYKA (139399117104447830)"
+       ,"Type":"No Rows returned"
+       ,"SQL Query":"SELECT * FROM KOSZYK_ZAMOWIENIA WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT;"
+      }
+    }
+   ,{
+      "id":"184744252146587049"
+     ,"Identification":{
+        "Name":"DODANIE KOSZYKA DODATKOW"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"IF SUBSTR(:P801_ID, 1, 1) = \u0027A\u0027 THEN \n  INSERT INTO \"KOSZYK_DODATKI\" VALUES (\u0027T\u0027 || :P801_KLIENT, :P801_ID, 0,\u0027X\u0027,\u0027X\u0027);\nEND IF;"
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DODAJ_DO_KOSZYKA (139399117104447830)"
+       ,"Type":"No Rows returned"
+       ,"SQL Query":"SELECT ID_KOSZYKA FROM KOSZYK_DODATKI\nWHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT AND ID_DODATKU=:P801_ID;"
+      }
+    }
+   ,{
+      "id":"184744398475587050"
+     ,"Identification":{
+        "Name":"DODANIE KOSZYKA SRUB"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"IF SUBSTR(:P801_ID, 1, 1) = \u0027S\u0027 THEN \n  INSERT INTO \"KOSZYK_SRUBY\" VALUES (\u0027T\u0027 || :P801_KLIENT, :P801_ID, 0,\u0027X\u0027,\u0027X\u0027);\nEND IF;"
+      }
+     ,"Execution":{
+        "Sequence":30
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DODAJ_DO_KOSZYKA (139399117104447830)"
+       ,"Type":"No Rows returned"
+       ,"SQL Query":"SELECT ID_KOSZYKA FROM KOSZYK_SRUBY\n    WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT AND ID_SRUBY=:P801_ID;"
+      }
+    }
+   ,{
+      "id":"190334593762366201"
+     ,"Identification":{
+        "Name":"ZMIANA POZYCJI KOSZYKA"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"IF SUBSTR(:P801_ID, 1, 1) = \u0027A\u0027 THEN \n    UPDATE \"KOSZYK_DODATKI\" SET LICZBA=:P801_LICZBA, GWARANCJA=:P801_GWARANCJA, NARZEDZIA=:P801_NARZEDZIA WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT AND ID_DODATKU=:P801_ID;\nELSE\n    UPDATE \"KOSZYK_SRUBY\" SET LICZBA=:P801_LICZBA, GWARANCJA=:P801_GWARANCJA, NARZEDZIA=:P801_NARZEDZIA WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT AND ID_SRUBY=:P801_ID;\nEND IF;"
+      }
+     ,"Execution":{
+        "Sequence":50
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DODAJ_DO_KOSZYKA (139399117104447830)"
+      }
+    }
+   ,{
+      "id":"190334670739366202"
+     ,"Identification":{
+        "Name":"USUWANIE"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"DECLARE\nl1 INTEGER;\nl2 INTEGER;\nBEGIN\nIF SUBSTR(:P801_ID, 1, 1) = \u0027A\u0027 THEN \n    DELETE FROM \"KOSZYK_DODATKI\" WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT AND ID_DODATKU=:P801_ID;\nELSE\n    DELETE FROM \"KOSZYK_SRUBY\" WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT AND ID_SRUBY=:P801_ID;\nEND IF;\nSELECT COUNT(*) INTO l1 FROM \"KOSZYK_DODATKI\" WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT;\nSELECT COUNT(*) INTO l2 FROM \"KOSZYK_SRUBY\" WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT;\nIF l1+l2=0 THEN\nDELETE FROM \"KOSZYK_ZAMOWIENIA\" WHERE ID_KOSZYKA=\u0027T\u0027 || :P801_KLIENT;\nEND IF;\nEND;"
+      }
+     ,"Execution":{
+        "Sequence":70
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DODAJ_DO_KOSZYKA (139399117104447830)"
+       ,"Type":"Item = Value"
+       ,"Item":"P801_LICZBA"
+       ,"Value":"0"
+      }
+    }
+   ,{
+      "id":"190334730877366203"
+     ,"Identification":{
+        "Name":"CLOSE"
+       ,"Type":"Close Dialog"
+       ,"Execution Chain":"None"
+      }
+     ,"Execution":{
+        "Sequence":80
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DODAJ_DO_KOSZYKA (139399117104447830)"
+      }
+    }
+  ]
+}

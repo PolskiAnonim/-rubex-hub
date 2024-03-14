@@ -1,0 +1,74 @@
+[
+  {
+    "id":"21660780533562608"
+   ,"Identification":{
+      "Name":"Timeline"
+    }
+  }
+ ,{
+    "id":"21661329294562609"
+   ,"Identification":{
+      "Name":"Content Row"
+    }
+  }
+ ,{
+    "id":"21664508186562612"
+   ,"Identification":{
+      "Name":"Media List"
+    }
+  }
+ ,{
+    "id":"21667985596562614"
+   ,"Identification":{
+      "Name":"Value Attribute Pairs - Row"
+    }
+  }
+ ,{
+    "id":"21669930497562616"
+   ,"Identification":{
+      "Name":"Value Attribute Pairs - Column"
+    }
+  }
+ ,{
+    "id":"21671736829562617"
+   ,"Identification":{
+      "Name":"Badge List"
+    }
+  }
+ ,{
+    "id":"21675370900562620"
+   ,"Identification":{
+      "Name":"Contextual Info"
+    }
+  }
+ ,{
+    "id":"21676326901562621"
+   ,"Identification":{
+      "Name":"Standard"
+    }
+  }
+ ,{
+    "id":"21678971173562623"
+   ,"Identification":{
+      "Name":"Comments"
+    }
+  }
+ ,{
+    "id":"21680194025562624"
+   ,"Identification":{
+      "Name":"Alerts"
+    }
+  }
+ ,{
+    "id":"21680317061562624"
+   ,"Identification":{
+      "Name":"Cards"
+    }
+  }
+ ,{
+    "id":"21685513240562628"
+   ,"Identification":{
+      "Name":"Search Results"
+    }
+  }
+]

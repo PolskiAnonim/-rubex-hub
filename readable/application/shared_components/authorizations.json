@@ -1,0 +1,138 @@
+[
+  {
+    "id":"21826286636562751"
+   ,"Identification":{
+      "Name":"Administration Rights"
+    }
+   ,"Authorization Scheme":{
+      "Type":"Is In Role or Group"
+    }
+   ,"Settings":{
+      "Type":"Application Role"
+     ,"Name(s)":"Administrator"
+    }
+   ,"Server Cache":{
+      "Evaluation Point":"Once per Page View"
+    }
+   ,"Error":{
+      "Error Message":"Insufficient privileges, user is not an Administrator"
+    }
+  }
+ ,{
+    "id":"21826381073562751"
+   ,"Identification":{
+      "Name":"Reader Rights"
+    }
+   ,"Authorization Scheme":{
+      "Type":"PL\/SQL Function Returning Boolean"
+    }
+   ,"Settings":{
+      "PL\/SQL Function Body":"if nvl(apex_app_setting.get_value(\n   p_name =\u003E \u0027ACCESS_CONTROL_SCOPE\u0027),\u0027x\u0027) = \u0027ALL_USERS\u0027 then\n    -- allow user not in the ACL to access the application\n    return true;\nelse\n    -- require user to have at least one role\n    return apex_acl.has_user_any_roles (\n        p_application_id =\u003E :APP_ID, \n        p_user_name      =\u003E :APP_USER);\nend if;"
+    }
+   ,"Server Cache":{
+      "Evaluation Point":"Once per Session"
+    }
+   ,"Error":{
+      "Error Message":"You are not authorized to view this application, either because you have not been granted access, or your account has been locked. Please contact the application administrator."
+    }
+  }
+ ,{
+    "id":"21826435529562751"
+   ,"Identification":{
+      "Name":"Contribution Rights"
+    }
+   ,"Authorization Scheme":{
+      "Type":"Is In Role or Group"
+    }
+   ,"Settings":{
+      "Type":"Application Role"
+     ,"Name(s)":"Administrator,Contributor"
+    }
+   ,"Server Cache":{
+      "Evaluation Point":"Once per Page View"
+    }
+   ,"Error":{
+      "Error Message":"Insufficient privileges, user is not a Contributor"
+    }
+  }
+ ,{
+    "id":"21994860619838061"
+   ,"Identification":{
+      "Name":"Prawa kierownika"
+    }
+   ,"Authorization Scheme":{
+      "Type":"Is In Role or Group"
+    }
+   ,"Settings":{
+      "Type":"Application Role"
+     ,"Name(s)":"kierownik_r"
+    }
+   ,"Server Cache":{
+      "Evaluation Point":"Once per Session"
+    }
+  }
+ ,{
+    "id":"21995039631841302"
+   ,"Identification":{
+      "Name":"Prawa w\u0142a\u015Bciciela"
+    }
+   ,"Authorization Scheme":{
+      "Type":"Is In Role or Group"
+    }
+   ,"Settings":{
+      "Type":"Application Role"
+     ,"Name(s)":"wlasciciel_r"
+    }
+   ,"Server Cache":{
+      "Evaluation Point":"Once per Session"
+    }
+  }
+ ,{
+    "id":"21995221692843153"
+   ,"Identification":{
+      "Name":"Prawa managera"
+    }
+   ,"Authorization Scheme":{
+      "Type":"Is In Role or Group"
+    }
+   ,"Settings":{
+      "Type":"Application Role"
+     ,"Name(s)":"manager_r"
+    }
+   ,"Server Cache":{
+      "Evaluation Point":"Once per Session"
+    }
+  }
+ ,{
+    "id":"21995411764845570"
+   ,"Identification":{
+      "Name":"Prawa klienta"
+    }
+   ,"Authorization Scheme":{
+      "Type":"Is In Role or Group"
+    }
+   ,"Settings":{
+      "Type":"Application Role"
+     ,"Name(s)":"klient_r"
+    }
+   ,"Server Cache":{
+      "Evaluation Point":"Once per Session"
+    }
+  }
+ ,{
+    "id":"21995650961848200"
+   ,"Identification":{
+      "Name":"Prawa pracownika"
+    }
+   ,"Authorization Scheme":{
+      "Type":"Is In Role or Group"
+    }
+   ,"Settings":{
+      "Type":"Application Role"
+     ,"Name(s)":"pracownik_r"
+    }
+   ,"Server Cache":{
+      "Evaluation Point":"Once per Session"
+    }
+  }
+]

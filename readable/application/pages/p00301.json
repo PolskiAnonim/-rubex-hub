@@ -1,0 +1,1426 @@
+{
+  "id":"301"
+ ,"Identification":{
+    "Name":"dod_sr"
+   ,"Alias":"DOD-SR"
+   ,"Title":"\u015Aruba"
+   ,"Page Group":"Sruby (62444942272771816)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Drawer (127720327755451391)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-dialog-class-t-Drawer--pullOutEnd"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"40712196667169618"
+     ,"Identification":{
+        "Title":"\u015Aruba"
+       ,"Type":"Form"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"SRUBA"
+       ,"Include ROWID Column":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Edit":{
+          "Enabled":true
+         ,"Allowed Operations":[
+            "Add Row"
+           ,"Update Row"
+           ,"Delete Row"
+          ]
+         ,"Lost Update Type":"Row Values"
+        }
+      }
+    }
+   ,{
+      "id":"40721933755169636"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_03"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (127783730784451445)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"Text (escape special characters)"
+         ,"Show Line Breaks":true
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"36851790297116119"
+     ,"Identification":{
+        "Name":"P301_ID_DOSTAWCY"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Dostawca"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT nazwa_dostawcy, id_dostawcy FROM dostawca ORDER BY nazwa_dostawcy;"
+       ,"Display Extra Values":false
+       ,"Display Null Value":true
+       ,"Null Display Value":"-Wybierz dostawc\u0119-"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"ID_DOSTAWCY"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40712539874169619"
+     ,"Identification":{
+        "Name":"P301_ID_SRUBY"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"ID_SRUBY"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":true
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40712925872169620"
+     ,"Identification":{
+        "Name":"P301_NAZWA_SRUBY"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Nazwa \u015Bruby"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Custom Attributes":[
+          "readonly"
+        ]
+       ,"Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"NAZWA_SRUBY"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40713357588169621"
+     ,"Identification":{
+        "Name":"P301_DLUGOSC_GWINTU"
+       ,"Type":"Number Field"
+      }
+     ,"Label":{
+        "Label":"D\u0142ugo\u015B\u0107 gwintu"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Minimum Value":0
+       ,"Number Alignment":"Start"
+       ,"Virtual Keyboard":"Decimal"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":255
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"DLUGOSC_GWINTU"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40713736136169622"
+     ,"Identification":{
+        "Name":"P301_RODZAJ_GWINTU"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Rodzaj gwintu"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"None"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"RODZAJ_GWINTU"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40714158004169622"
+     ,"Identification":{
+        "Name":"P301_DLUGOSC_TRZPIENIA"
+       ,"Type":"Number Field"
+      }
+     ,"Label":{
+        "Label":"D\u0142ugo\u015B\u0107 trzpienia"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Minimum Value":0
+       ,"Number Alignment":"Start"
+       ,"Virtual Keyboard":"Decimal"
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"DLUGOSC_TRZPIENIA"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40714585222169622"
+     ,"Identification":{
+        "Name":"P301_KLASA_WYTRZYMALOSCI"
+       ,"Type":"Number Field"
+      }
+     ,"Label":{
+        "Label":"Klasa wytrzyma\u0142o\u015Bci"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Minimum Value":0
+       ,"Number Alignment":"Start"
+       ,"Virtual Keyboard":"Decimal"
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"KLASA_WYTRZYMALOSCI"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40714996385169623"
+     ,"Identification":{
+        "Name":"P301_KOLOR"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Kolor"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"None"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":80
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"KOLOR"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40716086870169627"
+     ,"Identification":{
+        "Name":"P301_MATERIAL"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Materia\u0142"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"None"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":90
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"MATERIAL"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40716487285169627"
+     ,"Identification":{
+        "Name":"P301_RODZAJ_LBA"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Rodzaj \u0142ba"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"None"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":100
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"RODZAJ_LBA"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40716800251169628"
+     ,"Identification":{
+        "Name":"P301_WYSOKOSC_LBA"
+       ,"Type":"Number Field"
+      }
+     ,"Label":{
+        "Label":"Wysoko\u015B\u0107 \u0142ba"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number Alignment":"Start"
+       ,"Virtual Keyboard":"Decimal"
+      }
+     ,"Layout":{
+        "Sequence":110
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":255
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"WYSOKOSC_LBA"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40717286570169628"
+     ,"Identification":{
+        "Name":"P301_GNIAZDO"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Gniazdo"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"None"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":120
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":32
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"GNIAZDO"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"40717688621169629"
+     ,"Identification":{
+        "Name":"P301_CENA"
+       ,"Type":"Number Field"
+      }
+     ,"Label":{
+        "Label":"Cena"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number Alignment":"Start"
+       ,"Virtual Keyboard":"Decimal"
+      }
+     ,"Layout":{
+        "Sequence":130
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":255
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"CENA"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"168316695759430324"
+     ,"Identification":{
+        "Name":"P301_ILOSC_W_PUDELKU"
+       ,"Type":"Number Field"
+      }
+     ,"Label":{
+        "Label":"Ilo\u015B\u0107 w pude\u0142ku"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number Alignment":"Start"
+       ,"Virtual Keyboard":"Decimal"
+      }
+     ,"Layout":{
+        "Sequence":140
+       ,"Region":"\u015Aruba (40712196667169618)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"\u015Aruba (40712196667169618)"
+       ,"Column":"ILOSC_W_PUDELKU"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"40722360983169636"
+     ,"Identification":{
+        "Button Name":"CANCEL"
+       ,"Label":"Anuluj"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Buttons (40721933755169636)"
+       ,"Position":"CLOSE"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":true
+      }
+    }
+   ,{
+      "id":"40723748797169641"
+     ,"Identification":{
+        "Button Name":"DELETE"
+       ,"Label":"Usu\u0144"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Buttons (40721933755169636)"
+       ,"Position":"DELETE"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":false
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Confirmation":{
+        "Message":"\u0026APP_TEXT$DELETE_MSG!RAW."
+       ,"Style":"Danger"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P301_ID_SRUBY"
+      }
+    }
+   ,{
+      "id":"40724134739169641"
+     ,"Identification":{
+        "Button Name":"SAVE"
+       ,"Label":"Zapisz zmiany"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Buttons (40721933755169636)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P301_ID_SRUBY"
+      }
+    }
+   ,{
+      "id":"40724522297169641"
+     ,"Identification":{
+        "Button Name":"CREATE"
+       ,"Label":"Dodaj"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Buttons (40721933755169636)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NULL"
+       ,"Item":"P301_ID_SRUBY"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"36853685940116138"
+     ,"Identification":{
+        "Name":"Zm_pol"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.KEYUP"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P301_RODZAJ_GWINTU"
+         ,"P301_DLUGOSC_GWINTU"
+        ]
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"36853894377116140"
+         ,"Identification":{
+            "Name":"nazw"
+           ,"Action":"Set Value"
+          }
+         ,"Settings":{
+            "Set Type":"SQL Statement"
+           ,"SQL Statement":"SELECT CASE WHEN :P301_rodzaj_gwintu IS NOT NULL AND :P301_dlugosc_gwintu IS NOT NULL THEN\n    :P301_rodzaj_gwintu || \u0027x\u0027 || :P301_dlugosc_gwintu \n    ELSE :P301_rodzaj_gwintu || :P301_dlugosc_gwintu END AS nazwa_sruby FROM DUAL;"
+           ,"Items to Submit":[
+              "P301_RODZAJ_GWINTU"
+             ,"P301_DLUGOSC_GWINTU"
+            ]
+           ,"Escape Special Characters":true
+           ,"Suppress Change Event":false
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Item(s)"
+           ,"Item(s)":[
+              "P301_NAZWA_SRUBY"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":20
+           ,"Event":"Zm_pol (36853685940116138)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+           ,"Stop Execution On Error":true
+           ,"Wait For Result":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"40722475069169636"
+     ,"Identification":{
+        "Name":"Cancel Dialog"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"CANCEL (40722360983169636)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"40723290417169640"
+         ,"Identification":{
+            "Action":"Cancel Dialog"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Cancel Dialog (40722475069169636)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"168318883364430346"
+     ,"Identification":{
+        "Name":"cena"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P301_CENA\u003E0"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Cena musi by\u0107 wi\u0119ksza od 0"
+       ,"Display Location":"Inline with Field and in Notification"
+       ,"Associated Item":"P301_CENA (40717688621169629)"
+      }
+    }
+   ,{
+      "id":"168318931637430347"
+     ,"Identification":{
+        "Name":"Ilosc"
+      }
+     ,"Execution":{
+        "Sequence":30
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P301_ILOSC_W_PUDELKU\u003E0"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Ilo\u015B\u0107 musi by\u0107 wi\u0119ksza od 0"
+       ,"Display Location":"Inline with Field and in Notification"
+       ,"Associated Item":"P301_ILOSC_W_PUDELKU (168316695759430324)"
+      }
+    }
+   ,{
+      "id":"183682902822036041"
+     ,"Identification":{
+        "Name":"DL_TRZPIENIA"
+      }
+     ,"Execution":{
+        "Sequence":40
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P301_DLUGOSC_GWINTU\u003C=:P301_DLUGOSC_TRZPIENIA"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"D\u0142ugo\u015B\u0107 trzpienia mus by\u0107 wi\u0119ksza b\u0105d\u017A r\u00F3wna d\u0142ugo\u015Bci gwintu"
+       ,"Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"183683004432036042"
+     ,"Identification":{
+        "Name":"KOLOR"
+      }
+     ,"Execution":{
+        "Sequence":50
+      }
+     ,"Validation":{
+        "Type":"Item contains only characters specified in Value"
+       ,"Item":"P301_KOLOR"
+       ,"Value":"a\u0105bc\u0107de\u0119fghijkl\u0142mn\u0144o\u00F3pqrs\u015Btuvwxyz\u017A\u017CA\u0104BC\u0106DE\u0118FGHIJKL\u0141MN\u0143O\u00D3PQRS\u015ATUVWXYZ\u0179\u017B"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Kolor musi by\u0107 jednym wyrazem"
+       ,"Display Location":"Inline with Field and in Notification"
+       ,"Associated Item":"P301_KOLOR (40714996385169623)"
+      }
+    }
+   ,{
+      "id":"183683165196036043"
+     ,"Identification":{
+        "Name":"RODZAJ"
+      }
+     ,"Execution":{
+        "Sequence":60
+      }
+     ,"Validation":{
+        "Type":"Item matches Regular Expression"
+       ,"Item":"P301_RODZAJ_GWINTU"
+       ,"Regular Expression":"^[A-Z][0-9]{1,}$"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Z\u0142y rodzaj gwintu"
+       ,"Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"202171395371847346"
+     ,"Identification":{
+        "Name":"ISTNIEJE"
+      }
+     ,"Execution":{
+        "Sequence":70
+      }
+     ,"Validation":{
+        "Type":"No Rows returned"
+       ,"SQL Query":"SELECT * FROM sruba WHERE NAZWA_SRUBY=:P301_NAZWA_SRUBY AND DLUGOSC_GWINTU=:P301_DLUGOSC_GWINTU\n    AND RODZAJ_GWINTU=:P301_DLUGOSC_GWINTU AND DLUGOSC_TRZPIENIA=:P301_DLUGOSC_TRZPIENIA AND\n    KLASA_WYTRZYMALOSCI=:P301_KLASA_WYTRZYMALOSCI AND KOLOR=:P301_KOLOR AND MATERIAL=:P301_MATERIAL AND\n    RODZAJ_LBA=:P301_RODZAJ_LBA AND WYSOKOSC_LBA=:P301_WYSOKOSC_LBA"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Taka \u015Bruba ju\u017C istnieje!"
+       ,"Display Location":"Inline in Notification"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"40724951627169642"
+     ,"Identification":{
+        "Name":"Initialize form dod_sr"
+       ,"Type":"Form - Initialization"
+       ,"Execution Chain":"None"
+       ,"Form Region":"\u015Aruba (40712196667169618)"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Before Header"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+   ,{
+      "id":"40725723355169643"
+     ,"Identification":{
+        "Name":"Close Dialog"
+       ,"Type":"Close Dialog"
+       ,"Execution Chain":"None"
+      }
+     ,"Execution":{
+        "Sequence":40
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "Type":"Request is contained in Value"
+       ,"Value":"CREATE,SAVE,DELETE"
+      }
+    }
+   ,{
+      "id":"183683371407036045"
+     ,"Identification":{
+        "Name":"UPDATE"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"UPDATE SRUBA SET \n    NAZWA_SRUBY=:P301_NAZWA_SRUBY,\n    ID_DOSTAWCY=:P301_ID_DOSTAWCY,\n    DLUGOSC_GWINTU=:P301_DLUGOSC_GWINTU,\n    RODZAJ_GWINTU=:P301_RODZAJ_GWINTU,\n    DLUGOSC_TRZPIENIA=:P301_DLUGOSC_TRZPIENIA,\n    KLASA_WYTRZYMALOSCI=:P301_KLASA_WYTRZYMALOSCI,\n    KOLOR=INITCAP(:P301_KOLOR),\n    MATERIAL=INITCAP(:P301_MATERIAL),\n    RODZAJ_LBA=INITCAP(:P301_RODZAJ_LBA),\n    WYSOKOSC_LBA=:P301_WYSOKOSC_LBA,\n    GNIAZDO=INITCAP(:P301_GNIAZDO),\n    CENA=:P301_CENA,\n    ILOSC_W_PUDELKU=:P301_ILOSC_W_PUDELKU\nWHERE ID_SRUBY=:P301_ID_SRUBY;"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"SAVE (40724134739169641)"
+      }
+    }
+   ,{
+      "id":"183683406247036046"
+     ,"Identification":{
+        "Name":"INSERT"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"INSERT INTO SRUBA (NAZWA_SRUBY,ID_DOSTAWCY, DLUGOSC_GWINTU, RODZAJ_GWINTU, DLUGOSC_TRZPIENIA,\n        KLASA_WYTRZYMALOSCI, KOLOR, MATERIAL, RODZAJ_LBA, WYSOKOSC_LBA, GNIAZDO, CENA, ILOSC_W_PUDELKU,\n        ILOSC_PUDELEK_NA_MAGAZYNIE) \nVALUES (:P301_NAZWA_SRUBY,:P301_ID_DOSTAWCY,:P301_DLUGOSC_GWINTU,:P301_RODZAJ_GWINTU,\n    :P301_DLUGOSC_TRZPIENIA,:P301_KLASA_WYTRZYMALOSCI,INITCAP(:P301_KOLOR),INITCAP(:P301_MATERIAL),\n    INITCAP(:P301_RODZAJ_LBA),:P301_WYSOKOSC_LBA,INITCAP(:P301_GNIAZDO),:P301_CENA,:P301_ILOSC_W_PUDELKU,0);"
+      }
+     ,"Execution":{
+        "Sequence":30
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (40724522297169641)"
+      }
+    }
+   ,{
+      "id":"183683645182036048"
+     ,"Identification":{
+        "Name":"DELETE"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"DELETE FROM SRUBA\nWHERE ID_SRUBY=:P301_ID_SRUBY;"
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DELETE (40723748797169641)"
+      }
+    }
+  ]
+}

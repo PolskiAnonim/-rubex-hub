@@ -1,0 +1,669 @@
+{
+  "id":"804"
+ ,"Identification":{
+    "Name":"Kompatybilne dodatki"
+   ,"Alias":"KOMPATYBILNE-DODATKI"
+   ,"Title":"Kompatybilne dodatki"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Dialog":{
+    "Height":"600"
+   ,"Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+  }
+ ,"Security":{
+    "Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"168713511235548141"
+     ,"Identification":{
+        "Title":"Dodatki-sruby"
+       ,"Type":"Interactive Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select \n       d.ID_DODATKU,\n       d.NAZWA_DODATKU AS \"NAZWA DODATKU\",\n       (SELECT do.nazwa_dostawcy FROM dostawca do WHERE do.id_dostawcy=d.id_dostawcy) AS \"Dostawca dodatk\u00F3w\",\n       CENA,\n       \u0027\u003Cbutton id=\u0027|| d.ID_DODATKU ||\u0027 class=\"t-Button t-Button--hot\" onclick=\"setSelectedDodatek(event,this)\"\u003E Sprawd\u017A dodatek \u003C\/button\u003E\u0027 as Dodatek\n  from Dodatek d JOIN sruba_dodatek sd ON sd.id_dodatku=d.id_dodatku WHERE sd.id_sruby=:P804_ID;"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (127779121151451441)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cscript\u003E\n  function setSelectedSruba(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 801,\n        x02:\u0027P801_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n\n  }\n\u003C\/script\u003E"
+       ,"Footer Text":"   \u003Cscript\u003E\n   \n   function setSelectedDodatek(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 801,\n        x02:\u0027P801_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n    }\n\n   \u003C\/script\u003E\n    "
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":"SUBSTR(:P804_ID,1,1) = \u0027S\u0027"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"175089081958666627"
+       ,"Link":{
+          "Link Column":"Exclude Link Column"
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y"
+         ,"Display Position":"Bottom - Right"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":1000000
+        }
+       ,"Search Bar":{
+          "Include Search Bar":true
+         ,"Search Field":true
+         ,"Finder Drop Down":false
+         ,"Reports Select List":false
+         ,"Rows Per Page Selector":false
+        }
+       ,"Actions Menu":{
+          "Include Actions Menu":false
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"175324684756866078"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"1753247"
+            }
+          }
+        ]
+       ,"Columns":[
+          {
+            "id":"175089188158666628"
+           ,"Identification":{
+              "Column Name":"ID_DODATKU"
+             ,"Type":"Hidden Column"
+            }
+           ,"Heading":{
+              "Heading":"Id Dodatku"
+            }
+           ,"Layout":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175089203006666629"
+           ,"Identification":{
+              "Column Name":"NAZWA DODATKU"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Nazwa Dodatku"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":20
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175089336792666630"
+           ,"Identification":{
+              "Column Name":"Dostawca dodatk\u00F3w"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Dostawca Dodatk\u00F3w"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":30
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175089483608666631"
+           ,"Identification":{
+              "Column Name":"CENA"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Cena"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":40
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175089558444666632"
+           ,"Identification":{
+              "Column Name":"DODATEK"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Dodatek"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":50
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":false
+            }
+          }
+        ]
+      }
+    }
+   ,{
+      "id":"173860471648508148"
+     ,"Identification":{
+        "Title":"Sruby-Dodatki"
+       ,"Type":"Interactive Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select \n       s.ID_SRUBY ,\n       s.NAZWA_sruby AS \"NAZWA \u015ARUBY\",\n       (SELECT do.nazwa_dostawcy FROM dostawca do WHERE do.id_dostawcy=s.id_dostawcy) AS \"Dostawca \u015Brub\",\n       CENA,\n       \u0027\u003Cbutton id=\u0027||s.ID_SRUBY||\u0027 class=\"t-Button t-Button--hot\" onclick=\"setSelectedSruba(event,this)\"\u003E Sprawd\u017A \u015Brub\u0119 \u003C\/button\u003E\u0027 as Sruba\n  from Sruba s JOIN sruba_dodatek sd ON sd.id_sruby=s.id_sruby WHERE sd.id_dodatku=:P804_ID \n\n\n\n"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":false
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (127779121151451441)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cscript\u003E\n  function setSelectedSruba(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 801,\n        x02:\u0027P801_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n\n  }\n\u003C\/script\u003E"
+       ,"Footer Text":"   \u003Cscript\u003E\n   \n   function setSelectedDodatek(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 801,\n        x02:\u0027P801_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n    }\n\n   \u003C\/script\u003E\n    "
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":"SUBSTR(:P804_ID,1,1) = \u0027A\u0027"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"175087808167666615"
+       ,"Link":{
+          "Link Column":"Exclude Link Column"
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y"
+         ,"Display Position":"Bottom - Right"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":1000000
+        }
+       ,"Search Bar":{
+          "Include Search Bar":true
+         ,"Search Field":true
+         ,"Finder Drop Down":false
+         ,"Reports Select List":false
+         ,"Rows Per Page Selector":false
+        }
+       ,"Actions Menu":{
+          "Include Actions Menu":false
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"175140565348676159"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"1751406"
+            }
+          }
+        ]
+       ,"Columns":[
+          {
+            "id":"175087974614666616"
+           ,"Identification":{
+              "Column Name":"ID_SRUBY"
+             ,"Type":"Hidden Column"
+            }
+           ,"Heading":{
+              "Heading":"Id Sruby"
+            }
+           ,"Layout":{
+              "Sequence":10
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175088006005666617"
+           ,"Identification":{
+              "Column Name":"NAZWA \u015ARUBY"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Nazwa \u015Aruby"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":20
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175088130435666618"
+           ,"Identification":{
+              "Column Name":"Dostawca \u015Brub"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Dostawca \u015Arub"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":30
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175088231494666619"
+           ,"Identification":{
+              "Column Name":"CENA"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Cena"
+             ,"Alignment":"end"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":40
+             ,"Column Alignment":"end"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175088383447666620"
+           ,"Identification":{
+              "Column Name":"SRUBA"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Sruba"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":50
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":false
+            }
+          }
+        ]
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"168709720117548103"
+     ,"Identification":{
+        "Name":"P804_ID"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"173855973333508103"
+     ,"Identification":{
+        "Name":"GET_ANY_URL"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"DECLARE\n    l_url VARCHAR2(4000);\nBEGIN\n      l_url := APEX_PAGE.GET_URL(\n          p_page =\u003E APEX_APPLICATION.g_x01,\n          p_items =\u003E APEX_APPLICATION.g_x02,\n          p_values =\u003E APEX_APPLICATION.g_x03);\n    htp.p(l_url);\nEND;\n"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Ajax Callback"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+  ]
+}

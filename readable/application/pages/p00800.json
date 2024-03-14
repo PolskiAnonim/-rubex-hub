@@ -1,0 +1,2276 @@
+{
+  "id":"800"
+ ,"Identification":{
+    "Name":"Ryneczek \u015Brubexu"
+   ,"Alias":"RYNECZEK-\u015ARUBEXU"
+   ,"Title":"Ryneczek \u015Brubexu"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Right Side Column (127736532937451406)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+  }
+ ,"Security":{
+    "Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"111591920542383807"
+     ,"Identification":{
+        "Title":"Breadcrumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (21537423727562520)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (127792658721451452)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (127897691758451540)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"111592598223383809"
+     ,"Identification":{
+        "Title":"Ryneczek \u015Brubexu - \u015Bruby"
+       ,"Type":"Cards"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"SRUBA"
+       ,"Include ROWID Column":false
+       ,"Where Clause":"(((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL)))\n  AND (:P800_SEARCH IS NULL OR (UPPER(NAZWA_SRUBY) LIKE \u0027%\u0027 || UPPER(:P800_SEARCH) || \u0027%\u0027))\n AND\n ID_DOSTAWCY IS NOT NULL"
+      }
+     ,"Order By":{
+        "Type":"None"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"krn\u0105brny k\u0105cik (150616189669910217)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Cards Container (127777036284451439)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Static ID":"P800_SRUBY"
+       ,"Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cscript\u003E\n  function setSelectedSruba(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 801,\n        x02:\u0027P801_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n\n  }\n\n  function setPasujaceDodatki(event,button){\n       event.preventDefault(); \n\n    apex.server.process(\"GET_ANY_URL\", { \n        x01: 804,\n        x02:\u0027P804_ID\u0027,\n        x03: button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n}\n    function setPasujaceCertyfikaty(event,button){\n       event.preventDefault(); \n\n    apex.server.process(\"GET_ANY_URL\", { \n        x01: 805,\n        x02:\u0027P805_ID\u0027,\n        x03: button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n\n  }\n\u003C\/script\u003E"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"134065260576674734"
+       ,"Appearance":{
+          "Layout":"Grid"
+         ,"Grid Columns":"2 Columns"
+        }
+       ,"Card":{
+          "Primary Key Column 1":"ID_SRUBY"
+        }
+       ,"Title":{
+          "Advanced Formatting":true
+         ,"HTML Expression":"  \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column;\"\u003E\n  \u003Cdiv\u003E\n    \u003Ch3\u003E\u0026NAZWA_SRUBY.\u003C\/h3\u003E  \n  \u003C\/div\u003E\n\u003Cdiv style=\"display: flex; column-gap: 60px;\"\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ED\u0142ugo\u015B\u0107 gwintu: \u0026DLUGOSC_GWINTU.\u003C\/h1\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ERodzaj gwintu: \u0026RODZAJ_GWINTU.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ED\u0142ugo\u015B\u0107 trzpienia: \u0026DLUGOSC_TRZPIENIA.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EKlasa wytrzyma\u0142o\u015Bci: \u0026KLASA_WYTRZYMALOSCI.\u003C\/h1\u003E \n    \u003C\/div\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EKolor: \u0026KOLOR.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EMateria\u0142: \u0026MATERIAL.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ERodzaj \u0142ba: \u0026RODZAJ_LBA.\u003C\/h1\u003E \n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EGniazdo: \u0026GNIAZDO.\u003C\/h1\u003E \n    \u003C\/div\u003E\n\u003C\/div\u003E\n\n\n\n\u003Cdiv style=\"text-align: center;\"\u003E\n  \u003Ch3 style=\"margin-bottom: 1px\"\u003E\u0026ILOSC_W_PUDELKU. sztuk za\u003C\/h3\u003E\n  \u003Ch3 style=\"margin-top: 1px; color: #056ac8;\"\u003E\u0026CENA. z\u0142.\u003C\/h3\u003E\n  \n\n\n\n  \u003Cdiv style=\"display: flex; justify-content: space-between; flex-direction: row;\"\u003E\n    \u003Cbutton id=\"\u0026ID_SRUBY.\" class=\"t-Button\" onclick=\"setPasujaceDodatki(event,this)\" \u003E\n    Poka\u017C pasuj\u0105ce dodatki\n  \u003C\/button\u003E\n      \u003Cbutton id=\"\u0026ID_SRUBY.\" class=\"t-Button t-Button--hot\" onclick=\"setSelectedSruba(event,this)\" \u003E\n    Dodaj do zam\u00F3wienia\n  \u003C\/button\u003E\n\n      \u003Cbutton id=\"\u0026ID_SRUBY.\" class=\"t-Button\" onclick=\"setPasujaceCertyfikaty(event,this)\" \u003E\n    Kompatybilne certyfikaty\n  \u003C\/button\u003E\n  \u003C\/div\u003E\n\n\n\n  \u003Ch3 style=\"margin-top: 1px; color: #536675;font-size: 0.5rem;\"\u003EPozosta\u0142o \u0026ILOSC_PUDELEK_NA_MAGAZYNIE. opak.\u003C\/h3\u003E\n\u003C\/div\u003E\n\n\n\u003C\/div\u003E"
+        }
+       ,"Subtitle":{
+          "Advanced Formatting":false
+        }
+       ,"Body":{
+          "Advanced Formatting":false
+        }
+       ,"Secondary Body":{
+          "Advanced Formatting":false
+        }
+       ,"Icon and Badge":{
+          "Icon Source":"No Icon"
+        }
+       ,"Media":{
+          "Advanced Formatting":false
+         ,"Source":"No Media"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Count":false
+        }
+      }
+    }
+   ,{
+      "id":"134066093766674742"
+     ,"Identification":{
+        "Title":"Ryneczek \u015Brubexu - dodatki"
+       ,"Type":"Cards"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"SELECT * FROM DODATEK \nwhere (((TYP IN ( SELECT REGEXP_SUBSTR(:P800_TYP,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_TYP, \u0027:\u0027) + 1) AND :P800_TYP IS NOT NULL)\n OR (:P800_TYP IS NULL))\n AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL_DODATEK,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL_DODATEK, \u0027:\u0027) + 1) AND :P800_MATERIAL_DODATEK IS NOT NULL)\n OR (:P800_MATERIAL_DODATEK IS NULL)))  AND (:P800_SEARCH IS NULL OR (UPPER(NAZWA_DODATKU) LIKE \u0027%\u0027 || UPPER(:P800_SEARCH) || \u0027%\u0027))"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"krn\u0105brny k\u0105cik (150616189669910217)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":false
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Cards Container (127777036284451439)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"  \u003Cscript\u003E\n       function setSelectedDodatek(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 801,\n        x02:\u0027P801_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n    }\n       function setPasujaceSruby(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 804,\n        x02:\u0027P804_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n    }\n           function setPasujaceCertyfikaty(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 805,\n        x02:\u0027P805_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n    }\n\u003C\/script\u003E\n\n"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"Y"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"134066106419674743"
+       ,"Appearance":{
+          "Layout":"Grid"
+         ,"Grid Columns":"2 Columns"
+        }
+       ,"Title":{
+          "Advanced Formatting":true
+         ,"HTML Expression":"  \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column;\"\u003E\n  \u003Cdiv\u003E\n    \u003Ch3\u003E\u0026NAZWA_DODATKU.\u003C\/h3\u003E  \n  \u003C\/div\u003E\n\u003Cdiv style=\"display: flex; column-gap: 60px;\"\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003ETyp: \u0026TYP.\u003C\/h1\u003E\n    \u003C\/div\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003EMateria\u0142: \u0026MATERIAL.\u003C\/h1\u003E \n    \u003C\/div\u003E\n\u003C\/div\u003E\n        \u003Ch1 style=\"font-size: 0.8rem;\"\u003E\u0026OPIS.\u003C\/h1\u003E \n\n\n\u003Cdiv style=\"text-align: center;\"\u003E\n  \u003Ch3 style=\"margin-bottom: 1px\"\u003E\u0026SZTUKI_W_PODELKU. sztuk za\u003C\/h3\u003E\n  \u003Ch3 style=\"margin-top: 1px; color: #056ac8;\"\u003E\u0026CENA. z\u0142.\u003C\/h3\u003E\n  \n\n\n  \u003Cdiv style=\"display: flex; justify-content: space-between; flex-direction: row;\"\u003E\n    \u003Cbutton id=\"\u0026ID_DODATKU.\" class=\"t-Button\" onclick=\"setPasujaceSruby(event,this)\" \u003E\n    Poka\u017C pasuj\u0105ce \u015Bruby\n  \u003C\/button\u003E\n  \u003Cbutton id=\"\u0026ID_DODATKU.\" class=\"t-Button t-Button--hot\" onclick=\"setSelectedDodatek(event,this)\"\u003E\n    Dodaj do zam\u00F3wienia\n  \u003C\/button\u003E\n\n      \u003Cbutton id=\"\u0026ID_DODATKU.\" class=\"t-Button\" onclick=\"setPasujaceCertyfikaty(event,this)\" \u003E\n    Kompatybilne certyfikaty\n  \u003C\/button\u003E\n  \u003C\/div\u003E\n\n\n  \u003Ch3 style=\"margin-top: 1px; color: #536675;font-size: 0.5rem;\"\u003EPozosta\u0142o \u0026ILOSC_PUDELEK_NA_MAGAZYNIE. opak.\u003C\/h3\u003E\n  \n\u003C\/div\u003E\n\n\n\u003C\/div\u003E"
+        }
+       ,"Subtitle":{
+          "Advanced Formatting":false
+        }
+       ,"Body":{
+          "Advanced Formatting":false
+        }
+       ,"Secondary Body":{
+          "Advanced Formatting":false
+        }
+       ,"Icon and Badge":{
+          "Icon Source":"No Icon"
+        }
+       ,"Media":{
+          "Advanced Formatting":false
+         ,"Source":"No Media"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Count":false
+        }
+      }
+    }
+   ,{
+      "id":"134066486713674746"
+     ,"Identification":{
+        "Title":"Filtry"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_03"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"134723387980196316"
+     ,"Identification":{
+        "Title":"Dlugo\u015B\u0107_GWINTU"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"D\u0142ugo\u015B\u0107 gwintu"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134723956404196322"
+     ,"Identification":{
+        "Title":"Rodzaj gwintu"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Rodzaj gwintu"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134724086259196323"
+     ,"Identification":{
+        "Title":"D\u0142ugo\u015B\u0107 trzpienia"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"D\u0142ugo\u015B\u0107 trzpienia"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134724248378196325"
+     ,"Identification":{
+        "Title":"KLASA WYTRZYMALOSCI"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Klasa wyrzyma\u0142o\u015Bci"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134724403169196327"
+     ,"Identification":{
+        "Title":"KOLOR"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Kolor"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134724611754196329"
+     ,"Identification":{
+        "Title":"MATERIAL"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Materia\u0142"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134724809478196331"
+     ,"Identification":{
+        "Title":"RODZAJ_LBA"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Rodzaj \u0142ba"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134725004141196333"
+     ,"Identification":{
+        "Title":"WYSOKOSC_LBA"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":80
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Wysoko\u015B\u0107 \u0142ba"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134725258872196335"
+     ,"Identification":{
+        "Title":"Gniazdo"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":90
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Gniazdo"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134725439786196337"
+     ,"Identification":{
+        "Title":"Typ"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":100
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Typ"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"Y"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"134725695767196339"
+     ,"Identification":{
+        "Title":"MATERIAL"
+       ,"Type":"Dynamic Content"
+      }
+     ,"Source":{
+        "Language":"JavaScript (MLE)"
+       ,"JavaScript Function Body returning a String":";"
+      }
+     ,"Layout":{
+        "Sequence":110
+       ,"Parent Region":"Filtry (134066486713674746)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"Materia\u0142"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"Y"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Performance":{
+          "Lazy Loading":false
+        }
+      }
+    }
+   ,{
+      "id":"138514540589940933"
+     ,"Identification":{
+        "Title":"Cart content"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"\u003Cul class=\"t-NavigationBar\"\u003E\n   \u003Cli class=\"t-NavigationBar-item has-username\"\u003E\n      \u003Cbutton class=\"t-Button t-Button--icon t-Button t-Button--header t-Button--navBar\" type=\"button\"\u003E\n      \u003Cspan class=\"t-Icon fa fa fa-shopping-cart\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"t-Button-label\"\u003EKoszyk\u003C\/span\u003E\u003Cspan class=\"t-Button-badge\"\u003E\u003C\/span\u003E\n      \u003Cspan class=\"a-Icon icon-down-arrow\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\n      \u003C\/button\u003E\n   \u003C\/li\u003E\n\n\n   \u003Cli\u003E\n      \u003Cul id=\"bozeDlaczego\" \u003E\n          \u003Cli \u003E\n                    \u003Cbutton class=\"t-Button t-Button--stretch\" type=\"button\" onclick=\"apex.navigation.redirect(\u0026quot;f?p=120:803:\u0026APP_SESSION.:::::\u0026quot;)\"\u003E\n                \u003Cspan class=\"t-Button-label\"\u003EPrzejd\u017A do podsumowania\u003C\/span\u003E\n            \u003C\/button\u003E\n            \u003Cdiv style=\"margin: 1px; display: flex; align-items: center; \"\u003E\n                \u003Ch4 style=\"margin-right: 5px; margin-top: 0px;\"\u003EKOSZYK \u003C\/h4\u003E\n                \u003Ch4 style=\"color: grey; margin-top: 0px;\"\u003E (\u0026P800_ELEMENTY_W_KOSZYKU.) \u003C\/h4\u003E\n            \u003C\/div\u003E\n             \u003Chr\u003E \n          \u003C\/li\u003E\n      \u003C\/ul\u003E\n   \u003C\/li\u003E\n\u003C\/ul\u003E\n\n\u003Cstyle\u003E\n   #niewierze{\n   display: none;\n   background-color: #181a1b;\n\n   }\n   #bozeDlaczego li{\n   color: white\n\n   }\n   #bozeDlaczego{\n   background-color: #181a1b;\n   display: none;\n   position:absolute;\n   border: 1px solid #ccc; \n   padding: 10px;\n   z-index: 1;\n   overflow: auto;\n   }\n\u003C\/style\u003E\n\u003Cscript\u003E\n   let li = document.getElementById(\"bozeDlaczego\");\n   let button = document.querySelector(\".t-Button--navBar\");\n\n   \n   button.addEventListener(\"click\", function () {\n       toggleListVisibility();\n   });\n   \n   function toggleListVisibility() {\n       let buttonRect = button.getBoundingClientRect();\n       li.style.top = buttonRect.bottom + \"px\";\n   \n       let listItems = li.querySelectorAll(\"li\");\n       listItems.forEach(item =\u003E {\n           item.style.display = (item.style.display === \"none\" || item.style.display === \"\") ? \"block\" : \"none\";\n       });\n       li.style.display = (li.style.display === \"none\" || li.style.display === \"\") ? \"block\" : \"none\";\n\n        const liWidth = li.getBoundingClientRect().width; \n        li.style.left = (buttonRect.left - liWidth + 150) + \"px\";\n   }\n   \n   \n   document.addEventListener(\"DOMContentLoaded\", ()=\u003E {\n\n\n       let table = document.getElementById(\"niewierze\");\n       \/\/ Loop through rows\n       if(table.rows.length === 1){\n            let liInside = document.createElement(\"li\");\n           liInside.classList.add(\"a-Menu-item\");\n   \n           let divInside = document.createElement(\"div\");\n           divInside.classList.add(\"a-Menu-inner\");\n           divInside.textContent = \"Tw\u00F3j koszyk jest pusty\";\n   \n           liInside.appendChild(divInside); \n           li.appendChild(liInside);\n       }\n       for (let i = 1; i \u003C table.rows.length; i++) {\n           let row = table.rows[i];\n   \n           let name = row.cells[1].textContent;\n           let quantity = row.cells[0].textContent;\n           let cost = row.cells[2].textContent;\n\n   \n           let liInside = document.createElement(\"li\");\n           liInside.classList.add(\"a-Menu-item\");\n   \n           let divInside = document.createElement(\"div\");\n           divInside.classList.add(\"a-Menu-inner\");\n           divInside.style.display = \"flex\";\n           divInside.style.justifyContent = \"space-between\";\n\n           let divInsideName = document.createElement(\"h4\");\n           let divInsideNumber = document.createElement(\"h4\");\n           let divInsideLineBreak = document.createElement(\"hr\");\n\n           divInsideName.style.marginRight = \"auto\";\n\n\n           divInsideName.textContent = name;\n           divInsideNumber.textContent = quantity + \u0027szt.       \u0027  + (quantity * cost).toFixed(2) +\u0027z\u0142\u0027;\n\n           liInside.appendChild(divInside); \n   \n           divInside.appendChild(divInsideName); \n           divInside.appendChild(divInsideNumber); \n\n           li.appendChild(liInside);\n           li.appendChild(divInsideLineBreak);\n       }\n   });\n\u003C\/script\u003E\n"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BEFORE_NAVIGATION_BAR"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"CSS Classes":[
+          "t-NavigationBar-item"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":APP_USER != \u0027go\u015B\u0107\u0027"
+      }
+     ,"Security":{
+        "Authorization Scheme":"{Not Prawa pracownika} (21995650961848200)"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"138514632879940934"
+     ,"Identification":{
+        "Title":"ElementyWZamowieniu"
+       ,"Type":"Reflow Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"SELECT nazwa_sruby, liczba, cena, (cena * liczba) FROM \"KOSZYK_SRUBY\" NATURAL JOIN SRUBA  WHERE ID_KOSZYKA = \u0027T\u0027 || (SELECT ID_KLIENTA FROM KONTO_APEX WHERE \nID_APEXA = TO_CHAR(apex_util.get_user_id(p_username =\u003E ( :APP_USER) )))\nUNION \nSELECT nazwa_dodatku, liczba, cena, cena * liczba FROM \"KOSZYK_DODATKI\" NATURAL JOIN DODATEK  WHERE ID_KOSZYKA = \u0027T\u0027 || (SELECT ID_KLIENTA FROM KONTO_APEX WHERE \nID_APEXA = TO_CHAR(apex_util.get_user_id(p_username =\u003E ( :APP_USER) )));\n "
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"Cart content (138514540589940933)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"None"
+       ,"Render Components":"Above Content"
+      }
+     ,"Advanced":{
+        "Static ID":"niewierze"
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Heading":{
+          "Type":"Custom Headings"
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"130175398021451930"
+         ,"Identification":{
+            "Column Name":"LICZBA"
+           ,"Show":true
+          }
+         ,"Settings":{
+            "Type":"Plain Text"
+           ,"Value Identifies Row":false
+          }
+         ,"Heading":{
+            "Heading":"Liczba"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"end"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"142257142394044938"
+         ,"Identification":{
+            "Column Name":"NAZWA_SRUBY"
+           ,"Show":true
+          }
+         ,"Settings":{
+            "Type":"Plain Text"
+           ,"Value Identifies Row":false
+          }
+         ,"Heading":{
+            "Heading":"Nazwa Sruby"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"start"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"150614690643910202"
+         ,"Identification":{
+            "Column Name":"CENA"
+           ,"Show":true
+          }
+         ,"Settings":{
+            "Type":"Plain Text"
+           ,"Value Identifies Row":false
+          }
+         ,"Heading":{
+            "Heading":"Cena"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":80
+           ,"Column Alignment":"end"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"151249176135700803"
+         ,"Identification":{
+            "Column Name":"(CENA*LICZBA)"
+           ,"Show":true
+          }
+         ,"Settings":{
+            "Type":"Plain Text"
+           ,"Value Identifies Row":false
+          }
+         ,"Heading":{
+            "Heading":"(cena*liczba)"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":90
+           ,"Column Alignment":"end"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"142255958965044926"
+     ,"Identification":{
+        "Title":"BRAK"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"Nie znalaz\u0142e\u015B niczego dla siebie? NIE PRZEJMUJ SI\u0118!!\nMo\u017Cesz zasugerowa\u0107 \u015Brub\u0119, kt\u00F3r\u0105 postanowimy doda\u0107 SPECJALNIE DLA CIEBIE!"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"krn\u0105brny k\u0105cik (150616189669910217)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":false
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (127783730784451445)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"150616189669910217"
+     ,"Identification":{
+        "Title":"krn\u0105brny k\u0105cik"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_08"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (127841453146451491)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"111593583155383817"
+     ,"Identification":{
+        "Name":"P800_ORDER_BY"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Ryneczek \u015Brubexu - \u015Bruby (111592598223383809)"
+       ,"Position":"ORDER_BY_ITEM"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Ignore"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Default":{
+        "Type":"Static"
+       ,"Static Value":"NAZWA_SRUBY"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134065869816674740"
+     ,"Identification":{
+        "Name":"P800_SWITCH"
+       ,"Type":"Switch"
+      }
+     ,"Label":{
+        "Alignment":"Left"
+      }
+     ,"Settings":{
+        "Use Defaults":true
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Breadcrumb (111591920542383807)"
+       ,"Position":"NEXT"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional (127893317519451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form-fieldContainer--preTextBlock"
+         ,"t-Form-fieldContainer--postTextBlock"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"Advanced":{
+        "Pre Text":"\u003Cdiv\u003E\n    \u003Ch1 style=\"font-size: 0.8rem; height:0.8rem;margin-top: 0px;margin-bottom: 0px;\"\u003E\u015Arubki  \u003C\/h1\u003E\n\u003C\/div\u003E"
+       ,"Post Text ":"\u003Cdiv\u003E\n    \u003Ch1 style=\"font-size: 0.8rem; height:0.8rem;margin-top: 0px;margin-bottom: 0px;margin-right: 100px;\"\u003E Dodatki \u003C\/h1\u003E\n\u003C\/div\u003E"
+       ,"Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Static Value"
+       ,"Static Value":"N"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134066727905674749"
+     ,"Identification":{
+        "Name":"P800_DLUGOSC_GWINTU"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"DLUGOSC_GWINTU"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Dlugo\u015B\u0107_GWINTU (134723387980196316)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n    \u0027\u0027 || DLUGOSC_GWINTU,\n    DLUGOSC_GWINTU\nFROM \n   (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL))\n   AND\n    (:P800_SEARCH IS NULL OR (NAZWA_SRUBY LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n   \u0027\u0027 || DLUGOSC_GWINTU,\n   DLUGOSC_GWINTU\nORDER BY\n    2;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134066856077674750"
+     ,"Identification":{
+        "Name":"P800_RODZAJ_GWINTU"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"RODZAJ_GWINTU"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Rodzaj gwintu (134723956404196322)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n   \u0027\u0027 || RODZAJ_GWINTU, RODZAJ_GWINTU\nFROM \n    (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL))  AND\n    (:P800_SEARCH IS NULL OR (NAZWA_SRUBY LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n   \u0027\u0027 ||RODZAJ_GWINTU, RODZAJ_GWINTU\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134724110059196324"
+     ,"Identification":{
+        "Name":"P800_DLUGOSC_TRZPIENIA"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"D\u0142ugo\u015B\u0107 trzpienia"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"D\u0142ugo\u015B\u0107 trzpienia (134724086259196323)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n    \u0027\u0027 || DLUGOSC_TRZPIENIA, DLUGOSC_TRZPIENIA\nFROM \n    (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL))  AND\n    (:P800_SEARCH IS NULL OR (NAZWA_SRUBY LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n   \u0027\u0027 || DLUGOSC_TRZPIENIA, DLUGOSC_TRZPIENIA\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134724364455196326"
+     ,"Identification":{
+        "Name":"P800_KLASA_WYTRZYMALOSCI"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Klasa Wytrzymalosci"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"KLASA WYTRZYMALOSCI (134724248378196325)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n   \u0027\u0027 || KLASA_WYTRZYMALOSCI, KLASA_WYTRZYMALOSCI\nFROM \n    (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL))  AND\n    (:P800_SEARCH IS NULL OR (NAZWA_SRUBY LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n   \u0027\u0027 ||KLASA_WYTRZYMALOSCI, KLASA_WYTRZYMALOSCI\nORDER BY\n    2;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134724541302196328"
+     ,"Identification":{
+        "Name":"P800_KOLOR"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Kolor"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"KOLOR (134724403169196327)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n     \u0027\u0027 || KOLOR, KOLOR\nFROM \n    (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL))  AND\n    (:P800_SEARCH IS NULL OR (NAZWA_SRUBY LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n    \u0027\u0027 || KOLOR, KOLOR\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134724779484196330"
+     ,"Identification":{
+        "Name":"P800_MATERIAL"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Kolor"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"MATERIAL (134724611754196329)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n   \u0027\u0027 ||  MATERIAL, MATERIAL\nFROM \n    (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL)))\nGROUP BY\n  \u0027\u0027 || MATERIAL, MATERIAL\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134724902058196332"
+     ,"Identification":{
+        "Name":"P800_RODZAJ_LBA"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Kolor"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"RODZAJ_LBA (134724809478196331)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n    \u0027\u0027 || RODZAJ_LBA, RODZAJ_LBA\nFROM \n    (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL))  AND\n    (:P800_SEARCH IS NULL OR (NAZWA_SRUBY LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n   \u0027\u0027 || RODZAJ_LBA, RODZAJ_LBA\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134725113915196334"
+     ,"Identification":{
+        "Name":"P800_WYSOKOSC_LBA"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Kolor"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"WYSOKOSC_LBA (134725004141196333)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n    \u0027\u0027 || WYSOKOSC_LBA, WYSOKOSC_LBA\nFROM \n    (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL))  AND\n    (:P800_SEARCH IS NULL OR (NAZWA_SRUBY LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n   \u0027\u0027 || WYSOKOSC_LBA, WYSOKOSC_LBA\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134725323892196336"
+     ,"Identification":{
+        "Name":"P800_GNIAZDO"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Kolor"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Gniazdo (134725258872196335)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n    \u0027\u0027 || Gniazdo, Gniazdo\nFROM \n    (select *\n  from SRUBA\n where ((DLUGOSC_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_GWINTU, \u0027:\u0027) + 1) AND :P800_DLUGOSC_GWINTU IS NOT NULL)\n OR (:P800_DLUGOSC_GWINTU IS NULL))\n AND\n ((RODZAJ_GWINTU IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_GWINTU,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_GWINTU, \u0027:\u0027) + 1) AND :P800_RODZAJ_GWINTU IS NOT NULL)\n  OR (:P800_RODZAJ_GWINTU IS NULL))\n AND\n ((DLUGOSC_TRZPIENIA IN ( SELECT REGEXP_SUBSTR(:P800_DLUGOSC_TRZPIENIA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_DLUGOSC_TRZPIENIA, \u0027:\u0027) + 1) AND :P800_DLUGOSC_TRZPIENIA IS NOT NULL)\n  OR (:P800_DLUGOSC_TRZPIENIA IS NULL))\n AND\n ((KLASA_WYTRZYMALOSCI IN ( SELECT REGEXP_SUBSTR(:P800_KLASA_WYTRZYMALOSCI,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KLASA_WYTRZYMALOSCI, \u0027:\u0027) + 1) AND :P800_KLASA_WYTRZYMALOSCI IS NOT NULL)\n  OR (:P800_KLASA_WYTRZYMALOSCI IS NULL))\n   AND\n ((KOLOR IN ( SELECT REGEXP_SUBSTR(:P800_KOLOR,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_KOLOR, \u0027:\u0027) + 1) AND :P800_KOLOR IS NOT NULL)\n  OR (:P800_KOLOR IS NULL))\n     AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL, \u0027:\u0027) + 1) AND :P800_MATERIAL IS NOT NULL)\n  OR (:P800_MATERIAL IS NULL))\n       AND\n ((RODZAJ_LBA IN ( SELECT REGEXP_SUBSTR(:P800_RODZAJ_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_RODZAJ_LBA, \u0027:\u0027) + 1) AND :P800_RODZAJ_LBA IS NOT NULL)\n  OR (:P800_RODZAJ_LBA IS NULL))\n         AND\n ((WYSOKOSC_LBA IN ( SELECT REGEXP_SUBSTR(:P800_WYSOKOSC_LBA,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_WYSOKOSC_LBA, \u0027:\u0027) + 1) AND :P800_WYSOKOSC_LBA IS NOT NULL)\n  OR (:P800_WYSOKOSC_LBA IS NULL))\n           AND\n ((GNIAZDO IN ( SELECT REGEXP_SUBSTR(:P800_GNIAZDO,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_GNIAZDO, \u0027:\u0027) + 1) AND :P800_GNIAZDO IS NOT NULL)\n  OR (:P800_GNIAZDO IS NULL))  AND\n    (:P800_SEARCH IS NULL OR (NAZWA_SRUBY LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n  \u0027\u0027 || Gniazdo, Gniazdo\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"N"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134725511516196338"
+     ,"Identification":{
+        "Name":"P800_TYP"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Kolor"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Typ (134725439786196337)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n   \u0027\u0027 || Typ, Typ\nFROM \n   (select *\n  from DODATEK\n where ((TYP IN ( SELECT REGEXP_SUBSTR(:P800_TYP,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_TYP, \u0027:\u0027) + 1) AND :P800_TYP IS NOT NULL)\n OR (:P800_TYP IS NULL))\n AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL_DODATEK,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL_DODATEK, \u0027:\u0027) + 1) AND :P800_MATERIAL_DODATEK IS NOT NULL)\n OR (:P800_MATERIAL_DODATEK IS NULL))AND\n    (:P800_SEARCH IS NULL OR (NAZWA_DODATKU LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n  \u0027\u0027 || Typ, Typ\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"Y"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"134725719232196340"
+     ,"Identification":{
+        "Name":"P800_MATERIAL_DODATEK"
+       ,"Type":"Checkbox Group"
+      }
+     ,"Label":{
+        "Label":"Kolor"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Number of Columns":1
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"MATERIAL (134725695767196339)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"SQL Query"
+       ,"SQL Query":"SELECT \n    \u0027\u0027 || MATERIAL, MATERIAL\nFROM \n   (select *\n  from DODATEK\n where ((TYP IN ( SELECT REGEXP_SUBSTR(:P800_TYP,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_TYP, \u0027:\u0027) + 1) AND :P800_TYP IS NOT NULL)\n OR (:P800_TYP IS NULL))\n AND\n ((MATERIAL IN ( SELECT REGEXP_SUBSTR(:P800_MATERIAL_DODATEK,\u0027[^:]+\u0027, 1, LEVEL) FROM DUAL\n CONNECT BY LEVEL \u003C= REGEXP_COUNT(:P800_MATERIAL_DODATEK, \u0027:\u0027) + 1) AND :P800_MATERIAL_DODATEK IS NOT NULL)\n OR (:P800_MATERIAL_DODATEK IS NULL))  AND\n    (:P800_SEARCH IS NULL OR (NAZWA_DODATKU LIKE \u0027%\u0027 || :P800_SEARCH || \u0027%\u0027)))\nGROUP BY\n   \u0027\u0027 || MATERIAL, MATERIAL\nORDER BY\n    1;"
+       ,"Display Extra Values":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item = Value"
+       ,"Item":"P800_SWITCH"
+       ,"Value":"Y"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Escape special characters":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"150614848407910204"
+     ,"Identification":{
+        "Name":"P800_ELEMENTY_W_KOSZYKU"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"No Parent"
+       ,"Position":"BEFORE_NAVIGATION_BAR"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"SQL Query (return single value)"
+       ,"SQL Query":"SELECT COUNT(*) FROM \"POZYCJA_W_ZAMOWIENIU\" WHERE ID_ZAMOWIENIA=\n    (SELECT \u0027T\u0027 || ID_KLIENTA FROM KONTO_APEX \n    WHERE ID_APEXA=TO_CHAR(apex_util.get_user_id(p_username =\u003E ( :APP_USER))))"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"150615802446910214"
+     ,"Identification":{
+        "Name":"P800_SEARCH"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Wyszukaj obiekt..."
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":true
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Breadcrumb (111591920542383807)"
+       ,"Position":"NEXT"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-search"
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"142256077610044927"
+     ,"Identification":{
+        "Button Name":"P800_CREATE"
+       ,"Label":"Zasugeruj teraz!"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"BRAK (142255958965044926)"
+       ,"Position":"CREATE"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:802:\u0026SESSION.::\u0026DEBUG.:802::"
+         ,"Page":"802"
+         ,"Clear Cache":"802"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Security":{
+        "Authorization Scheme":"{Not Prawa pracownika} (21995650961848200)"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"130173915122451916"
+     ,"Identification":{
+        "Name":"Switch"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P800_SWITCH"
+        ]
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"168710795316548113"
+         ,"Identification":{
+            "Action":"Submit Page"
+          }
+         ,"Settings":{
+            "Show Processing":true
+          }
+         ,"Execution":{
+            "Sequence":50
+           ,"Event":"Switch (130173915122451916)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"134725830992196341"
+     ,"Identification":{
+        "Name":"Filtry"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Region"
+       ,"Region":"Filtry (134066486713674746)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"168710991654548115"
+         ,"Identification":{
+            "Action":"Submit Page"
+          }
+         ,"Settings":{
+            "Show Processing":true
+          }
+         ,"Execution":{
+            "Sequence":40
+           ,"Event":"Filtry (134725830992196341)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"150618249672910238"
+     ,"Identification":{
+        "Name":"DialogClosed"
+      }
+     ,"Execution":{
+        "Sequence":50
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.FAMEWORK.APEXAFTERCLOSECANCELDIALOG"
+       ,"Selection Type":"JavaScript Expression"
+       ,"JavaScript Expression":"window"
+      }
+     ,"Client-side Condition":{
+        "Type":"JavaScript expression"
+       ,"JavaScript Expression":"this.data.dialogPageId == 801"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"168711171768548117"
+         ,"Identification":{
+            "Action":"Submit Page"
+          }
+         ,"Settings":{
+            "Show Processing":true
+          }
+         ,"Execution":{
+            "Sequence":50
+           ,"Event":"DialogClosed (150618249672910238)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"150618496726910240"
+     ,"Identification":{
+        "Name":"ClearSearchBySwitch"
+      }
+     ,"Execution":{
+        "Sequence":60
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P800_SWITCH"
+        ]
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"150618510454910241"
+         ,"Identification":{
+            "Action":"Clear"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Item(s)"
+           ,"Item(s)":[
+              "P800_SEARCH"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"ClearSearchBySwitch (150618496726910240)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"168709941823548105"
+     ,"Identification":{
+        "Name":"GET_ANY_URL"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"DECLARE\n    l_url VARCHAR2(4000);\nBEGIN\n      l_url := APEX_PAGE.GET_URL(\n          p_page =\u003E APEX_APPLICATION.g_x01,\n          p_items =\u003E APEX_APPLICATION.g_x02,\n          p_values =\u003E APEX_APPLICATION.g_x03);\n    htp.p(l_url);\nEND;\n"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Ajax Callback"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Success Message":{
+        "Success Message":"AAAAAAAAAAAAAAAAAAAAAAA"
+      }
+     ,"Error":{
+        "Error Message":"NIEA AAAAAAAAAAAAAAAAAAAAA"
+      }
+    }
+  ]
+}

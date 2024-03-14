@@ -1,0 +1,594 @@
+{
+  "id":"115"
+ ,"Identification":{
+    "Name":"nowe wydanie"
+   ,"Alias":"NOWE-WYDANIE"
+   ,"Title":"Nowe wydanie"
+   ,"Page Group":"Certyfikaty (188167373563904633)"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Drawer (127720327755451391)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-dialog-class-t-Drawer--pullOutEnd"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":false
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"232496761425870164"
+     ,"Identification":{
+        "Title":"Wydanie"
+       ,"Type":"Form"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Function Body returning SQL Query"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body returning SQL Query":"IF :P115_TYP=\u0027D\u0027 THEN\nreturn q\u0027~\nselect ID_WYDANIA,\n       ID_DODATKU,\n       SYMBOL_CERTYFIKATU,\n       DATA_WYDANIA,\n       DATA_WAZNOSCI\n  from WYDANIE_CERTYFIKATU_DODATKU\n~\u0027;\nELSE\nreturn q\u0027~\nselect ID_WYDANIA,\n       ID_SRUBY,\n       SYMBOL_CERTYFIKATU,\n       DATA_WYDANIA,\n       DATA_WAZNOSCI\n  from WYDANIE_CERTYFIKATU_SRUBY\n~\u0027;\nEND IF;"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Edit":{
+          "Enabled":true
+         ,"Allowed Operations":[
+            "Add Row"
+           ,"Update Row"
+           ,"Delete Row"
+          ]
+         ,"Lost Update Type":"Row Values"
+        }
+      }
+    }
+   ,{
+      "id":"232500920880870168"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_03"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (127783730784451445)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"Text (escape special characters)"
+         ,"Show Line Breaks":true
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"161745093125982418"
+     ,"Identification":{
+        "Name":"P115_ID_WYDANIA"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Wydanie (232496761425870164)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Wydanie (232496761425870164)"
+       ,"Column":"ID_WYDANIA"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":true
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"161745207752982420"
+     ,"Identification":{
+        "Name":"P115_SYMBOL_CERTYFIKATU"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Wydanie (232496761425870164)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Wydanie (232496761425870164)"
+       ,"Column":"SYMBOL_CERTYFIKATU"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"161745313779982421"
+     ,"Identification":{
+        "Name":"P115_DATA_WYDANIA"
+       ,"Type":"Date Picker"
+      }
+     ,"Label":{
+        "Label":"Data Wydania"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Show Time":false
+       ,"Display As":"Popup"
+       ,"Minimum Date":"None"
+       ,"Maximum Date":"None"
+       ,"Multiple Months":"No"
+       ,"Use Defaults":true
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Region":"Wydanie (232496761425870164)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Wydanie (232496761425870164)"
+       ,"Column":"DATA_WYDANIA"
+       ,"Data Type":"DATE"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"161745443406982422"
+     ,"Identification":{
+        "Name":"P115_DATA_WAZNOSCI"
+       ,"Type":"Date Picker"
+      }
+     ,"Label":{
+        "Label":"Data Waznosci"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Show Time":false
+       ,"Display As":"Popup"
+       ,"Minimum Date":"None"
+       ,"Maximum Date":"None"
+       ,"Multiple Months":"No"
+       ,"Use Defaults":true
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Region":"Wydanie (232496761425870164)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Wydanie (232496761425870164)"
+       ,"Column":"DATA_WAZNOSCI"
+       ,"Data Type":"DATE"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"161745535435982423"
+     ,"Identification":{
+        "Name":"P115_TYP"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"161746226461982430"
+     ,"Identification":{
+        "Name":"P115_ID"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Dodatek\/\u015Aruba"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Wydanie (232496761425870164)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"List of Values":{
+        "Type":"Function Body returning SQL Query"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body returning SQL Query":"if :P115_TYP=\u0027S\u0027 THEN\nRETURN q\u0027~SELECT \nNAZWA_SRUBY || \u0027 Kl. \u0027 || KLASA_WYTRZYMALOSCI || \u0027 Materia\u0142: \u0027 ||\n MATERIAL || \u0027 \u0027 || KOLOR || \u0027 \u0141eb: \u0027 || RODZAJ_LBA || \u0027 Gniazdo: \u0027 || GNIAZDO, \n ID_SRUBY FROM SRUBA;~\u0027;\nELSE\nRETURN q\u0027~SELECT nazwa_dodatku, id_dodatku FROM dodatek~\u0027;\nEND IF;"
+       ,"Display Extra Values":true
+       ,"Display Null Value":true
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Wydanie (232496761425870164)"
+       ,"Column":"ID_SRUBY"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"167039976831658795"
+     ,"Identification":{
+        "Button Name":"CREATE"
+       ,"Label":"Dodaj"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Buttons (232500920880870168)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"177631147622098034"
+     ,"Identification":{
+        "Name":"ID NOT NULL"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P115_ID IS NOT NULL"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy wybra\u0107 \u015Brub\u0119\/dodatek do kt\u00F3rego ma by\u0107 przypisane wydanie"
+       ,"Display Location":"Inline with Field"
+       ,"Associated Item":"P115_ID (161746226461982430)"
+      }
+    }
+   ,{
+      "id":"177631402999098037"
+     ,"Identification":{
+        "Name":"DATA NOT NULL 1"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P115_DATA_WAZNOSCI IS NOT NULL"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy wybra\u0107 dat\u0119 wa\u017Cno\u015Bci."
+       ,"Display Location":"Inline in Notification"
+       ,"Associated Item":"P115_DATA_WAZNOSCI (161745443406982422)"
+      }
+    }
+   ,{
+      "id":"177631564399098038"
+     ,"Identification":{
+        "Name":"DATA NOT NULL 2"
+      }
+     ,"Execution":{
+        "Sequence":30
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P115_DATA_WYDANIA IS NOT NULL"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy wybra\u0107 dat\u0119 wydania."
+       ,"Display Location":"Inline in Notification"
+       ,"Associated Item":"P115_DATA_WYDANIA (161745313779982421)"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"167038888335658793"
+     ,"Identification":{
+        "Name":"Initialize form Pozycja zam\u00F3wienia"
+       ,"Type":"Form - Initialization"
+       ,"Execution Chain":"None"
+       ,"Form Region":"Wydanie (232496761425870164)"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Before Header"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+   ,{
+      "id":"167039217423658794"
+     ,"Identification":{
+        "Name":"INSERT"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"IF :P115_TYP=\u0027D\u0027 THEN\nINSERT INTO WYDANIE_CERTYFIKATU_DODATKU (ID_DODATKU,SYMBOL_CERTYFIKATU,DATA_WYDANIA,DATA_WAZNOSCI) VALUES\n(:P115_ID,:P115_SYMBOL_CERTYFIKATU,:P115_DATA_WYDANIA,:P115_DATA_WAZNOSCI);\nELSE\nINSERT INTO WYDANIE_CERTYFIKATU_SRUBY (ID_SRUBY,SYMBOL_CERTYFIKATU,DATA_WYDANIA,DATA_WAZNOSCI) VALUES\n(:P115_ID,:P115_SYMBOL_CERTYFIKATU,:P115_DATA_WYDANIA,:P115_DATA_WAZNOSCI);\nEND IF;"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (167039976831658795)"
+      }
+    }
+   ,{
+      "id":"167040878104658796"
+     ,"Identification":{
+        "Name":"Close Dialog"
+       ,"Type":"Close Dialog"
+       ,"Execution Chain":"None"
+      }
+     ,"Settings":{
+        "Items to Return ":[
+          "REQUEST"
+        ]
+      }
+     ,"Execution":{
+        "Sequence":50
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "Type":"Request is contained in Value"
+       ,"Value":"CREATE,SAVE,DELETE"
+      }
+    }
+  ]
+}

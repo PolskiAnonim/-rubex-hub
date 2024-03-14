@@ -1,0 +1,2562 @@
+{
+  "id":"500"
+ ,"Identification":{
+    "Name":"Zam\u00F3wienia"
+   ,"Alias":"ZAM\u00D3WIENIA"
+   ,"Title":"Zam\u00F3wienia"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Left Side Column (127732811418451403)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":false
+  }
+ ,"CSS":{
+    "Inline":"\/* Scroll Results Only in Side Column *\/\n.t-Body-side {\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n}\n.search-results {\n    flex: 1;\n    overflow: auto;\n}\n\/* Format Search Region *\/\n.search-region {\n    border-bottom: 1px solid rgba(0,0,0,.1);\n    flex-shrink: 0;\n}"
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"On"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"No - Prevent page from being re-posted"
+   ,"Reload on Submit":"Always"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"65439874862211311"
+     ,"Identification":{
+        "Title":"Breadcrumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (21537423727562520)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (127792658721451452)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (127897691758451540)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+   ,{
+      "id":"65441271316211312"
+     ,"Identification":{
+        "Title":"Search"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_02"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Item Container (127759329521451425)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-ItemContainer--alignStretch"
+         ,"t-Form--xlarge"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"65442034587211314"
+     ,"Identification":{
+        "Title":"Master Records"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select \"ID_ZAMOWIENIA\",\n    null LINK_CLASS,\n    apex_page.get_url(p_items =\u003E \u0027P500_ID_ZAMOWIENIA\u0027, p_values =\u003E \"ID_ZAMOWIENIA\") LINK,\n    --null ICON_CLASS,\n    null LINK_ATTR,\n    --null ICON_COLOR_CLASS,\n    case when coalesce(:P500_ID_ZAMOWIENIA,\u00270\u0027) = \"ID_ZAMOWIENIA\"\n      then \u0027is-active\u0027 \n      else \u0027 \u0027\n    end LIST_CLASS,\n    (substr((SELECT \"IMIE\/NAZWA\" FROM KLIENCI WHERE klienci.id_klienta=x.id_klienta), 1, 50)||( case when length(\"ID_KLIENTA\") \u003E 50 then \u0027...\u0027 else \u0027\u0027 end )) LIST_TITLE,\n    (\"DATA_ZLOZENIA\") LIST_TEXT--,\n    --null LIST_BADGE\nfrom \"ZAMOWIENIE\" x\nwhere (:P500_SEARCH is null\n        or upper(x.\"ID_KLIENTA\") like \u0027%\u0027||upper(:P500_SEARCH)||\u0027%\u0027\n        or upper(x.\"DATA_ZLOZENIA\") like \u0027%\u0027||upper(:P500_SEARCH)||\u0027%\u0027\n    ) AND x.status NOT LIKE \u0027KOSZYK\u0027\norder by \"DATA_ZLOZENIA\" DESC"
+       ,"Page Items to Submit":[
+          "P500_SEARCH"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_02"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"CSS Classes":[
+          "search-results"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Authorization Scheme":"Prawa pracownika (21995650961848200)"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":10000
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Media List (127846607542451495)"
+         ,"Template Options":[
+            "t-MediaList--showDesc"
+           ,"t-MediaList--stack"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"130172760819451904"
+         ,"Identification":{
+            "Column Name":"ID_ZAMOWIENIA"
+           ,"Type":"Hidden Column"
+          }
+         ,"Layout":{
+            "Sequence":10
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"130172947719451906"
+         ,"Identification":{
+            "Column Name":"LINK"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Link"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"130173123847451908"
+         ,"Identification":{
+            "Column Name":"LINK_ATTR"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Link Attr"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"130173319495451910"
+         ,"Identification":{
+            "Column Name":"LIST_CLASS"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"List Class"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"130173406052451911"
+         ,"Identification":{
+            "Column Name":"LIST_TITLE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"List Title"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":80
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"130173552792451912"
+         ,"Identification":{
+            "Column Name":"LIST_TEXT"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"List Text"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":90
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"130173773095451914"
+         ,"Identification":{
+            "Column Name":"LINK_CLASS"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Link Class"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":100
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"65446748590211347"
+     ,"Identification":{
+        "Title":"Zam\u00F3wienie"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select ID_ZAMOWIENIA,\n       (SELECT \"IMIE\/NAZWA\" FROM KLIENCI k WHERE z.ID_KLIENTA=k.ID_KLIENTA) AS KLIENT,\n       (SELECT imie || \u0027 \u0027 || nazwisko FROM PRACOWNIK p WHERE z.ID_PRACOWNIKA=p.ID_PRACOWNIKA) AS PRACOWNIK,\n       STATUS,\n       DATA_ZLOZENIA,\n       KOSZT\n  from ZAMOWIENIE z\n where \"ID_ZAMOWIENIA\" = :P500_ID_ZAMOWIENIA"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"CSS Classes":[
+          "js-master-region"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P500_ID_ZAMOWIENIA"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":15
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Value Attribute Pairs - Column (127852047425451500)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-AVPList--leftAligned"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"No Pagination (Show All Rows)"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":500
+        }
+       ,"Messages":{
+          "When No Data Found":"No Record Selected"
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"64879022904374926"
+         ,"Identification":{
+            "Column Name":"KLIENT"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Klient"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":11
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"64879142788374927"
+         ,"Identification":{
+            "Column Name":"PRACOWNIK"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Pracownik"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":21
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"65447440487211348"
+         ,"Identification":{
+            "Column Name":"ID_ZAMOWIENIA"
+           ,"Type":"Hidden Column"
+          }
+         ,"Layout":{
+            "Sequence":1
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Server-side Condition":{
+            "Type":"Rows returned"
+           ,"SQL Query":"select 1 from \"ZAMOWIENIE\"\nwhere \"ID_ZAMOWIENIA\" is not null\nand \"ID_ZAMOWIENIA\" = :P500_ID_ZAMOWIENIA"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"65448644795211349"
+         ,"Identification":{
+            "Column Name":"STATUS"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Status"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":31
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Server-side Condition":{
+            "Type":"Rows returned"
+           ,"SQL Query":"select 1 from \"ZAMOWIENIE\"\nwhere \"STATUS\" is not null\nand \"ID_ZAMOWIENIA\" = :P500_ID_ZAMOWIENIA"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"65449021708211350"
+         ,"Identification":{
+            "Column Name":"DATA_ZLOZENIA"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Data z\u0142o\u017Cenia"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":41
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Server-side Condition":{
+            "Type":"Rows returned"
+           ,"SQL Query":"select 1 from \"ZAMOWIENIE\"\nwhere \"DATA_ZLOZENIA\" is not null\nand \"ID_ZAMOWIENIA\" = :P500_ID_ZAMOWIENIA"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"65449468744211350"
+         ,"Identification":{
+            "Column Name":"KOSZT"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Koszt"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":51
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Server-side Condition":{
+            "Type":"Rows returned"
+           ,"SQL Query":"select 1 from \"ZAMOWIENIE\"\nwhere \"KOSZT\" is not null\nand \"ID_ZAMOWIENIA\" = :P500_ID_ZAMOWIENIA"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"65454139461211355"
+     ,"Identification":{
+        "Title":"Region Display Selector"
+       ,"Type":"Region Display Selector"
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (127841453146451491)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"CSS Classes":[
+          "js-detail-rds"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P500_ID_ZAMOWIENIA"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Mode":"View Single Region"
+         ,"Display Region Icons":false
+         ,"Include \u0027Show All\u0027":true
+         ,"Remember Selection":"N"
+        }
+      }
+    }
+   ,{
+      "id":"65454557451211356"
+     ,"Identification":{
+        "Title":"Dodatki w zam\u00F3wieniu"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select ID_ZAMOWIENIA,\n       ID_DODATKU AS Usu\u0144,\n       \u0027\u003Ca href=\"\u0027 || apex_page.get_url(p_page =\u003E 205, p_items =\u003E\u0027P205_ID_DODATKU\u0027, p_values =\u003E p.ID_DODATKU) || \u0027\"\u003E\u003Cspan class=\"fa fa-tools\" title=\"Dodatkowe informacje\"\u003E \u003C\/span\u003E\u003C\/a\u003E\u0027 AS INFO,\n        (SELECT NAZWA_DODATKU FROM DODATEK d WHERE d.id_dodatku=p.ID_DODATKU) AS NAZWA,\n       ILOSC_PUDELEK,\n        CASE CZY_ZAWARTE_NARZEDZIA WHEN \u0027Y\u0027 THEN \u0027Tak\u0027 ELSE \u0027Nie\u0027 END  AS NARZEDZIA,\n       CASE DODATKOWA_GWARANCJA WHEN \u0027Y\u0027 THEN \u0027Tak\u0027 ELSE \u0027Nie\u0027 END  AS GWARANCJA\n  from DODATEK_W_ZAMOWIENIU p\n where \"ID_ZAMOWIENIA\" = :P500_ID_ZAMOWIENIA"
+      }
+     ,"Layout":{
+        "Sequence":80
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"CSS Classes":[
+          "js-detail-region"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P500_ID_ZAMOWIENIA IS NOT NULL AND :P500_SWITCH=\u0027Y\u0027"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":100
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (127858489089451506)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":5000
+        }
+       ,"Messages":{
+          "When No Data Found":"No data found."
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"64879295372374928"
+         ,"Identification":{
+            "Column Name":"NAZWA"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Nazwa"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":61
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"64879306934374929"
+         ,"Identification":{
+            "Column Name":"INFO"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Info"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":21
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":false
+          }
+        }
+       ,{
+          "id":"64879491006374930"
+         ,"Identification":{
+            "Column Name":"USU\u0143"
+           ,"Type":"Link"
+          }
+         ,"Heading":{
+            "Heading":"Usu\u0144"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":11
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Link":{
+            "Target":"javascript:void(null)"
+           ,"Link Text":"\u003Cspan class=\"t-Icon fa fa-trash delete-note\" aria-hidden=\"true\"\u003E\u003C\/span\u003E"
+           ,"Link Attributes":"data-id=#USU\u0143#"
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Authorization Scheme":"Prawa pracownika (21995650961848200)"
+           ,"Escape special characters":false
+          }
+        }
+       ,{
+          "id":"65455375615211357"
+         ,"Identification":{
+            "Column Name":"ID_ZAMOWIENIA"
+           ,"Type":"Hidden Column"
+          }
+         ,"Layout":{
+            "Sequence":1
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"190335434040366210"
+         ,"Identification":{
+            "Column Name":"ILOSC_PUDELEK"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Ilo\u015B\u0107"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":71
+           ,"Column Alignment":"end"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"190335839040366214"
+         ,"Identification":{
+            "Column Name":"NARZEDZIA"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Narz\u0119dzia"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":81
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"190335987083366215"
+         ,"Identification":{
+            "Column Name":"GWARANCJA"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Gwarancja"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":91
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"65470342813211386"
+     ,"Identification":{
+        "Title":"No Record Selected"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"Nie wybrano pozycji"
+      }
+     ,"Layout":{
+        "Sequence":90
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NULL"
+       ,"Item":"P500_ID_ZAMOWIENIA"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"150615087158910206"
+     ,"Identification":{
+        "Title":"Master Records - client"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select \"ID_ZAMOWIENIA\",\n    null LINK_CLASS,\n    apex_page.get_url(p_items =\u003E \u0027P500_ID_ZAMOWIENIA\u0027, p_values =\u003E \"ID_ZAMOWIENIA\") LINK,\n    --null ICON_CLASS,\n    null LINK_ATTR,\n    --null ICON_COLOR_CLASS,\n    case when coalesce(:P500_ID_ZAMOWIENIA,\u00270\u0027) = \"ID_ZAMOWIENIA\"\n      then \u0027is-active\u0027 \n      else \u0027 \u0027\n    end LIST_CLASS,\n    (substr((SELECT \"IMIE\/NAZWA\" FROM KLIENCI WHERE klienci.id_klienta=x.id_klienta), 1, 50)||( case when length(\"ID_KLIENTA\") \u003E 50 then \u0027...\u0027 else \u0027\u0027 end )) LIST_TITLE,\n    (\"DATA_ZLOZENIA\") LIST_TEXT--,\n    --null LIST_BADGE\nfrom (SELECT * FROM \"ZAMOWIENIE\" WHERE ID_KLIENTA = (SELECT ID_KLIENTA FROM KONTO_APEX WHERE \nID_APEXA = TO_CHAR(apex_util.get_user_id(p_username =\u003E ( :APP_USER) ))) ) x\nwhere (:P500_SEARCH is null\n        or upper(x.\"ID_KLIENTA\") like \u0027%\u0027||upper(:P500_SEARCH)||\u0027%\u0027\n        or upper(x.\"DATA_ZLOZENIA\") like \u0027%\u0027||upper(:P500_SEARCH)||\u0027%\u0027\n    )  AND x.status NOT LIKE \u0027KOSZYK\u0027\norder by \"DATA_ZLOZENIA\" DESC"
+       ,"Page Items to Submit":[
+          "P500_SEARCH"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_02"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"CSS Classes":[
+          "search-results"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Security":{
+        "Authorization Scheme":"{Not Prawa pracownika} (21995650961848200)"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":10000
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Media List (127846607542451495)"
+         ,"Template Options":[
+            "t-MediaList--showDesc"
+           ,"t-MediaList--stack"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":false
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"150615186193910207"
+         ,"Identification":{
+            "Column Name":"ID_ZAMOWIENIA"
+           ,"Type":"Hidden Column"
+          }
+         ,"Layout":{
+            "Sequence":10
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"150615240667910208"
+         ,"Identification":{
+            "Column Name":"LINK"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Link"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"150615355703910209"
+         ,"Identification":{
+            "Column Name":"LINK_ATTR"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Link Attr"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"150615494148910210"
+         ,"Identification":{
+            "Column Name":"LIST_CLASS"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"List Class"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":40
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"150615500227910211"
+         ,"Identification":{
+            "Column Name":"LIST_TITLE"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"List Title"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":50
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"150615689079910212"
+         ,"Identification":{
+            "Column Name":"LIST_TEXT"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"List Text"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":60
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"150615784192910213"
+         ,"Identification":{
+            "Column Name":"LINK_CLASS"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Link Class"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"184742325601587030"
+     ,"Identification":{
+        "Title":"\u015Aruby w zam\u00F3wieniu"
+       ,"Type":"Classic Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select ID_ZAMOWIENIA,\n       ID_SRUBY AS Usu\u0144,\n       \u0027\u003Ca href=\"\u0027 || apex_page.get_url(p_page =\u003E 305, p_items =\u003E\u0027P305_ID_SRUBY\u0027, p_values =\u003E p.ID_SRUBY) || \u0027\"\u003E\u003Cspan class=\"fa fa-wrench\" title=\"Dodatkowe informacje\"\u003E \u003C\/span\u003E\u003C\/a\u003E\u0027 AS INFO,\n       (SELECT NAZWA_SRUBY || \u0027 Kl. \u0027 || KLASA_WYTRZYMALOSCI || \u0027 Materia\u0142: \u0027 ||\n MATERIAL || \u0027 \u0027 || KOLOR || \u0027 \u0141eb: \u0027 || RODZAJ_LBA || \u0027 Gniazdo: \u0027 || GNIAZDO FROM SRUBA s WHERE s.id_sruby=p.ID_SRUBY) AS NAZWA,\n       ILOSC_PUDELEK,\n       CASE CZY_ZAWARTE_NARZEDZIA WHEN \u0027Y\u0027 THEN \u0027Tak\u0027 ELSE \u0027Nie\u0027 END  AS NARZEDZIA,\n       CASE DODATKOWA_GWARANCJA WHEN \u0027Y\u0027 THEN \u0027Tak\u0027 ELSE \u0027Nie\u0027 END  AS GWARANCJA\n  from SRUBA_W_ZAMOWIENIU p\n where \"ID_ZAMOWIENIA\" = :P500_ID_ZAMOWIENIA"
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"CSS Classes":[
+          "js-detail-region"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":true
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server-side Condition":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P500_ID_ZAMOWIENIA IS NOT NULL AND :P500_SWITCH=\u0027N\u0027"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Layout":{
+          "Number of Rows Type":"Static Value"
+         ,"Number of Rows":100
+        }
+       ,"Appearance":{
+          "Template Type":"Theme"
+         ,"Template":"Standard (127858489089451506)"
+         ,"Template Options":[
+            "#DEFAULT#"
+           ,"t-Report--altRowsDefault"
+           ,"t-Report--rowHighlight"
+          ]
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y (with next and previous links)"
+         ,"Display Position":"Bottom - Right"
+         ,"Partial Page Refresh":true
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":5000
+        }
+       ,"Messages":{
+          "When No Data Found":"No data found."
+        }
+       ,"Break Formatting":{
+          "Break Columns":"No Break"
+        }
+       ,"Advanced":{
+          "Strip HTML":true
+         ,"Sort Nulls":"Last"
+        }
+       ,"Heading":{
+          "Type":"Custom Headings"
+        }
+       ,"Download":{
+          "CSV Export Enabled":false
+        }
+       ,"Printing":{
+          "Enabled":false
+        }
+      }
+     ,"Columns":[
+        {
+          "id":"184742450214587031"
+         ,"Identification":{
+            "Column Name":"ID_ZAMOWIENIA"
+           ,"Type":"Hidden Column"
+          }
+         ,"Layout":{
+            "Sequence":10
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"184742529512587032"
+         ,"Identification":{
+            "Column Name":"USU\u0143"
+           ,"Type":"Link"
+          }
+         ,"Heading":{
+            "Heading":"Usu\u0144"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":20
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Link":{
+            "Target":"javascript:void(null)"
+           ,"Link Text":"\u003Cspan class=\"t-Icon fa fa-trash delete-note\" aria-hidden=\"true\"\u003E\u003C\/span\u003E"
+           ,"Link Attributes":"data-id=#USU\u0143#"
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Authorization Scheme":"Prawa pracownika (21995650961848200)"
+           ,"Escape special characters":false
+          }
+        }
+       ,{
+          "id":"184742630596587033"
+         ,"Identification":{
+            "Column Name":"INFO"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Info"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":30
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":false
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":false
+          }
+        }
+       ,{
+          "id":"184743047959587037"
+         ,"Identification":{
+            "Column Name":"NAZWA"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Nazwa"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":70
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"190335369469366209"
+         ,"Identification":{
+            "Column Name":"ILOSC_PUDELEK"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Ilo\u015B\u0107"
+           ,"Alignment":"end"
+          }
+         ,"Layout":{
+            "Sequence":80
+           ,"Column Alignment":"end"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"190335517155366211"
+         ,"Identification":{
+            "Column Name":"NARZEDZIA"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Narz\u0119dzia"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":90
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+       ,{
+          "id":"190335630813366212"
+         ,"Identification":{
+            "Column Name":"GWARANCJA"
+           ,"Type":"Plain Text"
+          }
+         ,"Heading":{
+            "Heading":"Gwarancja"
+           ,"Alignment":"start"
+          }
+         ,"Layout":{
+            "Sequence":100
+           ,"Column Alignment":"start"
+          }
+         ,"Accessibility":{
+            "Value Identifies Row":false
+          }
+         ,"Sorting":{
+            "Sortable":true
+          }
+         ,"Export \/ Printing":{
+            "Include In Export \/ Print":true
+          }
+         ,"Advanced":{
+            "Compute Sum":false
+          }
+         ,"UI Defaults Reference":{
+            "Table Owner":"Parsing Schema"
+          }
+         ,"Security":{
+            "Escape special characters":true
+          }
+        }
+      ]
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"64879602651374932"
+     ,"Identification":{
+        "Name":"P500_POZ_ID_SRDOD"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"65441792335211314"
+     ,"Identification":{
+        "Name":"P500_SEARCH"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Search"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Search (65441271316211312)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Hidden (127893242764451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-search"
+       ,"Width":30
+       ,"Value Placeholder":"Search..."
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"65453863703211355"
+     ,"Identification":{
+        "Name":"P500_ID_ZAMOWIENIA"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Zam\u00F3wienie (65446748590211347)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"184742213018587029"
+     ,"Identification":{
+        "Name":"P500_SWITCH"
+       ,"Type":"Switch"
+      }
+     ,"Label":{
+        "Alignment":"Left"
+      }
+     ,"Settings":{
+        "Use Defaults":true
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":false
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Default":{
+        "Type":"Static"
+       ,"Static Value":"N"
+      }
+     ,"Session State":{
+        "Storage":"Per Session (Persistent)"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P500_ID_ZAMOWIENIA"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"65440588629211311"
+     ,"Identification":{
+        "Button Name":"RESET"
+       ,"Label":"Reset"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Breadcrumb (65439874862211311)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (127896192632451539)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-undo-alt"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:500:\u0026APP_SESSION.:RESET:\u0026DEBUG.:RP,500::"
+         ,"Page":"500"
+         ,"Request":"RESET"
+         ,"Clear Cache":"RP,500"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+    }
+   ,{
+      "id":"65440964211211312"
+     ,"Identification":{
+        "Button Name":"CREATE"
+       ,"Label":"Stw\u00F3rz nowy"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Breadcrumb (65439874862211311)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (127896192632451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-plus"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:504:\u0026APP_SESSION.::\u0026DEBUG.:RP,504::"
+         ,"Page":"504"
+         ,"Clear Cache":"RP,504"
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Security":{
+        "Authorization Scheme":"Prawa pracownika (21995650961848200)"
+      }
+    }
+   ,{
+      "id":"65459587783211361"
+     ,"Identification":{
+        "Button Name":"DODAJ_DODATEK"
+       ,"Label":"Dodaj dodatek do zam\u00F3wienia"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Dodatki w zam\u00F3wieniu (65454557451211356)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (127895353284451538)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-plus"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:505:\u0026SESSION.::\u0026DEBUG.:RP,505:P505_ID_ZAMOWIENIA,P505_TYP:\u0026P500_ID_ZAMOWIENIA.,A"
+         ,"Page":"505"
+         ,"Clear Cache":"RP,505"
+         ,"Values":{
+            "P505_ID_ZAMOWIENIA":"\u0026P500_ID_ZAMOWIENIA."
+           ,"P505_TYP":"A"
+          }
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Security":{
+        "Authorization Scheme":"Prawa pracownika (21995650961848200)"
+      }
+    }
+   ,{
+      "id":"65470841906211387"
+     ,"Identification":{
+        "Button Name":"EDIT"
+       ,"Label":"Edytuj"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Zam\u00F3wienie (65446748590211347)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text with Icon (127896192632451539)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--iconLeft"
+        ]
+       ,"Icon":"fa-pencil-square-o"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:504:\u0026APP_SESSION.::\u0026DEBUG.:RP,504:P504_ID_ZAMOWIENIA:\u0026P500_ID_ZAMOWIENIA."
+         ,"Page":"504"
+         ,"Clear Cache":"RP,504"
+         ,"Values":{
+            "P504_ID_ZAMOWIENIA":"\u0026P500_ID_ZAMOWIENIA."
+          }
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Advanced":{
+        "Static ID":"edit_master_btn"
+      }
+     ,"Security":{
+        "Authorization Scheme":"Prawa pracownika (21995650961848200)"
+      }
+    }
+   ,{
+      "id":"184743199208587038"
+     ,"Identification":{
+        "Button Name":"DODAJ_SRUBE"
+       ,"Label":"Dodaj \u015Brub\u0119 do zam\u00F3wienia"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"\u015Aruby w zam\u00F3wieniu (184742325601587030)"
+       ,"Position":"EDIT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Icon (127895353284451538)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Icon":"fa-plus"
+      }
+     ,"Behavior":{
+        "Action":"Redirect to Page in this Application"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:505:\u0026SESSION.::\u0026DEBUG.:RP,505:P505_ID_ZAMOWIENIA,P505_TYP:\u0026P500_ID_ZAMOWIENIA.,S"
+         ,"Page":"505"
+         ,"Clear Cache":"RP,505"
+         ,"Values":{
+            "P505_ID_ZAMOWIENIA":"\u0026P500_ID_ZAMOWIENIA."
+           ,"P505_TYP":"S"
+          }
+        }
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Security":{
+        "Authorization Scheme":"Prawa pracownika (21995650961848200)"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"64879772710374933"
+     ,"Identification":{
+        "Name":"USUN_POZ"
+      }
+     ,"Execution":{
+        "Sequence":70
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"jQuery Selector"
+       ,"jQuery Selector":".delete-note"
+      }
+     ,"Execution":{
+        "Event Scope":"Dynamic"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"64879808515374934"
+         ,"Identification":{
+            "Action":"Confirm"
+          }
+         ,"Settings":{
+            "Message":"Jeste\u015B pewny?"
+           ,"Style":"Default"
+           ,"Confirm Label":"Tak"
+           ,"Cancel Label":"Nie"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"USUN_POZ (64879772710374933)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"64879952678374935"
+         ,"Identification":{
+            "Action":"Set Value"
+          }
+         ,"Settings":{
+            "Set Type":"JavaScript Expression"
+           ,"JavaScript Expression":"$(this.triggeringElement).parent().data(\u0027id\u0027)"
+           ,"Suppress Change Event":false
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Item(s)"
+           ,"Item(s)":[
+              "P500_POZ_ID_SRDOD"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":20
+           ,"Event":"USUN_POZ (64879772710374933)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+           ,"Stop Execution On Error":true
+           ,"Wait For Result":true
+          }
+        }
+       ,{
+          "id":"64880061181374936"
+         ,"Identification":{
+            "Action":"Execute Server-side Code"
+          }
+         ,"Settings":{
+            "Language":"PE.PROPERTY.SOURCE_SNIPPET_LANG.LOV.PLSQL.D"
+           ,"PL\/SQL Code":"CASE WHEN SUBSTR(:P500_POZ_ID_SRDOD,1,1)=\u0027S\u0027 THEN \n    DELETE FROM sruba_w_zamowieniu WHERE id_zamowienia=:P500_ID_ZAMOWIENIA AND id_sruby=:P500_POZ_ID_SRDOD;\nELSE\n    DELETE FROM dodatek_w_zamowieniu WHERE id_zamowienia=:P500_ID_ZAMOWIENIA AND id_dodatku=:P500_POZ_ID_SRDOD;\nEND CASE;"
+           ,"Items to Submit":[
+              "P500_ID_ZAMOWIENIA"
+             ,"P500_POZ_ID_SRDOD"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"USUN_POZ (64879772710374933)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+           ,"Stop Execution On Error":true
+           ,"Wait For Result":true
+          }
+        }
+       ,{
+          "id":"64880105156374937"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Dodatki w zam\u00F3wieniu (65454557451211356)"
+          }
+         ,"Execution":{
+            "Sequence":40
+           ,"Event":"USUN_POZ (64879772710374933)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"184743552755587042"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"\u015Aruby w zam\u00F3wieniu (184742325601587030)"
+          }
+         ,"Execution":{
+            "Sequence":50
+           ,"Event":"USUN_POZ (64879772710374933)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"65454689243211356"
+     ,"Identification":{
+        "Name":"Dialog Closed dod"
+      }
+     ,"Execution":{
+        "Sequence":40
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.FAMEWORK.APEXAFTERCLOSEDIALOG"
+       ,"Selection Type":"Region"
+       ,"Region":"Dodatki w zam\u00F3wieniu (65454557451211356)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"65460228032211363"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Dodatki w zam\u00F3wieniu (65454557451211356)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Dialog Closed dod (65454689243211356)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"65460741195211363"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"apex.message.showPageSuccess(\u0027Dodano dodatek do zam\u005Cu00F3wienia.\u0027);"
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"Dialog Closed dod (65454689243211356)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"190336681666366222"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Zam\u00F3wienie (65446748590211347)"
+          }
+         ,"Execution":{
+            "Sequence":20
+           ,"Event":"Dialog Closed dod (65454689243211356)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"65471106647211387"
+     ,"Identification":{
+        "Name":"Dialog Closed zam"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.FAMEWORK.APEXAFTERCLOSEDIALOG"
+       ,"Selection Type":"Region"
+       ,"Region":"Zam\u00F3wienie (65446748590211347)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"65471709525211388"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Zam\u00F3wienie (65446748590211347)"
+          }
+         ,"Execution":{
+            "Sequence":20
+           ,"Event":"Dialog Closed zam (65471106647211387)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"65472240441211388"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"apex.message.showPageSuccess(\u0027Dodano nowe zam\u005Cu00F3wienie.\u0027);"
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"Dialog Closed zam (65471106647211387)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"65471253279211387"
+     ,"Identification":{
+        "Name":"Perform Search"
+      }
+     ,"Execution":{
+        "Sequence":60
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.KEYPRESS"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P500_SEARCH"
+        ]
+      }
+     ,"Client-side Condition":{
+        "Type":"JavaScript expression"
+       ,"JavaScript Expression":"this.browserEvent.which === apex.jQuery.ui.keyCode.ENTER"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"65473040474211389"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Master Records (65442034587211314)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Perform Search (65471253279211387)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"65473584712211389"
+         ,"Identification":{
+            "Action":"Cancel Event"
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"Perform Search (65471253279211387)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"184743269599587039"
+     ,"Identification":{
+        "Name":"SWITCH"
+      }
+     ,"Execution":{
+        "Sequence":80
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P500_SWITCH"
+        ]
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"184743359581587040"
+         ,"Identification":{
+            "Action":"Submit Page"
+          }
+         ,"Settings":{
+            "Show Processing":true
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"SWITCH (184743269599587039)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+   ,{
+      "id":"190336361812366219"
+     ,"Identification":{
+        "Name":"Dialog Closed sr"
+      }
+     ,"Execution":{
+        "Sequence":50
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.FAMEWORK.APEXAFTERCLOSEDIALOG"
+       ,"Selection Type":"Region"
+       ,"Region":"Dodatki w zam\u00F3wieniu (65454557451211356)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"190336480896366220"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"\u015Aruby w zam\u00F3wieniu (184742325601587030)"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Dialog Closed sr (190336361812366219)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"190336564715366221"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"apex.message.showPageSuccess(\u0027Dodano \u015Brub\u0119 do zam\u005Cu00F3wienia.\u0027);"
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"Dialog Closed sr (190336361812366219)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"190336727857366223"
+         ,"Identification":{
+            "Action":"Refresh"
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Region"
+           ,"Region":"Zam\u00F3wienie (65446748590211347)"
+          }
+         ,"Execution":{
+            "Sequence":20
+           ,"Event":"Dialog Closed sr (190336361812366219)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

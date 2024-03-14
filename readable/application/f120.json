@@ -1,0 +1,161 @@
+{
+  "id":"120"
+ ,"Identification":{
+    "Name":"\u015Arubex"
+   ,"Alias":"\u015ARUBEX"
+   ,"Version":"Beta 0.9"
+  }
+ ,"Row Search":{
+    "Tokenize":true
+  }
+ ,"Availability":{
+    "Status":"Available with Developer Toolbar"
+   ,"Build Status":"Run and Build Application"
+  }
+ ,"Error Handling":{
+    "Default Display Location":"Inline with Field and in Notification"
+  }
+ ,"Report Printing":{
+    "Type":"Native Printing"
+  }
+ ,"Advanced":{
+    "Friendly URLs":false
+   ,"Allow Feedback":true
+   ,"Logging":true
+   ,"Debugging":true
+   ,"Compatibility Mode":"21.2 \/ 22.1 \/ 22.2"
+  }
+ ,"Authentication":{
+    "Public User":"APEX_PUBLIC_USER"
+   ,"Authentication Scheme":"Oracle APEX Accounts (21537195979562519)"
+  }
+ ,"Authorization":{
+    "Authorization Scheme":"Reader Rights (21826381073562751)"
+   ,"Run on Public Pages":false
+   ,"Run on Background Job":true
+   ,"Source for Role or Group Schemes":"Access Control User Role Assignments"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Disabled"
+  }
+ ,"Session State Protection":{
+    "Enabled":true
+  }
+ ,"Security":{
+    "Deep Linking":"Disabled"
+   ,"Browser Cache":"Disabled"
+   ,"Embed in Frames":"Deny"
+   ,"Referrer Policy":"strict-origin"
+   ,"HTML Escaping Mode":"Extended"
+   ,"Runtime API Usage":[
+      "Modify This Application"
+     ,"Modify Other Applications"
+     ,"Modify Workspace Repository"
+    ]
+  }
+ ,"Advanced":{
+    "Pass ECID":"Y"
+  }
+ ,"Database Session":{
+    "Parsing Schema":"WKSP_WS151783"
+   ,"Initialization PL\/SQL Code":"if v(\u0027APP_USER\u0027) = \u0027nobody\u0027 then\r\n    apex_custom_auth.set_user(\u0027go\u015B\u0107\u0027);\r\nend if;"
+  }
+ ,"Globalization":{
+    "Primary Language":"English (en)"
+   ,"Document Direction":"Left-To-Right"
+   ,"Language Derived From":"Application Primary Language"
+   ,"Automatic Time Zone":false
+   ,"Automatic CSV Encoding":true
+  }
+ ,"Application Format Masks":{
+    "Date":"DS"
+   ,"Timestamp":"DS"
+   ,"Timestamp Time Zone":"DS"
+  }
+ ,"Character Value Comparison":{
+    "Behavior":"Database session NLS setting (default)"
+  }
+ ,"Logo":{
+    "Type":"Text"
+   ,"Text":"\u015Arubex"
+  }
+ ,"Progressive Web App":{
+    "Enable":true
+   ,"Installable":false
+   ,"Display":"Standalone"
+   ,"Screen Orientation":"Any"
+   ,"iOS Status Bar Style":"Default"
+   ,"Enable Push Notifications":false
+  }
+ ,"Navigation":{
+    "Home URL":{
+      "url":"f?p=\u0026APP_ID.:1:\u0026SESSION."
+     ,"Page":"1"
+    }
+   ,"Login URL":{
+      "url":"f?p=\u0026APP_ID.:LOGIN:\u0026APP_SESSION.::\u0026DEBUG.:::"
+     ,"Page":"LOGIN"
+    }
+  }
+ ,"Navigation Menu":{
+    "List Template":"Side Navigation Menu (127880810953451525)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-defaultCollapsed"
+     ,"js-navCollapsed--hidden"
+     ,"t-TreeNav--classic"
+    ]
+   ,"List Position":"Side"
+   ,"List":"Navigation Menu (21537913166562520)"
+  }
+ ,"Navigation Bar":{
+    "Implementation":"List"
+   ,"List":"Navigation Bar (21821761277562745)"
+   ,"List Template":"Navigation Bar (127883651016451528)"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"JavaScript":{
+    "Include jQuery Migrate":false
+  }
+ ,"Attributes":{
+    "Theme":"Universal Theme (100)"
+   ,"Global Page":"0"
+   ,"Enable End Users to choose Theme Style":false
+   ,"Add \"Built with APEX\" to Footer":false
+  }
+ ,"Substitutions":[
+    {
+      "id":"1"
+     ,"Identification":{
+        "Name":"APP_NAME"
+      }
+     ,"Value":{
+        "Static Value":"\u015Arubex"
+      }
+    }
+  ]
+ ,"Application Settings":[
+    {
+      "id":"21827236978562752"
+     ,"Identification":{
+        "Name":"ACCESS_CONTROL_SCOPE"
+      }
+     ,"Value":{
+        "Value":"ALL_USERS"
+       ,"Required":false
+      }
+     ,"Advanced":{
+        "Valid Values":"ACL_ONLY, ALL_USERS"
+       ,"On Upgrade Keep Value":true
+      }
+     ,"Configuration":{
+        "Build Option":"Feature: Access Control (21824134720562750)"
+      }
+     ,"Comments":{
+        "Comments":"The default access level given to authenticated users who are not in the access control list"
+      }
+    }
+  ]
+}

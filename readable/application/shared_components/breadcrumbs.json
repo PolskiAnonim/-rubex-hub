@@ -1,0 +1,281 @@
+[
+  {
+    "id":"21537423727562520"
+   ,"Identification":{
+      "Name":"Breadcrumb"
+    }
+   ,"Entries":[
+      {
+        "id":"21537685149562520"
+       ,"Identification":{
+          "Name":"Home"
+         ,"Page Number":"1"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:1:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"1"
+          }
+        }
+      }
+     ,{
+        "id":"21962363812563027"
+       ,"Identification":{
+          "Name":"Administration"
+         ,"Page Number":"10000"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:10000:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"10000"
+          }
+        }
+      }
+     ,{
+        "id":"24070307700770904"
+       ,"Identification":{
+          "Name":"\u015Aruby"
+         ,"Page Number":"30"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:30:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"30"
+          }
+        }
+      }
+     ,{
+        "id":"24084635665786400"
+       ,"Identification":{
+          "Name":"Dostawcy"
+         ,"Page Number":"40"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:40:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"40"
+          }
+        }
+      }
+     ,{
+        "id":"24103410844818605"
+       ,"Identification":{
+          "Name":"Pracownicy"
+         ,"Page Number":"60"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:60:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"60"
+          }
+        }
+      }
+     ,{
+        "id":"24113890945825355"
+       ,"Identification":{
+          "Name":"Klienci"
+         ,"Page Number":"70"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:70:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"70"
+          }
+        }
+      }
+     ,{
+        "id":"24126884618062979"
+       ,"Identification":{
+          "Name":"Osoby prywatne"
+         ,"Page Number":"71"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Appearance":{
+          "Parent Entry":"Klienci (24113890945825355)"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:71:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"71"
+          }
+        }
+      }
+     ,{
+        "id":"24134397844074217"
+       ,"Identification":{
+          "Name":"Firmy"
+         ,"Page Number":"72"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Appearance":{
+          "Parent Entry":"Klienci (24113890945825355)"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:72:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"72"
+          }
+        }
+      }
+     ,{
+        "id":"25615449660329487"
+       ,"Identification":{
+          "Name":"Dodatki"
+         ,"Page Number":"20"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:20:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"20"
+          }
+        }
+      }
+     ,{
+        "id":"62475891024877063"
+       ,"Identification":{
+          "Name":"Dodatki pasuj\u0105ce do \u015Brub"
+         ,"Page Number":"320"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Appearance":{
+          "Parent Entry":"\u015Aruby (24070307700770904)"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:320:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"320"
+          }
+        }
+      }
+     ,{
+        "id":"64832516947915841"
+       ,"Identification":{
+          "Name":"\u015Aruby pasuj\u0105ce do dodatk\u00F3w"
+         ,"Page Number":"220"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Appearance":{
+          "Parent Entry":"Dodatki (25615449660329487)"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:220:\u0026SESSION.::\u0026DEBUG.:::"
+           ,"Page":"220"
+          }
+        }
+      }
+     ,{
+        "id":"65440205297211311"
+       ,"Identification":{
+          "Name":"Zam\u00F3wienia"
+         ,"Page Number":"500"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:500:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"500"
+          }
+        }
+      }
+     ,{
+        "id":"111592346635383809"
+       ,"Identification":{
+          "Name":"Ryneczek \u015Brubexu"
+         ,"Page Number":"800"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:800:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"800"
+          }
+        }
+      }
+     ,{
+        "id":"160116541937651324"
+       ,"Identification":{
+          "Name":"Certyfikaty"
+         ,"Page Number":"100"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:100:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"100"
+          }
+        }
+      }
+     ,{
+        "id":"160213976207704864"
+       ,"Identification":{
+          "Name":"Podsumowanie koszyk"
+         ,"Page Number":"803"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:803:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"803"
+          }
+        }
+      }
+     ,{
+        "id":"184386595310082204"
+       ,"Identification":{
+          "Name":"Certyfikaty wydane dla dodatk\u00F3w"
+         ,"Page Number":"230"
+        }
+       ,"Execution":{
+          "Sequence":10
+        }
+       ,"Appearance":{
+          "Parent Entry":"Dodatki (25615449660329487)"
+        }
+       ,"Link":{
+          "Target":{
+            "url":"f?p=\u0026APP_ID.:230:\u0026APP_SESSION.::\u0026DEBUG.:::"
+           ,"Page":"230"
+          }
+        }
+      }
+    ]
+  }
+]

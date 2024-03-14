@@ -1,0 +1,203 @@
+{
+  "id":"806"
+ ,"Identification":{
+    "Name":"Platnosc"
+   ,"Alias":"PLATNOSC"
+   ,"Title":"Trwa p\u0142atno\u015B\u0107 - nie wy\u0142\u0105czaj okna"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"t-Dialog--noPadding"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"No - Prevent page from being re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"187862255469597207"
+     ,"Identification":{
+        "Title":"Trwa p\u0142atno\u015B\u0107"
+       ,"Type":"Static Content"
+      }
+     ,"Source":{
+        "HTML Code":"\u003Cbody style=\"position: relative; min-height: 100vh;\"\u003E\n\n\u003Cprogress max=\"100\" value=\"0\" id=\"progressBar\" style=\"\n      position: absolute;\n      top: 50%;  \n      left: 50%;\n      transform: translate(-50%, -50%); \n      width: 200px; margin-top: 50px;\"\u003E\u003C\/progress\u003E\n\n\u003Cscript\u003E\n  const progressBar = document.getElementById(\"progressBar\");\n  var value = 0;\n\n  \n      \n\n  var interval = setInterval(frame, 50);\n  function frame() {\n      if (value \u003E= 100) {\n        clearInterval(interval);\n        apex.item(\"P806_DONE\").setValue(\"1\");\n      } else {\n        value++;\n        progressBar.value = value;\n      }\n    }\n\u003C\/script\u003E\n\n\u003C\/body\u003E\n"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Item Container (127759329521451425)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-ItemContainer--wrap"
+         ,"t-Form--noPadding"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"190335208289366208"
+     ,"Identification":{
+        "Name":"P806_DONE"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Default":{
+        "Type":"Static"
+       ,"Static Value":"0"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"190336019251366216"
+     ,"Identification":{
+        "Name":"New"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P806_DONE"
+        ]
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"190336170276366217"
+         ,"Identification":{
+            "Action":"Execute Server-side Code"
+          }
+         ,"Settings":{
+            "Language":"PE.PROPERTY.SOURCE_SNIPPET_LANG.LOV.PLSQL.D"
+           ,"PL\/SQL Code":"DECLARE\nvidprac VARCHAR2(32);\nvid VARCHAR2(32);\nvidk VARCHAR2(32);\nvSuma SUMA;\nBEGIN\n\nSELECT ID_PRACOWNIKA INTO vidprac\n    FROM ZAMOWIENIE\n    WHERE ID_PRACOWNIKA IS NOT NULL\n    GROUP BY ID_PRACOWNIKA\n    HAVING COUNT(*) = (\n        SELECT MIN(ILOSC)\n            FROM (\n            SELECT COUNT(*) AS ILOSC, ID_PRACOWNIKA\n            FROM ZAMOWIENIE\n            WHERE ID_PRACOWNIKA IS NOT NULL\n            GROUP BY ID_PRACOWNIKA\n        ) t\n    )\n    FETCH FIRST 1 ROW ONLY;\n\nSELECT ID_KLIENTA INTO vidk \n    FROM KONTO_APEX WHERE ID_APEXA=TO_CHAR(apex_util.get_user_id(p_username =\u003E ( :APP_USER)));\n\nSELECT WARTOSC_KOSZYKA(vidk) INTO vSuma FROM DUAL;\n\nINSERT INTO ZAMOWIENIE (ID_KLIENTA,ID_PRACOWNIKA,STATUS,DATA_ZLOZENIA,KOSZT) \n    VALUES (vidk,vidprac,\u0027Op\u0142acone\u0027,CURRENT_DATE,vSuma.SRUBY+vSuma.DODATKI) RETURNING ID_ZAMOWIENIA INTO vid;\n\n\nUPDATE SRUBA_W_ZAMOWIENIU SET id_zamowienia=vid WHERE id_zamowienia=\u0027T\u0027 || vidk;\n--usuwanie srubek\nFOR vSruba IN (SELECT * from sruba_w_zamowieniu where id_zamowienia=vid) LOOP\n    update sruba set ILOSC_PUDELEK_NA_MAGAZYNIE=ILOSC_PUDELEK_NA_MAGAZYNIE-vSruba.ILOSC_PUDELEK WHERE id_sruby=vSruba.id_sruby;\nend loop;\n\nUPDATE DODATEK_W_ZAMOWIENIU SET id_zamowienia=vid WHERE id_zamowienia=\u0027T\u0027 || vidk;\nFOR vDodatek IN (SELECT * from dodatek_w_zamowieniu where id_zamowienia=vid) LOOP\n    update dodatek set ILOSC_PUDELEK_NA_MAGAZYNIE=ILOSC_PUDELEK_NA_MAGAZYNIE-vDodatek.ILOSC_PUDELEK WHERE id_dodatku=vDodatek.id_dodatku;\nend loop;\n\n\nDELETE FROM \"KOSZYK_ZAMOWIENIA\" WHERE ID_KOSZYKA=\u0027T\u0027 || vidk;\nEND;\n"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"New (190336019251366216)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+           ,"Stop Execution On Error":true
+           ,"Wait For Result":true
+          }
+        }
+       ,{
+          "id":"190336833480366224"
+         ,"Identification":{
+            "Name":"POTWIERDZENIE"
+           ,"Action":"Alert"
+          }
+         ,"Settings":{
+            "Message":"Potwierdzono p\u0142atno\u015B\u0107, zam\u00F3wienie z\u0142o\u017Cone"
+           ,"Style":"Default"
+          }
+         ,"Execution":{
+            "Sequence":20
+           ,"Event":"New (190336019251366216)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"190336914007366225"
+         ,"Identification":{
+            "Name":"CLOSE"
+           ,"Action":"Close Dialog"
+          }
+         ,"Execution":{
+            "Sequence":30
+           ,"Event":"New (190336019251366216)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+}

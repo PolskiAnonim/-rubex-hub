@@ -1,0 +1,55 @@
+[
+  {
+    "id":"21536805231562519"
+   ,"Identification":{
+      "Name":"Commented Out"
+    }
+   ,"Status":{
+      "Status":"Exclude"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+  }
+ ,{
+    "id":"21824134720562750"
+   ,"Identification":{
+      "Name":"Feature: Access Control"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Incorporate role based user authentication within your application and manage username mappings to application roles."
+    }
+  }
+ ,{
+    "id":"21824272928562750"
+   ,"Identification":{
+      "Name":"Feature: Activity Reporting"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Include numerous reports and charts on end user activity."
+    }
+  }
+ ,{
+    "id":"21824596075562750"
+   ,"Identification":{
+      "Name":"Feature: Configuration Options"
+    }
+   ,"Status":{
+      "Status":"Include"
+     ,"Default on Export":"Same as Current Status"
+     ,"On Upgrade Keep Status":false
+    }
+   ,"Comments":{
+      "Comments":"Allow application administrators to enable or disable specific functionality, associated with an Oracle APEX build option, from within the application."
+    }
+  }
+]

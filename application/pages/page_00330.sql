@@ -1,0 +1,292 @@
+prompt --application/pages/page_00330
+begin
+--   Manifest
+--     PAGE: 00330
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.5'
+,p_default_workspace_id=>8358547342345319
+,p_default_application_id=>120
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_WS151783'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>330
+,p_name=>unistr('Certyfikaty wydane dla \015Brub')
+,p_alias=>unistr('CERTYFIKATY-WYDANE-DLA-\015ARUB')
+,p_page_mode=>'MODAL'
+,p_step_title=>unistr('Certyfikaty wydane dla \015Brub')
+,p_autocomplete_on_off=>'OFF'
+,p_group_id=>wwv_flow_imp.id(64799221816860008)
+,p_step_template=>wwv_flow_imp.id(127720327755451391)
+,p_page_template_options=>'#DEFAULT#:js-dialog-class-t-Drawer--pullOutEnd'
+,p_protection_level=>'C'
+,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'<p>To find data enter a search term into the search dialog, or click on the column headings to limit the records returned.</p>',
+'',
+'<p>You can perform numerous functions by clicking the <strong>Actions</strong> button. This includes selecting the columns that are displayed / hidden and their display sequence, plus numerous data and format functions.  You can also define additiona'
+||'l views of the data using the chart, group by, and pivot options.</p>',
+'',
+'<p>If you want to save your customizations select report, or click download to unload the data. Enter you email address and time frame under subscription to be sent the data on a regular basis.<p>',
+'',
+'<p>For additional information click Help at the bottom of the Actions menu.</p> ',
+'',
+'<p>Click the <strong>Reset</strong> button to reset the interactive report back to the default settings.</p>'))
+,p_page_component_map=>'18'
+,p_last_updated_by=>'KACPER.KURAS@STUDENT.PUT.POZNAN.PL'
+,p_last_upd_yyyymmddhh24miss=>'20240114140357'
+);
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(684795072120107073)
+,p_plug_name=>'Certyfikaty'
+,p_region_name=>'sr'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_imp.id(127779121151451441)
+,p_plug_display_sequence=>20
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+unistr('select ''<a href="'' || apex_page.get_url(p_page => 100, p_items =>''P100_SYMBOL'', p_values => SYMBOL_CERTYFIKATU) || ''"><span class="fa fa-file-o" title="Certyfikaty (pe\0142na strona)"> </span></a>'' AS INFO,'),
+unistr('       ID_WYDANIA AS Usu\0144,'),
+'       SYMBOL_CERTYFIKATU,',
+'       DATA_WYDANIA,',
+'       DATA_WAZNOSCI',
+'  from WYDANIE_CERTYFIKATU_SRUBY WHERE ID_sruby=:P330_ID_SRUBY;'))
+,p_plug_source_type=>'NATIVE_IR'
+,p_ajax_items_to_submit=>'P330_ID_SRUBY'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>11
+,p_prn_height=>8.5
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header=>'Certyfikaty'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#EEEEEE'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'bold'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#FFFFFF'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+,p_prn_border_color=>'#666666'
+);
+wwv_flow_imp_page.create_worksheet(
+ p_id=>wwv_flow_imp.id(507383953185907527)
+,p_max_row_count=>'1000000'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_show_actions_menu=>'N'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'N'
+,p_enable_mail_download=>'Y'
+,p_owner=>'JAKUB.WIECZOREK@STUDENT.PUT.POZNAN.PL'
+,p_internal_uid=>507383953185907527
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(373679686890737645)
+,p_db_column_name=>'INFO'
+,p_display_order=>10
+,p_column_identifier=>'J'
+,p_column_label=>'Informacje'
+,p_allow_sorting=>'N'
+,p_allow_filtering=>'N'
+,p_allow_highlighting=>'N'
+,p_allow_ctrl_breaks=>'N'
+,p_allow_aggregations=>'N'
+,p_allow_computations=>'N'
+,p_allow_charting=>'N'
+,p_allow_group_by=>'N'
+,p_allow_pivot=>'N'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_display_text_as=>'WITHOUT_MODIFICATION'
+,p_heading_alignment=>'LEFT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(373680347578737651)
+,p_db_column_name=>unistr('USU\0143')
+,p_display_order=>20
+,p_column_identifier=>'K'
+,p_column_label=>unistr('Usu\0144')
+,p_column_link=>'javascript:void(null)'
+,p_column_linktext=>'<span class="t-Icon fa fa-trash delete-note" aria-hidden="true"></span>'
+,p_column_link_attr=>unistr('data-id=#USU\0143#')
+,p_allow_sorting=>'N'
+,p_allow_filtering=>'N'
+,p_allow_highlighting=>'N'
+,p_allow_ctrl_breaks=>'N'
+,p_allow_aggregations=>'N'
+,p_allow_computations=>'N'
+,p_allow_charting=>'N'
+,p_allow_group_by=>'N'
+,p_allow_pivot=>'N'
+,p_allow_hide=>'N'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_use_as_row_header=>'N'
+,p_security_scheme=>wwv_flow_imp.id(21995650961848200)
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(373679318018737641)
+,p_db_column_name=>'SYMBOL_CERTYFIKATU'
+,p_display_order=>30
+,p_column_identifier=>'G'
+,p_column_label=>'Symbol Certyfikatu'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(373679441999737642)
+,p_db_column_name=>'DATA_WYDANIA'
+,p_display_order=>40
+,p_column_identifier=>'H'
+,p_column_label=>'Data Wydania'
+,p_column_type=>'DATE'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_column(
+ p_id=>wwv_flow_imp.id(373679540050737643)
+,p_db_column_name=>'DATA_WAZNOSCI'
+,p_display_order=>50
+,p_column_identifier=>'I'
+,p_column_label=>'Data Waznosci'
+,p_column_type=>'DATE'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_use_as_row_header=>'N'
+);
+wwv_flow_imp_page.create_worksheet_rpt(
+ p_id=>wwv_flow_imp.id(507398479446908804)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'1340769'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>unistr('USU\0143:INFO:SYMBOL_CERTYFIKATU:DATA_WYDANIA:DATA_WAZNOSCI:')
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(188944635280150650)
+,p_button_sequence=>10
+,p_button_name=>'ADD'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_imp.id(127896059539451539)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Dodaj certyfikat'
+,p_button_redirect_url=>'f?p=&APP_ID.:335:&SESSION.::&DEBUG.:335:P335_ID_SRUBY:&P330_ID_SRUBY.'
+,p_grid_new_row=>'Y'
+,p_security_scheme=>wwv_flow_imp.id(21995650961848200)
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(373684925454737666)
+,p_name=>'P330_ID_WYDANIA'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_imp.id(684795072120107073)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'N'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(438071975280501000)
+,p_name=>'P330_ID_SRUBY'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_imp.id(684795072120107073)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(188947553914150655)
+,p_name=>'Edit Report - Dialog Closed'
+,p_event_sequence=>10
+,p_triggering_element_type=>'JAVASCRIPT_EXPRESSION'
+,p_triggering_element=>'window'
+,p_bind_type=>'bind'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'apexafterclosedialog'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(188948029529150655)
+,p_event_id=>wwv_flow_imp.id(188947553914150655)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(684795072120107073)
+);
+wwv_flow_imp_page.create_page_da_event(
+ p_id=>wwv_flow_imp.id(188945173433150651)
+,p_name=>'usun'
+,p_event_sequence=>20
+,p_triggering_element_type=>'JQUERY_SELECTOR'
+,p_triggering_element=>'.delete-note'
+,p_bind_type=>'live'
+,p_execution_type=>'IMMEDIATE'
+,p_bind_event_type=>'click'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(188945696869150651)
+,p_event_id=>wwv_flow_imp.id(188945173433150651)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_CONFIRM'
+,p_attribute_01=>unistr('Jeste\015B pewny?')
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(188946156699150653)
+,p_event_id=>wwv_flow_imp.id(188945173433150651)
+,p_event_result=>'TRUE'
+,p_action_sequence=>20
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_SET_VALUE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P330_ID_WYDANIA'
+,p_attribute_01=>'JAVASCRIPT_EXPRESSION'
+,p_attribute_05=>'$(this.triggeringElement).parent().data(''id'')'
+,p_attribute_09=>'N'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(188946652658150653)
+,p_event_id=>wwv_flow_imp.id(188945173433150651)
+,p_event_result=>'TRUE'
+,p_action_sequence=>30
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_EXECUTE_PLSQL_CODE'
+,p_attribute_01=>'DELETE FROM wydanie_certyfikatu_sruby WHERE id_sruby=:P330_ID_SRUBY AND id_wydania=:P330_ID_WYDANIA;'
+,p_attribute_02=>'P330_ID_WYDANIA,P330_ID_SRUBY'
+,p_attribute_05=>'PLSQL'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_imp_page.create_page_da_action(
+ p_id=>wwv_flow_imp.id(188947137662150653)
+,p_event_id=>wwv_flow_imp.id(188945173433150651)
+,p_event_result=>'TRUE'
+,p_action_sequence=>40
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_imp.id(684795072120107073)
+);
+wwv_flow_imp.component_end;
+end;
+/

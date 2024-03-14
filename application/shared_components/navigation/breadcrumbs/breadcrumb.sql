@@ -1,0 +1,121 @@
+prompt --application/shared_components/navigation/breadcrumbs/breadcrumb
+begin
+--   Manifest
+--     MENU: Breadcrumb
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.5'
+,p_default_workspace_id=>8358547342345319
+,p_default_application_id=>120
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_WS151783'
+);
+wwv_flow_imp_shared.create_menu(
+ p_id=>wwv_flow_imp.id(21537423727562520)
+,p_name=>'Breadcrumb'
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(21537685149562520)
+,p_short_name=>'Home'
+,p_link=>'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>1
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(21962363812563027)
+,p_short_name=>'Administration'
+,p_link=>'f?p=&APP_ID.:10000:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>10000
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(24070307700770904)
+,p_short_name=>unistr('\015Aruby')
+,p_link=>'f?p=&APP_ID.:30:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>30
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(24084635665786400)
+,p_short_name=>'Dostawcy'
+,p_link=>'f?p=&APP_ID.:40:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>40
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(24103410844818605)
+,p_short_name=>'Pracownicy'
+,p_link=>'f?p=&APP_ID.:60:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>60
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(24113890945825355)
+,p_short_name=>'Klienci'
+,p_link=>'f?p=&APP_ID.:70:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>70
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(24126884618062979)
+,p_parent_id=>wwv_flow_imp.id(24113890945825355)
+,p_short_name=>'Osoby prywatne'
+,p_link=>'f?p=&APP_ID.:71:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>71
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(24134397844074217)
+,p_parent_id=>wwv_flow_imp.id(24113890945825355)
+,p_short_name=>'Firmy'
+,p_link=>'f?p=&APP_ID.:72:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>72
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(25615449660329487)
+,p_short_name=>'Dodatki'
+,p_link=>'f?p=&APP_ID.:20:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>20
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(62475891024877063)
+,p_parent_id=>wwv_flow_imp.id(24070307700770904)
+,p_short_name=>unistr('Dodatki pasuj\0105ce do \015Brub')
+,p_link=>'f?p=&APP_ID.:320:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>320
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(64832516947915841)
+,p_parent_id=>wwv_flow_imp.id(25615449660329487)
+,p_short_name=>unistr('\015Aruby pasuj\0105ce do dodatk\00F3w')
+,p_link=>'f?p=&APP_ID.:220:&SESSION.::&DEBUG.:::'
+,p_page_id=>220
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(65440205297211311)
+,p_short_name=>unistr('Zam\00F3wienia')
+,p_link=>'f?p=&APP_ID.:500:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>500
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(111592346635383809)
+,p_short_name=>unistr('Ryneczek \015Brubexu')
+,p_link=>'f?p=&APP_ID.:800:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>800
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(160116541937651324)
+,p_short_name=>'Certyfikaty'
+,p_link=>'f?p=&APP_ID.:100:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>100
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(160213976207704864)
+,p_short_name=>'Podsumowanie koszyk'
+,p_link=>'f?p=&APP_ID.:803:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>803
+);
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(184386595310082204)
+,p_parent_id=>wwv_flow_imp.id(25615449660329487)
+,p_short_name=>unistr('Certyfikaty wydane dla dodatk\00F3w')
+,p_link=>'f?p=&APP_ID.:230:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>230
+);
+wwv_flow_imp.component_end;
+end;
+/

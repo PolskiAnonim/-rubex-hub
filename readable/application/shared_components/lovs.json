@@ -1,0 +1,122 @@
+[
+  {
+    "id":"21861997456562865"
+   ,"Identification":{
+      "Name":"TIMEFRAME (4 WEEKS)"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"SQL Query"
+     ,"SQL Query":"select disp,\n       val as seconds\n  from table( apex_util.get_timeframe_lov_data )\n order by insert_order"
+    }
+   ,"Column Mapping":{
+      "Return":"SECONDS"
+     ,"Display":"DISP"
+     ,"Default Sort":"Use Order By from Query"
+    }
+  }
+ ,{
+    "id":"21908304503562937"
+   ,"Identification":{
+      "Name":"VIEW_AS_REPORT_CHART"
+    }
+   ,"Source":{
+      "Location":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"21908631194562938"
+       ,"Entry":{
+          "Sequence":1
+         ,"Display":"Add Report Page"
+         ,"Return":"REPORT"
+        }
+       ,"Globalization":{
+          "Template":"\u003Cspan class=\"fa fa-table\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003Cspan class=\"u-VisuallyHidden\"\u003E#DISPLAY_VALUE#\u003C\/span\u003E"
+        }
+      }
+     ,{
+        "id":"21909074065562938"
+       ,"Entry":{
+          "Sequence":2
+         ,"Display":"Add Chart Page"
+         ,"Return":"CHART"
+        }
+       ,"Globalization":{
+          "Template":"\u003Cspan class=\"fa fa-pie-chart\" aria-hidden=\"true\"\u003E\u003C\/span\u003E\u003Cspan class=\"u-VisuallyHidden\"\u003E#DISPLAY_VALUE#\u003C\/span\u003E"
+        }
+      }
+    ]
+  }
+ ,{
+    "id":"21941070899562975"
+   ,"Identification":{
+      "Name":"ACCESS_ROLES"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"SQL Query"
+     ,"SQL Query":"select role_name d, role_id r\nfrom APEX_APPL_ACL_ROLES where application_id = :APP_ID \norder by 1"
+    }
+   ,"Column Mapping":{
+      "Return":"R"
+     ,"Display":"D"
+     ,"Default Sort":"Use Order By from Query"
+    }
+  }
+ ,{
+    "id":"21948540597562982"
+   ,"Identification":{
+      "Name":"EMAIL_USERNAME_FORMAT"
+    }
+   ,"Source":{
+      "Location":"Static Values"
+    }
+   ,"Entries":[
+      {
+        "id":"21948814535562982"
+       ,"Entry":{
+          "Sequence":1
+         ,"Display":"Email Addresses"
+         ,"Return":"EMAIL"
+        }
+      }
+    ]
+  }
+ ,{
+    "id":"23994504883679657"
+   ,"Identification":{
+      "Name":"WYDANIE_CERTYFIKATU_SRUBY.ID_SRUBY"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"WYDANIE_CERTYFIKATU_SRUBY"
+    }
+   ,"Column Mapping":{
+      "Return":"ID_WYDANIA"
+     ,"Display":"ID_SRUBY"
+     ,"Default Sort":"ID_SRUBY"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+ ,{
+    "id":"23995296350679660"
+   ,"Identification":{
+      "Name":"WYDANIE_CERTYFIKATU_DODATKU.SYMBOL_DODATKU"
+    }
+   ,"Source":{
+      "Location":"Local Database"
+     ,"Type":"Table \/ View"
+     ,"Table Owner":"Parsing Schema"
+     ,"Table Name":"WYDANIE_CERTYFIKATU_DODATKU"
+    }
+   ,"Column Mapping":{
+      "Return":"ID_WYDANIA"
+     ,"Display":"SYMBOL_DODATKU"
+     ,"Default Sort":"SYMBOL_DODATKU"
+     ,"Sort Direction":"Ascending (Nulls Last)"
+    }
+  }
+]

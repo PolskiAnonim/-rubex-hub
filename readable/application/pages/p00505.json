@@ -1,0 +1,757 @@
+{
+  "id":"505"
+ ,"Identification":{
+    "Name":"Pozycja zam\u00F3wienia"
+   ,"Alias":"POZYCJA-ZAM\u00D3WIENIA"
+   ,"Title":"Pozycja zam\u00F3wienia"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Drawer (127720327755451391)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-dialog-class-t-Drawer--pullOutEnd"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":false
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"65461470124211378"
+     ,"Identification":{
+        "Title":"Pozycja zam\u00F3wienia"
+       ,"Type":"Form"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"POZYCJA_W_ZAMOWIENIU"
+       ,"Include ROWID Column":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Edit":{
+          "Enabled":true
+         ,"Allowed Operations":[
+            "Add Row"
+           ,"Update Row"
+           ,"Delete Row"
+          ]
+         ,"Lost Update Type":"Row Values"
+        }
+      }
+    }
+   ,{
+      "id":"65465629579211382"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_03"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (127783730784451445)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"Text (escape special characters)"
+         ,"Show Line Breaks":true
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"64880272993374938"
+     ,"Identification":{
+        "Name":"P505_ID_DODSR"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Dodatek\/\u015Aruba"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Function Body returning SQL Query"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body returning SQL Query":"CASE WHEN :P505_TYP=\u0027A\u0027 THEN RETURN q\u0027~SELECT nazwa_dodatku, id_dodatku FROM dodatek WHERE id_dodatku NOT IN (SELECT \"ID_DODATKU\/SRUBY\" FROM pozycja_w_zamowieniu p WHERE p.id_zamowienia=:P505_ID_ZAMOWIENIA ) ORDER BY nazwa_dodatku~\u0027;\nWHEN :P505_TYP=\u0027S\u0027 THEN RETURN q\u0027~SELECT \nNAZWA_SRUBY || \u0027 Kl. \u0027  || KLASA_WYTRZYMALOSCI || \u0027 Materia\u0142: \u0027 ||\n MATERIAL || \u0027 \u0027 || KOLOR || \u0027 \u0141eb: \u0027 || RODZAJ_LBA || \u0027 Gniazdo: \u0027 || GNIAZDO, \n ID_SRUBY FROM sruba WHERE id_sruby NOT IN (SELECT \"ID_DODATKU\/SRUBY\" FROM pozycja_w_zamowieniu p WHERE p.id_zamowienia=:P505_ID_ZAMOWIENIA) ORDER BY nazwa_sruby~\u0027;\nELSE RETURN q\u0027~SELECT nazwa_dodatku, id_dodatku FROM dodatek WHERE id_dodatku=\u00271\u0027~\u0027;\n END CASE;"
+       ,"Display Extra Values":false
+       ,"Display Null Value":true
+       ,"Null Display Value":"-Wybierz-"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Column":"ID_DODATKU\/SRUBY"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":true
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"64880355045374939"
+     ,"Identification":{
+        "Name":"P505_TYP"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"65461884677211378"
+     ,"Identification":{
+        "Name":"P505_ID_ZAMOWIENIA"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Column":"ID_ZAMOWIENIA"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":true
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"65462954439211379"
+     ,"Identification":{
+        "Name":"P505_ILOSC"
+       ,"Type":"Number Field"
+      }
+     ,"Label":{
+        "Label":"Ilo\u015B\u0107"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Minimum Value":1
+       ,"Number Alignment":"Start"
+       ,"Virtual Keyboard":"Decimal"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":32
+      }
+     ,"Validation":{
+        "Value Required":false
+       ,"Maximum Length":255
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Column":"ILOSC"
+       ,"Data Type":"NUMBER"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"65463375805211380"
+     ,"Identification":{
+        "Name":"P505_CZY_ZAWARTE_NARZEDZIA"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Czy Zawarte Narzedzia"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Static Values"
+       ,"Static Values":"STATIC:Tak;Y,Nie;N"
+       ,"Display Extra Values":false
+       ,"Display Null Value":true
+       ,"Null Display Value":"-Wybierz-"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Column":"CZY_ZAWARTE_NARZEDZIA"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"65463728182211380"
+     ,"Identification":{
+        "Name":"P505_DODATKOWA_GWARANCJA"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Dodatkowa Gwarancja"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":false
+      }
+     ,"List of Values":{
+        "Type":"Static Values"
+       ,"Static Values":"STATIC:Tak;Y,Nie;N"
+       ,"Display Extra Values":false
+       ,"Display Null Value":true
+       ,"Null Display Value":"-Wybierz-"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+       ,"Column":"DODATKOWA_GWARANCJA"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"65468277654211384"
+     ,"Identification":{
+        "Button Name":"CREATE"
+       ,"Label":"Dodaj"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Buttons (65465629579211382)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL INSERT action"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"64880502557374941"
+     ,"Identification":{
+        "Name":"Zmiana"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CHANGE"
+       ,"Selection Type":"Item(s)"
+       ,"Item(s)":[
+          "P505_TYP"
+        ]
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"64880633128374942"
+         ,"Identification":{
+            "Action":"Set Value"
+          }
+         ,"Settings":{
+            "Set Type":"Static Assignment"
+           ,"Suppress Change Event":false
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Item(s)"
+           ,"Item(s)":[
+              "P505_ID_DODSR"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Zmiana (64880502557374941)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+           ,"Stop Execution On Error":true
+           ,"Wait For Result":true
+          }
+        }
+      ]
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"184741761000587024"
+     ,"Identification":{
+        "Name":"ILOSC"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"Validation":{
+        "Type":"Item matches Regular Expression"
+       ,"Item":"P505_ILOSC"
+       ,"Regular Expression":"^[0-9]{1,}$"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Ilo\u015B\u0107 musi by\u0107 dodatni\u0105 liczb\u0105 ca\u0142kowit\u0105"
+       ,"Display Location":"Inline in Notification"
+       ,"Associated Item":"P505_ILOSC (65462954439211379)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (65468277654211384)"
+      }
+    }
+   ,{
+      "id":"184741859033587025"
+     ,"Identification":{
+        "Name":"NARZEDZIA"
+      }
+     ,"Execution":{
+        "Sequence":30
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P505_CZY_ZAWARTE_NARZEDZIA IS NOT NULL"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy wybra\u0107 dodanie narz\u0119dzi."
+       ,"Display Location":"Inline in Notification"
+       ,"Associated Item":"P505_CZY_ZAWARTE_NARZEDZIA (65463375805211380)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (65468277654211384)"
+      }
+    }
+   ,{
+      "id":"184741987703587026"
+     ,"Identification":{
+        "Name":"GWARANCJA"
+      }
+     ,"Execution":{
+        "Sequence":40
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P505_DODATKOWA_GWARANCJA is not null"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy wybra\u0107 dodanie gwarancji."
+       ,"Display Location":"Inline in Notification"
+       ,"Associated Item":"P505_DODATKOWA_GWARANCJA (65463728182211380)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (65468277654211384)"
+      }
+    }
+   ,{
+      "id":"184742012344587027"
+     ,"Identification":{
+        "Name":"New"
+      }
+     ,"Execution":{
+        "Sequence":50
+      }
+     ,"Validation":{
+        "Type":"Expression"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Expression":":P505_ID_DODSR IS NOT NULL"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nale\u017Cy wybra\u0107 dodatek\/\u015Brub\u0119."
+       ,"Display Location":"Inline in Notification"
+       ,"Associated Item":"P505_ID_DODSR (64880272993374938)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (65468277654211384)"
+      }
+    }
+   ,{
+      "id":"190335722972366213"
+     ,"Identification":{
+        "Name":"ILOSC_1"
+      }
+     ,"Execution":{
+        "Sequence":20
+      }
+     ,"Validation":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P505_ILOSC"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Ilo\u015B\u0107 musi by\u0107 dodatni\u0105 liczb\u0105 ca\u0142kowit\u0105"
+       ,"Display Location":"Inline in Notification"
+       ,"Associated Item":"P505_ILOSC (65462954439211379)"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (65468277654211384)"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"65468693649211385"
+     ,"Identification":{
+        "Name":"Initialize form Pozycja zam\u00F3wienia"
+       ,"Type":"Form - Initialization"
+       ,"Execution Chain":"None"
+       ,"Form Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Before Header"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+   ,{
+      "id":"65469012494211385"
+     ,"Identification":{
+        "Name":"Process form Pozycja zam\u00F3wienia"
+       ,"Type":"Form - Automatic Row Processing (DML)"
+       ,"Execution Chain":"None"
+       ,"Form Region":"Pozycja zam\u00F3wienia (65461470124211378)"
+      }
+     ,"Settings":{
+        "Target Type":"Region Source"
+       ,"Prevent Lost Updates":true
+       ,"Lock Row":"Yes"
+       ,"Return Primary Key(s) after Insert":false
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (65468277654211384)"
+      }
+    }
+   ,{
+      "id":"65469446397211385"
+     ,"Identification":{
+        "Name":"Close Dialog"
+       ,"Type":"Close Dialog"
+       ,"Execution Chain":"None"
+      }
+     ,"Settings":{
+        "Items to Return ":[
+          "P505_ID_ZAMOWIENIA"
+         ,"REQUEST"
+        ]
+      }
+     ,"Execution":{
+        "Sequence":30
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "Type":"Request is contained in Value"
+       ,"Value":"CREATE,SAVE,DELETE"
+      }
+    }
+   ,{
+      "id":"190336213874366218"
+     ,"Identification":{
+        "Name":"Process"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"UPDATE ZAMOWIENIE SET KOSZT=WARTOSC_ZAMOWIENIA(:P505_ID_ZAMOWIENIA) WHERE ID_ZAMOWIENIA=:P505_ID_ZAMOWIENIA;"
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"CREATE (65468277654211384)"
+      }
+    }
+  ]
+}

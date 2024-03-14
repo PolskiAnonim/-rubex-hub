@@ -1,0 +1,739 @@
+{
+  "id":"803"
+ ,"Identification":{
+    "Name":"Podsumowanie koszyka"
+   ,"Alias":"PODSUMOWANIE-KOSZYKA"
+   ,"Title":"Podsumowanie koszyka"
+  }
+ ,"Appearance":{
+    "Page Mode":"Normal"
+   ,"Page Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"JavaScript":{
+    "Execute when Page Loads":"function checkBoxes() {\n\n  var checkboxes = document.getElementsByTagName(\"input\");\n  for(var i = 0; i \u003C checkboxes.length; i++) {\n\n    var checkbox = checkboxes[i];\n    if(checkbox.type === \"checkbox\") {\n\n      if(checkbox.id === \"Y\") {\n\n        checkbox.checked = true;\n\n      } \n    }\n  }\n}\n\ncheckBoxes();\n\n\nfunction setSelectedSruba(event,button) {\n    event.preventDefault(); \n    apex.server.process(\"GET_ANY_URL\", { \n    x01: 801,\n    x02:\u0027P801_ID\u0027,\n    x03:button.id\n},{\n    dataType: \u0027text\u0027,\n    success: (urlLink)=\u003E{eval(urlLink);}\n});\n    checkBoxes();\n}\n\n\n\nlet list = apex.item(\"P803_BLAD\").getValue().split(\u0027:\u0027);\nlist.forEach( (id)=\u003E{\n    let button = document.getElementById(id);\n        if(button){ \n            button.style.backgroundColor = \"red\";\n            button.innerText = \"Brak elementu! EDYTUJ!\";\n            }\n})\n\n\n\n\n\n\n\n\n"
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"159728177791745910"
+     ,"Identification":{
+        "Title":"Przedmioty - sruby"
+       ,"Type":"Cards"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"SELECT\n  ks.id_sruby,\n  s.nazwa_sruby, \n  ks.liczba,\n  s.cena,\n \n  ROUND((s.cena * ks.liczba) *\n    CASE WHEN ks.gwarancja = \u0027Y\u0027 THEN 1.21 ELSE 1 END +\n    CASE WHEN ks.narzedzia = \u0027Y\u0027 THEN 1 ELSE 0 END,2) AS suma,\n  ks.narzedzia, \n  ks.gwarancja,\n  \u0027(\u0027 || s.cena || \u0027*\u0027 || ks.liczba || \u0027)\u0027 || CASE WHEN ks.gwarancja = \u0027Y\u0027 THEN \u0027 * 1.21\u0027 ELSE \u0027\u0027 END \n  || CASE WHEN ks.narzedzia = \u0027Y\u0027 THEN \u0027 + 1\u0027 ELSE \u0027\u0027 END as EQUATION\nFROM\n  \"KOSZYK_SRUBY\" ks\nJOIN\n  SRUBA s on s.id_sruby = ks.id_sruby\nWHERE\n  ks.id_koszyka = \u0027T\u0027 || (\n    SELECT id_klienta \n    FROM konto_apex\n    WHERE id_apexa = TO_CHAR(apex_util.get_user_id(:APP_USER))  \n  )"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"Wybrane \u015Aruby (159729896155745927)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cscript\u003E\nfunction setSelectedSruba(event,button) {\n    event.preventDefault(); \n    apex.server.process(\"GET_ANY_URL\", { \n    x01: 801,\n    x02:\u0027P801_ID\u0027,\n    x03:button.id\n},{\n    dataType: \u0027text\u0027,\n    success: (urlLink)=\u003E{eval(urlLink); }\n});\n   \n}\n\n\n\n\u003C\/script\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"159728662721745915"
+       ,"Appearance":{
+          "Layout":"Horizontal (Row)"
+        }
+       ,"Title":{
+          "Advanced Formatting":true
+         ,"HTML Expression":"\u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column; width: 100%;\"\u003E\n\u003Cdiv style=\"display: flex; justify-content: space-between; align-items: center; width: 100%; column-gap: 120px;\"\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch4\u003E\u0026NAZWA_SRUBY.\u003C\/h4\u003E\n    \u003C\/div\u003E\n    \u003Cdiv style=\"display: flex; flex-wrap: nowrap; align-items: center; min-width: 300px;  column-gap: 40px;\"\u003E\n        \u003Cdiv style=\"white-space: nowrap; flex-wrap: nowrap;\"\u003E\n            \u003Ch4 style=\"color: grey; white-space: nowrap; flex-wrap: nowrap;\"\u003E\u0026EQUATION.\u003C\/h4\u003E\n            \u003Ch4 style=\" flex-wrap: nowrap;  white-space: nowrap; \"\u003E= \u0026SUMA. z\u0142\u003C\/h4\u003E\n        \u003C\/div\u003E\n        \u003Cbutton id=\"\u0026ID_SRUBY.\" class=\"t-Button t-Button--hot\" onclick=\"setSelectedSruba(event,this)\" \u003EEdytuj pozycj\u0119\u003C\/button\u003E \n      \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column; width: 100%;\"\u003E\n       \u003Cdiv style=\"min-width: 0; display: flex; justify-content: flex-end; align-items: center;\"\u003E\n            \u003Cinput type=\"checkbox\" id=\"\u0026GWARANCJA.\" name=\"Dodatkowa gwarancja\" value=\"\u0026GWARANCJA.\" disabled\u003E\n            \u003Clabel for=\"Gwarancja\"\u003EDodatkowa gwarancja\u003C\/label\u003E\n        \u003C\/div\u003E\n\n        \u003Cdiv style=\"min-width: 0; display: flex; justify-content: flex-end; align-items: center;\"\u003E\n            \u003Cinput type=\"checkbox\" id=\"\u0026NARZEDZIA.\"  name=\"Dodatkowe narz\u0119dzia\" value=\"\u0026NARZEDZIA.\" disabled\u003E\n            \u003Clabel for=\"Narzedzia\"\u003EDodatkowe narz\u0119dzia\u003C\/label\u003E\n\n        \u003C\/div\u003E\n\u003C\/div\u003E\n\n\n    \u003C\/div\u003E\n\u003C\/div\u003E\n\u003C\/div\u003E\n\n"
+        }
+       ,"Subtitle":{
+          "Advanced Formatting":false
+        }
+       ,"Body":{
+          "Advanced Formatting":false
+        }
+       ,"Secondary Body":{
+          "Advanced Formatting":false
+        }
+       ,"Icon and Badge":{
+          "Icon Source":"No Icon"
+        }
+       ,"Media":{
+          "Advanced Formatting":false
+         ,"Source":"No Media"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Count":false
+        }
+       ,"Messages":{
+          "When No Data Found":"Brak przedmiot\u00F3w."
+        }
+      }
+    }
+   ,{
+      "id":"159729554234745924"
+     ,"Identification":{
+        "Title":"Przedmioty - dodatki"
+       ,"Type":"Cards"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"SELECT \n    kd.id_dodatku,\n    d.nazwa_dodatku, \n    kd.liczba, \n    d.cena, \n    ROUND((d.cena * kd.liczba) *\n    CASE WHEN kd.gwarancja = \u0027Y\u0027 THEN 1.21 ELSE 1 END +\n    CASE WHEN kd.narzedzia = \u0027Y\u0027 THEN 1 ELSE 0 END,2) AS suma,\n     \u0027(\u0027 || d.cena || \u0027*\u0027 || kd.liczba || \u0027)\u0027 || CASE WHEN kd.gwarancja = \u0027Y\u0027 THEN \u0027 * 1.21\u0027 ELSE \u0027\u0027 END \n  || CASE WHEN kd.narzedzia = \u0027Y\u0027 THEN \u0027 + 1\u0027 ELSE \u0027\u0027 END as EQUATION,\n    NARZEDZIA, \n    GWARANCJA  \nFROM\n \"KOSZYK_DODATKI\" kd \nJOIN DODATEK d on kd.id_dodatku = d.id_dodatku  \n    WHERE ID_KOSZYKA = \u0027T\u0027 || (\n        SELECT ID_KLIENTA \n        FROM KONTO_APEX \n        WHERE \n            ID_APEXA = TO_CHAR(apex_util.get_user_id(p_username =\u003E ( :APP_USER) ))\n            );\n \n"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"Wybrane Dodatki (159729947973745928)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Blank with Attributes (No Grid) (127830214700451482)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"  \u003Cscript\u003E\n\n\nfunction setSelectedDodatek(event,button) {\n    event.preventDefault(); \n    apex.server.process(\"GET_ANY_URL\", { \n    x01: 801,\n    x02:\u0027P801_ID\u0027,\n    x03:button.id\n},{\n    dataType: \u0027text\u0027,\n    success: (urlLink)=\u003E{eval(urlLink); }\n});\n   \n}\n\n\n\u003C\/script\u003E\n"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"159729639938745925"
+       ,"Appearance":{
+          "Layout":"Horizontal (Row)"
+        }
+       ,"Title":{
+          "Advanced Formatting":true
+         ,"HTML Expression":"\u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column; width: 100%;\"\u003E\n\u003Cdiv style=\"display: flex; justify-content: space-between; align-items: center; width: 100%; column-gap: 120px;\"\u003E\n    \u003Cdiv style=\"min-width: 0;\"\u003E\n        \u003Ch4\u003E\u0026NAZWA_DODATKU.\u003C\/h4\u003E\n    \u003C\/div\u003E\n    \u003Cdiv style=\"display: flex; flex-wrap: nowrap; align-items: center; min-width: 300px;  column-gap: 40px;\"\u003E\n        \u003Cdiv style=\"white-space: nowrap; flex-wrap: nowrap;\"\u003E\n            \u003Ch4 style=\"color: grey; white-space: nowrap; flex-wrap: nowrap;\"\u003E\u0026EQUATION.\u003C\/h4\u003E\n            \u003Ch4 style=\" flex-wrap: nowrap;  white-space: nowrap; \"\u003E= \u0026SUMA. z\u0142\u003C\/h4\u003E\n        \u003C\/div\u003E\n        \u003Cbutton id=\"\u0026ID_DODATKU.\" class=\"t-Button t-Button--hot\" onclick=\"setSelectedDodatek(event,this)\"\u003EEdytuj pozycj\u0119\u003C\/button\u003E \n        \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column; width: 100%;\"\u003E\n         \u003Cdiv style=\"min-width: 0; display: flex; justify-content: flex-end; align-items: center;\"\u003E\n            \u003Cinput type=\"checkbox\" id=\"\u0026GWARANCJA.\" name=\"Dodatkowa gwarancja\" value=\"\u0026GWARANCJA.\" disabled\u003E\n            \u003Clabel for=\"Gwarancja\"\u003EDodatkowa gwarancja\u003C\/label\u003E\n\n        \u003C\/div\u003E\n\n        \u003Cdiv style=\"min-width: 0; display: flex; justify-content: flex-end; align-items: center;\"\u003E\n            \u003Cinput type=\"checkbox\" id=\"\u0026NARZEDZIA.\"  name=\"Dodatkowe narz\u0119dzia\" value=\"\u0026NARZEDZIA.\" disabled\u003E\n            \u003Clabel for=\"Narzedzia\"\u003EDodatkowe narz\u0119dzia\u003C\/label\u003E\n\n        \u003C\/div\u003E\n\n        \u003C\/div\u003E\n\n    \u003C\/div\u003E\n\u003C\/div\u003E\n\n\u003C\/div\u003E\n"
+        }
+       ,"Subtitle":{
+          "Advanced Formatting":false
+        }
+       ,"Body":{
+          "Advanced Formatting":false
+        }
+       ,"Secondary Body":{
+          "Advanced Formatting":false
+        }
+       ,"Icon and Badge":{
+          "Icon Source":"No Icon"
+        }
+       ,"Media":{
+          "Advanced Formatting":false
+         ,"Source":"No Media"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+        }
+       ,"Pagination":{
+          "Type":"Scroll"
+         ,"Show Total Count":false
+        }
+       ,"Messages":{
+          "When No Data Found":"Brak przedmiot\u00F3w."
+        }
+      }
+    }
+   ,{
+      "id":"159729896155745927"
+     ,"Identification":{
+        "Title":"Wybrane \u015Aruby"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--noPadding"
+         ,"t-Region--scrollBody"
+         ,"t-Form--slimPadding"
+         ,"t-Form--xlarge"
+         ,"t-Form--stretchInputs"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"159729947973745928"
+     ,"Identification":{
+        "Title":"Wybrane Dodatki"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"159730182676745930"
+     ,"Identification":{
+        "Title":"Calc"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_08"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "t-Region--removeHeader js-removeLandmark"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":" \u003Cdiv class=\"t-Card-title\" style=\"display: flex; justify-content: space-between; align-items: center; flex-direction: column;\"\u003E\n             \u003Ch3 style=\"margin: 0px;\"\u003ECa\u0142kowita kwota za zam\u00F3wienie wynosi:\u003C\/h3\u003E\n        \u003Ch3 style=\"margin: 0px;\"\u003E\u0026P803_KWOTA. z\u0142\u003C\/h3\u003E "
+       ,"Footer Text":"\u003C\/div\u003E"
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"HTML"
+         ,"Expand Shortcuts":false
+        }
+      }
+    }
+   ,{
+      "id":"160213512093704864"
+     ,"Identification":{
+        "Title":"Breadcrumb"
+       ,"Type":"Breadcrumb"
+      }
+     ,"Source":{
+        "Breadcrumb":"Breadcrumb (21537423727562520)"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_01"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Title Bar (127792658721451452)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-BreadcrumbRegion--useBreadcrumbTitle"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Appearance":{
+          "Breadcrumb Template":"Breadcrumb (127897691758451540)"
+         ,"Template Options":[
+            "#DEFAULT#"
+          ]
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"159729113854745920"
+     ,"Identification":{
+        "Name":"P803_SELECTED_SRUBA"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":false
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"159729285764745921"
+     ,"Identification":{
+        "Name":"P803_SELECTED_DODATEK"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":false
+      }
+     ,"Layout":{
+        "Sequence":60
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":false
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"159731352553745942"
+     ,"Identification":{
+        "Name":"P803_KWOTA"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Calc (159730182676745930)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Function Body"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"DECLARE\nvSuma SUMA;\nvId VARCHAR2(32);\nBEGIN\nSELECT id_klienta into vId\n   FROM konto_apex  \n   WHERE id_apexa = TO_CHAR(apex_util.get_user_id(:APP_USER));\nSELECT WARTOSC_KOSZYKA(vId) INTO vSuma FROM dual;\nreturn vSuma.SRUBY + vSuma.DODATKI;\nEND;"
+       ,"Used":"Always, replacing any existing value in session state"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"270578885913686806"
+     ,"Identification":{
+        "Name":"P803_BLAD"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Region":"No Parent"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"SQL Query (return single value)"
+       ,"SQL Query":"SELECT \n    (SELECT LISTAGG(id_sruby,\u0027:\u0027) AS SRUBY\n    FROM \n        (select id_sruby  \n        FROM koszyk_sruby k WHERE LICZBA\u003E\n            (SELECT ILOSC_PUDELEK_NA_MAGAZYNIE FROM sruba \n                WHERE id_sruby=k.id_sruby) AND \n                    id_koszyka = \u0027T\u0027 || (\n                    SELECT id_klienta \n                    FROM konto_apex\n                        WHERE id_apexa = TO_CHAR(apex_util.get_user_id(:APP_USER)))\n                ))\n    || \u0027:\u0027 ||\n    (SELECT LISTAGG(id_dodatku,\u0027:\u0027) AS DODATKI\n    FROM \n        (select id_dodatku \n        FROM koszyk_dodatki k WHERE LICZBA\u003E\n            (SELECT ILOSC_PUDELEK_NA_MAGAZYNIE FROM dodatek \n                WHERE id_dodatku=k.id_dodatku) AND\n                                    id_koszyka = \u0027T\u0027 || (\n                    SELECT id_klienta \n                    FROM konto_apex\n                        WHERE id_apexa = TO_CHAR(apex_util.get_user_id(:APP_USER)))\n            )) AS BLAD\n    FROM DUAL;"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"159730071570745929"
+     ,"Identification":{
+        "Button Name":"Platnosc"
+       ,"Label":"Dokonaj p\u0142atno\u015Bci"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Calc (159730182676745930)"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Alignment":"Left center"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Button--stretch"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+      }
+     ,"Advanced":{
+        "Custom Attributes":[
+          "style=\"width:"
+         ,"200px;margin:auto;background-color:"
+         ,"#a91409\""
+        ]
+      }
+     ,"Server-side Condition":{
+        "Type":"Item != Value"
+       ,"Item":"P803_KWOTA"
+       ,"Value":"0"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"151252222701700834"
+     ,"Identification":{
+        "Name":"DialogClosed"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.FAMEWORK.APEXAFTERCLOSECANCELDIALOG"
+       ,"Selection Type":"JavaScript Expression"
+       ,"JavaScript Expression":"window"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"151252430945700836"
+         ,"Identification":{
+            "Action":"Set Value"
+          }
+         ,"Settings":{
+            "Set Type":"Static Assignment"
+           ,"Suppress Change Event":false
+          }
+         ,"Affected Elements":{
+            "Selection Type":"Item(s)"
+           ,"Item(s)":[
+              "P803_SELECTED_SRUBA"
+             ,"P803_SELECTED_DODATEK"
+            ]
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"DialogClosed (151252222701700834)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":true
+           ,"Stop Execution On Error":true
+           ,"Wait For Result":true
+          }
+        }
+       ,{
+          "id":"168711566317548121"
+         ,"Identification":{
+            "Action":"Execute JavaScript Code"
+          }
+         ,"Settings":{
+            "Code":"function checkBoxes() {\n\n  var checkboxes = document.getElementsByTagName(\"input\");\n  for(var i = 0; i \u003C checkboxes.length; i++) {\n\n    var checkbox = checkboxes[i];\n    if(checkbox.type === \"checkbox\") {\n\n      if(checkbox.id === \"Y\") {\n\n        checkbox.checked = true;\n\n      } \n    }\n  }\n}\n\ncheckBoxes();"
+          }
+         ,"Execution":{
+            "Sequence":50
+           ,"Event":"DialogClosed (151252222701700834)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+       ,{
+          "id":"168711643119548122"
+         ,"Identification":{
+            "Action":"Submit Page"
+          }
+         ,"Settings":{
+            "Show Processing":true
+          }
+         ,"Execution":{
+            "Sequence":40
+           ,"Event":"DialogClosed (151252222701700834)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"270578768005686805"
+     ,"Identification":{
+        "Name":"NOT_IN_STOCK"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"Validation":{
+        "Type":"Function Body (returning Boolean)"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"IF LENGTH(:P803_BLAD)\u003E1 THEN RETURN FALSE;\nEND IF;\nRETURN TRUE;"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Wymagana jest edycja nieistniej\u0105cych produkt\u00F3w na stanie."
+       ,"Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"Platnosc (159730071570745929)"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"168711319174548119"
+     ,"Identification":{
+        "Name":"GET_ANY_URL"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"DECLARE\n    l_url VARCHAR2(4000);\nBEGIN\n      l_url := APEX_PAGE.GET_URL(\n          p_page =\u003E APEX_APPLICATION.g_x01,\n          p_items =\u003E APEX_APPLICATION.g_x02,\n          p_values =\u003E APEX_APPLICATION.g_x03);\n    htp.p(l_url);\nEND;\n"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Ajax Callback"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+   ,{
+      "id":"187865255347597237"
+     ,"Identification":{
+        "Name":"ErrorList"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"BEGIN\n    htp.prn(:P803_BLAD);\nEND;\n"
+      }
+     ,"Execution":{
+        "Sequence":20
+       ,"Point":"Ajax Callback"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+  ]
+ ,"Branches":[
+    {
+      "id":"270579046917686808"
+     ,"Identification":{
+        "Name":"Go To Page 806"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Processing"
+      }
+     ,"Behavior":{
+        "Type":"Page or URL (Redirect)"
+       ,"Target":{
+          "url":"f?p=\u0026APP_ID.:806:\u0026SESSION.::\u0026DEBUG.:806::\u0026success_msg=#SUCCESS_MSG#"
+         ,"Page":"806"
+         ,"Clear Cache":"806"
+        }
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"Platnosc (159730071570745929)"
+      }
+    }
+  ]
+}

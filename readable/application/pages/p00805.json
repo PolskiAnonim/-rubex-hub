@@ -1,0 +1,323 @@
+{
+  "id":"805"
+ ,"Identification":{
+    "Name":"Kompatybilne certyfikaty"
+   ,"Alias":"KOMPATYBILNE-CERTYFIKATY"
+   ,"Title":"Kompatybilne certyfikaty"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Theme Default"
+   ,"Template Options":[
+      "#DEFAULT#"
+    ]
+  }
+ ,"Dialog":{
+    "Height":"700"
+   ,"Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Is Public"
+  }
+ ,"Advanced":{
+    "Enable Meta Tags":false
+  }
+ ,"Security":{
+    "Deep Linking":"Application Default"
+   ,"Page Access Protection":"Unrestricted"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"343094536457228176"
+     ,"Identification":{
+        "Title":"Certyfikaty"
+       ,"Type":"Interactive Report"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"SQL Query"
+       ,"SQL Query":"select \n       c.symbol_certyfikatu,\n       c.klasyfikacje,\n       c.opis\n  from certyfikat c JOIN wydanie_certyfikatu_sruby wcs ON c.symbol_certyfikatu=wcs.symbol_certyfikatu WHERE wcs.id_sruby=:P805_ID and SUBSTR(:P805_ID,1,1) = \u0027S\u0027\n  UNION ALL\nselect \n       c.symbol_certyfikatu,\n       c.klasyfikacje,\n       c.opis\n  from certyfikat c JOIN wydanie_certyfikatu_dodatku wcd ON c.symbol_certyfikatu=wcd.symbol_certyfikatu WHERE wcd.id_dodatku=:P805_ID and SUBSTR(:P805_ID,1,1) = \u0027A\u0027;\n\n\n"
+       ,"Page Items to Submit":[
+          "P805_ID"
+        ]
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":false
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Interactive Report (127779121151451441)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Header and Footer":{
+        "Header Text":"\u003Cscript\u003E\n  function setSelectedSruba(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 801,\n        x02:\u0027P801_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n\n  }\n\u003C\/script\u003E"
+       ,"Footer Text":"   \u003Cscript\u003E\n   \n   function setSelectedDodatek(event,button) {\n       event.preventDefault(); \n     apex.server.process(\"GET_ANY_URL\", { \n        x01: 801,\n        x02:\u0027P801_ID\u0027,\n        x03:button.id\n    },{\n        dataType: \u0027text\u0027,\n        success: (urlLink)=\u003E{eval(urlLink);}\n    });\n    }\n\n   \u003C\/script\u003E\n    "
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "id":"175090495120666641"
+       ,"Link":{
+          "Link Column":"Exclude Link Column"
+        }
+       ,"Pagination":{
+          "Type":"Row Ranges X to Y"
+         ,"Display Position":"Bottom - Right"
+        }
+       ,"Performance":{
+          "Lazy Loading":false
+         ,"Maximum Rows to Process":1000000
+        }
+       ,"Search Bar":{
+          "Include Search Bar":true
+         ,"Search Field":true
+         ,"Finder Drop Down":false
+         ,"Reports Select List":false
+         ,"Rows Per Page Selector":false
+        }
+       ,"Actions Menu":{
+          "Include Actions Menu":false
+        }
+       ,"Heading":{
+          "Fixed To":"Page"
+        }
+       ,"Icon View":{
+          "Show":false
+        }
+       ,"Detail View":{
+          "Show":false
+        }
+       ,"Saved Reports":[
+          {
+            "id":"175366858539995935"
+           ,"Identification":{
+              "Name":"Primary Report"
+             ,"Alias":"1753669"
+            }
+          }
+        ]
+       ,"Columns":[
+          {
+            "id":"175090590533666642"
+           ,"Identification":{
+              "Column Name":"SYMBOL_CERTYFIKATU"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Symbol Certyfikatu"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":10
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175090684236666643"
+           ,"Identification":{
+              "Column Name":"KLASYFIKACJE"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Klasyfikacje"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":20
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+         ,{
+            "id":"175090791135666644"
+           ,"Identification":{
+              "Column Name":"OPIS"
+             ,"Type":"Plain Text"
+            }
+           ,"Heading":{
+              "Heading":"Opis"
+             ,"Alignment":"start"
+            }
+           ,"Single Row View":{
+              "Use Column Heading":true
+            }
+           ,"Layout":{
+              "Sequence":30
+             ,"Column Alignment":"start"
+            }
+           ,"Accessibility":{
+              "Value Identifies Row":false
+            }
+           ,"Source":{
+              "Primary Key":false
+            }
+           ,"Column Filter":{
+              "Type":"Default Based on Column Type"
+            }
+           ,"Enable Users To":{
+              "Hide":true
+             ,"Sort":true
+             ,"Filter":true
+             ,"Highlight":true
+             ,"Control Break":true
+             ,"Aggregate":true
+             ,"Compute":true
+             ,"Chart":true
+             ,"Group By":true
+             ,"Pivot":true
+            }
+           ,"Security":{
+              "Escape special characters":true
+            }
+          }
+        ]
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"343094118280228159"
+     ,"Identification":{
+        "Name":"P805_ID"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Certyfikaty (343094536457228176)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Type":"Null"
+       ,"Used":"Only when current value in session state is null"
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Session (Persistent)"
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"174384894309680057"
+     ,"Identification":{
+        "Name":"GET_ANY_URL"
+       ,"Type":"Execute Code"
+       ,"Execution Chain":"None"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Code":"DECLARE\n    l_url VARCHAR2(4000);\nBEGIN\n      l_url := APEX_PAGE.GET_URL(\n          p_page =\u003E APEX_APPLICATION.g_x01,\n          p_items =\u003E APEX_APPLICATION.g_x02,\n          p_values =\u003E APEX_APPLICATION.g_x03);\n    htp.p(l_url);\nEND;\n"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Ajax Callback"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+  ]
+}

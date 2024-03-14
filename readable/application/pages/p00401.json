@@ -1,0 +1,853 @@
+{
+  "id":"401"
+ ,"Identification":{
+    "Name":"Dod_dost"
+   ,"Alias":"DOD-DOST"
+   ,"Title":"Dostawca"
+  }
+ ,"Appearance":{
+    "Page Mode":"Modal Dialog"
+   ,"Dialog Template":"Drawer (127720327755451391)"
+   ,"Template Options":[
+      "#DEFAULT#"
+     ,"js-dialog-class-t-Drawer--pullOutEnd"
+    ]
+  }
+ ,"Dialog":{
+    "Chained":true
+  }
+ ,"Navigation Menu":{
+    "Override User Interface Level":false
+  }
+ ,"Navigation":{
+    "Cursor Focus":"Do not focus cursor"
+   ,"Warn on Unsaved Changes":true
+  }
+ ,"Security":{
+    "Authentication":"Page Requires Authentication"
+   ,"Deep Linking":"Application Default"
+   ,"Page Access Protection":"Arguments Must Have Checksum"
+   ,"Form Auto Complete":"Off"
+   ,"Browser Cache":"Application Default"
+  }
+ ,"Session Management":{
+    "Rejoin Sessions":"Application Default"
+  }
+ ,"Advanced":{
+    "Enable duplicate page submissions":"Yes - Enable page to be re-posted"
+   ,"Reload on Submit":"Only for Success"
+  }
+ ,"Server Cache":{
+    "Caching":"Disabled"
+  }
+ ,"Regions":[
+    {
+      "id":"82600165438926403"
+     ,"Identification":{
+        "Title":"Dostawca"
+       ,"Type":"Form"
+      }
+     ,"Source":{
+        "Location":"Local Database"
+       ,"Type":"Table \/ View"
+       ,"Table Owner":"Parsing Schema"
+       ,"Table Name":"DOSTAWCA"
+       ,"Include ROWID Column":false
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Parent Region":"No Parent"
+       ,"Position":"BODY"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Standard (127831620256451483)"
+       ,"Template Options":[
+          "#DEFAULT#"
+         ,"t-Region--scrollBody"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Edit":{
+          "Enabled":true
+         ,"Allowed Operations":[
+            "Add Row"
+           ,"Update Row"
+           ,"Delete Row"
+          ]
+         ,"Lost Update Type":"Row Values"
+        }
+      }
+    }
+   ,{
+      "id":"82603807624926407"
+     ,"Identification":{
+        "Title":"Buttons"
+       ,"Type":"Static Content"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Parent Region":"No Parent"
+       ,"Position":"REGION_POSITION_03"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Template":"Buttons Container (127783730784451445)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Render Components":"Above Content"
+      }
+     ,"Accessibility":{
+        "Use Landmark":true
+       ,"Landmark Type":"Template Default"
+      }
+     ,"Advanced":{
+        "Region Display Selector":false
+       ,"Exclude Title from Translation":false
+      }
+     ,"Server Cache":{
+        "Caching":"Disabled"
+      }
+     ,"Customization":{
+        "Customizable":"Not Customizable By End Users"
+      }
+     ,"Attributes":{
+        "Settings":{
+          "Output As":"Text (escape special characters)"
+         ,"Show Line Breaks":true
+        }
+      }
+    }
+  ]
+ ,"Page Items":[
+    {
+      "id":"30533491224392033"
+     ,"Identification":{
+        "Name":"P401_ID_DOSTAWCY"
+       ,"Type":"Hidden"
+      }
+     ,"Settings":{
+        "Value Protected":true
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Dostawca (82600165438926403)"
+       ,"Position":"BODY"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Dostawca (82600165438926403)"
+       ,"Column":"ID_DOSTAWCY"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":true
+      }
+     ,"Session State":{
+        "Data Type":"VARCHAR2"
+       ,"Storage":"Per Request (Memory Only)"
+      }
+     ,"Security":{
+        "Session State Protection":"Checksum Required - Session Level"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"30533508627392034"
+     ,"Identification":{
+        "Name":"P401_NAZWA_DOSTAWCY"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Nazwa Dostawcy"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Dostawca (82600165438926403)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":64
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Dostawca (82600165438926403)"
+       ,"Column":"NAZWA_DOSTAWCY"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"30533642424392035"
+     ,"Identification":{
+        "Name":"P401_TYP_MATERIALOW"
+       ,"Type":"Select List"
+      }
+     ,"Label":{
+        "Label":"Typ Materialow"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Page Action on Selection":"None"
+       ,"Allow Multi Selection":false
+      }
+     ,"Layout":{
+        "Sequence":70
+       ,"Region":"Dostawca (82600165438926403)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Height":1
+      }
+     ,"Validation":{
+        "Value Required":true
+      }
+     ,"List of Values":{
+        "Type":"Static Values"
+       ,"Static Values":"STATIC:\u015Aruby;\u015Br,Dodatki;dod,\u015Aruby i dodatki;\u015Br\/dod"
+       ,"Display Extra Values":false
+       ,"Display Null Value":true
+       ,"Null Display Value":"-Wybierz typ-"
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Dostawca (82600165438926403)"
+       ,"Column":"TYP_MATERIALOW"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+     ,"Help":{
+        "Inline Help Text":"\u003Cp\u003EFormat: \u015Br,\u0026emsp;dod,\u0026emsp;\u015Br\/dod \u0026nbsp;\u003C\/p\u003E\n\u003Cp\u003EDla:\u0026emsp;\u015Arub,\u0026emsp;Dodatk\u00F3w,\u0026emsp;\u015Arub oraz dodatk\u00F3w\u003C\/p\u003E"
+      }
+    }
+   ,{
+      "id":"61796797214806376"
+     ,"Identification":{
+        "Name":"P401_EMAIL"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Email"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":50
+       ,"Region":"Dostawca (82600165438926403)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":64
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Dostawca (82600165438926403)"
+       ,"Column":"EMAIL"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+     ,"Help":{
+        "Inline Help Text":"Email musi by\u0107 zapisany ma\u0142ymi literami"
+      }
+    }
+   ,{
+      "id":"82581754573808436"
+     ,"Identification":{
+        "Name":"P401_NR_TELEFONU"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Nr Telefonu"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Dostawca (82600165438926403)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":13
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Dostawca (82600165438926403)"
+       ,"Column":"NR_TELEFONU"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+    }
+   ,{
+      "id":"82581853361808437"
+     ,"Identification":{
+        "Name":"P401_ADRES"
+       ,"Type":"Text Field"
+      }
+     ,"Label":{
+        "Label":"Adres"
+       ,"Alignment":"Left"
+      }
+     ,"Settings":{
+        "Subtype":"Text"
+       ,"Trim Spaces":"Leading and Trailing"
+       ,"Text Case":"NO CHANGE"
+       ,"Submit when Enter pressed":false
+       ,"Disabled":false
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Dostawca (82600165438926403)"
+       ,"Position":"BODY"
+       ,"Alignment":"Left"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+       ,"Label Column Span":"Page Template Default"
+      }
+     ,"Appearance":{
+        "Template":"Optional - Floating (127893514922451536)"
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+       ,"Width":30
+      }
+     ,"Validation":{
+        "Value Required":true
+       ,"Maximum Length":64
+      }
+     ,"Advanced":{
+        "Warn on Unsaved Changes":"Page Default"
+      }
+     ,"Source":{
+        "Form Region":"Dostawca (82600165438926403)"
+       ,"Column":"ADRES"
+       ,"Data Type":"VARCHAR2"
+       ,"Query Only":false
+       ,"Primary Key":false
+      }
+     ,"Session State":{
+        "Storage":"Per Request (Memory Only)"
+      }
+     ,"Quick Picks":{
+        "Show Quick Picks":false
+      }
+     ,"Security":{
+        "Session State Protection":"Unrestricted"
+       ,"Store value encrypted in session state":true
+       ,"Restricted Characters":"All characters can be saved."
+      }
+     ,"Help":{
+        "Inline Help Text":"Format: [ul.\/al. ]Ulica nr_domu[\/nr_mieszkania], kod_pocztowy Miejscowo\u015B\u0107"
+      }
+    }
+  ]
+ ,"Buttons":[
+    {
+      "id":"31269290337414355"
+     ,"Identification":{
+        "Button Name":"CANCEL"
+       ,"Label":"Anuluj"
+      }
+     ,"Layout":{
+        "Sequence":10
+       ,"Region":"Buttons (82603807624926407)"
+       ,"Position":"CLOSE"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Defined by Dynamic Action"
+       ,"Execute Validations":true
+      }
+    }
+   ,{
+      "id":"31269640964414356"
+     ,"Identification":{
+        "Button Name":"DELETE"
+       ,"Label":"Usu\u0144"
+      }
+     ,"Layout":{
+        "Sequence":20
+       ,"Region":"Buttons (82603807624926407)"
+       ,"Position":"DELETE"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":false
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":false
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL DELETE action"
+      }
+     ,"Confirmation":{
+        "Message":"\u0026APP_TEXT$DELETE_MSG!RAW."
+       ,"Style":"Danger"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P401_ID_DOSTAWCY"
+      }
+    }
+   ,{
+      "id":"31270066523414356"
+     ,"Identification":{
+        "Button Name":"SAVE"
+       ,"Label":"Zapisz zmiany"
+      }
+     ,"Layout":{
+        "Sequence":30
+       ,"Region":"Buttons (82603807624926407)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL UPDATE action"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NOT NULL"
+       ,"Item":"P401_ID_DOSTAWCY"
+      }
+    }
+   ,{
+      "id":"31270460994414356"
+     ,"Identification":{
+        "Button Name":"CREATE"
+       ,"Label":"Dodaj"
+      }
+     ,"Layout":{
+        "Sequence":40
+       ,"Region":"Buttons (82603807624926407)"
+       ,"Position":"NEXT"
+       ,"Start New Layout":false
+       ,"Start New Row":true
+       ,"Column":"Automatic"
+       ,"New Column":true
+       ,"Column Span":"Automatic"
+      }
+     ,"Appearance":{
+        "Button Template":"Text (127896059539451539)"
+       ,"Hot":true
+       ,"Template Options":[
+          "#DEFAULT#"
+        ]
+      }
+     ,"Behavior":{
+        "Action":"Submit Page"
+       ,"Execute Validations":true
+       ,"Warn on Unsaved Changes":"Do Not Check"
+       ,"Database Action":"SQL INSERT action"
+      }
+     ,"Server-side Condition":{
+        "Type":"Item is NULL"
+       ,"Item":"P401_ID_DOSTAWCY"
+      }
+    }
+  ]
+ ,"Dynamic Actions":[
+    {
+      "id":"31271460731414358"
+     ,"Identification":{
+        "Name":"Cancel Dialog"
+      }
+     ,"Execution":{
+        "Sequence":10
+      }
+     ,"When":{
+        "Event":"EVENT.EVENT.BROWSER.CLICK"
+       ,"Selection Type":"Button"
+       ,"Button":"CANCEL (31269290337414355)"
+      }
+     ,"Execution":{
+        "Event Scope":"Static"
+       ,"Type":"Immediate"
+      }
+     ,"Actions":[
+        {
+          "id":"31271961423414358"
+         ,"Identification":{
+            "Action":"Cancel Dialog"
+          }
+         ,"Execution":{
+            "Sequence":10
+           ,"Event":"Cancel Dialog (31271460731414358)"
+           ,"Fire When Event Result Is":"True"
+           ,"Fire on Initialization":false
+          }
+        }
+      ]
+    }
+  ]
+ ,"Validations":[
+    {
+      "id":"30534733888392046"
+     ,"Identification":{
+        "Name":"NRTEL"
+      }
+     ,"Execution":{
+        "Sequence":30
+      }
+     ,"Validation":{
+        "Type":"Function Body (returning Boolean)"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"CASE \nWHEN LENGTH(:P401_NR_TELEFONU)=9 THEN\n    CASE WHEN REGEXP_LIKE(:P401_NR_TELEFONU, \u0027^[0-9]{9}$\u0027)\n        THEN RETURN TRUE;\n        ELSE RETURN FALSE;\n    END CASE;\nWHEN LENGTH(:P401_NR_TELEFONU)=12 OR LENGTH(:P401_NR_TELEFONU)=13 THEN\n    CASE WHEN REGEXP_LIKE(:P401_NR_TELEFONU, \u0027^\u005C+[0-9]{11,12}$\u0027) THEN RETURN TRUE;\n    ELSE RETURN FALSE;\n    END CASE;\nELSE\n    RETURN FALSE;\nEND CASE;"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Niepoprawny numer telefonu"
+       ,"Display Location":"Inline in Notification"
+       ,"Associated Item":"P401_NR_TELEFONU (82581754573808436)"
+      }
+    }
+   ,{
+      "id":"32854302028771701"
+     ,"Identification":{
+        "Name":"MA_LIT_EMAIL"
+      }
+     ,"Execution":{
+        "Sequence":40
+      }
+     ,"Validation":{
+        "Type":"Item contains only characters specified in Value"
+       ,"Item":"P401_EMAIL"
+       ,"Value":"abcdefghijklmnopqrstuvwxyz@.0123456789_"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Adres email musi sk\u0142ada\u0107 si\u0119 z ma\u0142ych liter!"
+       ,"Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"32854536727771703"
+     ,"Identification":{
+        "Name":"EMAIL"
+      }
+     ,"Execution":{
+        "Sequence":60
+      }
+     ,"Validation":{
+        "Type":"Function Body (returning Boolean)"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"CASE WHEN REGEXP_LIKE(:P401_EMAIL,\u0027[a-z0-9_.-]+@[a-z0-9_.-]+\u005C.[a-z]{2,4}\u0027)  THEN RETURN TRUE;\nELSE RETURN FALSE;\nEND CASE;"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Niepoprawny adres email!"
+       ,"Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"32854857162771706"
+     ,"Identification":{
+        "Name":"ADRES"
+      }
+     ,"Execution":{
+        "Sequence":70
+      }
+     ,"Validation":{
+        "Type":"Function Body (returning Boolean)"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"CASE WHEN REGEXP_LIKE(:P401_ADRES,\u0027^[ua]l\u005C.\u005Cs[A-Z\u0118\u00D3\u0141\u015A\u0104\u017B\u0179\u0106\u0143][a-z\u0119\u00F3\u0142\u015B\u0105\u017C\u017A\u0107\u0144]*\u005Cs[0-9]{1,3}[A-Z]{0,1},\u005Cs[0-9]{2}-[0-9]{3}\u005Cs[A-Z\u0118\u00D3\u0141\u015A\u0104\u017B\u0179\u0106\u0143][a-z\u0119\u00F3\u0142\u015B\u0105\u017C\u017A\u0107\u0144]*$\u0027)\n    THEN RETURN TRUE;\nWHEN REGEXP_LIKE(:P401_ADRES,\u0027^[ua]l\u005C.\u005Cs[A-Z\u0118\u00D3\u0141\u015A\u0104\u017B\u0179\u0106\u0143][a-z\u0119\u00F3\u0142\u015B\u0105\u017C\u017A\u0107\u0144]*\u005Cs[0-9]{1,3}[A-Z]{0,1}\/[0-9]{1,3},\u005Cs[0-9]{2}-[0-9]{3}\u005Cs[A-Z\u0118\u00D3\u0141\u015A\u0104\u017B\u0179\u0106\u0143][a-z\u0119\u00F3\u0142\u015B\u0105\u017C\u017A\u0107\u0144]*$\u0027)\n    THEN RETURN TRUE;\nWHEN REGEXP_LIKE(:P401_ADRES,\u0027^[A-Z\u0118\u00D3\u0141\u015A\u0104\u017B\u0179\u0106\u0143][a-z\u0119\u00F3\u0142\u015B\u0105\u017C\u017A\u0107\u0144]*\u005Cs[0-9]{1,3}[A-Z]{0,1}\/[0-9]{1,3},\u005Cs[0-9]{2}-[0-9]{3}\u005Cs[A-Z\u0118\u00D3\u0141\u015A\u0104\u017B\u0179\u0106\u0143][a-z\u0119\u00F3\u0142\u015B\u0105\u017C\u017A\u0107\u0144]*$\u0027)\n    THEN RETURN TRUE;\nWHEN REGEXP_LIKE(:P401_ADRES,\u0027^[A-Z\u0118\u00D3\u0141\u015A\u0104\u017B\u0179\u0106\u0143][a-z\u0119\u00F3\u0142\u015B\u0105\u017C\u017A\u0107\u0144]*\u005Cs[0-9]{1,3}[A-Z]{0,1},\u005Cs[0-9]{2}-[0-9]{3}\u005Cs[A-Z\u0118\u00D3\u0141\u015A\u0104\u017B\u0179\u0106\u0143][a-z\u0119\u00F3\u0142\u015B\u0105\u017C\u017A\u0107\u0144]*$\u0027)\n    THEN RETURN TRUE;\nELSE RETURN FALSE;\nEND CASE;"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Z\u0142y format adresu"
+       ,"Display Location":"Inline with Field and in Notification"
+      }
+    }
+   ,{
+      "id":"32854980799771707"
+     ,"Identification":{
+        "Name":"ISTNIEJACY"
+      }
+     ,"Execution":{
+        "Sequence":80
+      }
+     ,"Validation":{
+        "Type":"Function Body (returning Boolean)"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"DECLARE\nvDostawca dostawca%ROWTYPE;\nBEGIN\n    SELECT * INTO vDostawca FROM dostawca WHERE LOWER(nazwa_dostawcy)=LOWER(:P401_NAZWA_DOSTAWCY);\n    CASE WHEN :P401_ID_DOSTAWCY IS NOT NULL THEN RETURN TRUE;\n        ELSE RETURN FALSE;\n    END CASE;\nEXCEPTION\n    WHEN OTHERS THEN RETURN TRUE;\nEND;"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Taki dostawca ju\u017C istnieje!"
+       ,"Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"184741565739587022"
+     ,"Identification":{
+        "Name":"USUWANIE"
+      }
+     ,"Execution":{
+        "Sequence":90
+      }
+     ,"Validation":{
+        "Type":"Function Body (returning Boolean)"
+       ,"Language":"PL\/SQL"
+       ,"PL\/SQL Function Body":"BEGIN\nfor x in ( select count(*) cnt\nfrom dual\nwhere exists ( SELECT null FROM dodatek WHERE ID_DOSTAWCY=:P401_ID_DOSTAWCY ) )\nloop\nif ( x.cnt = 1 )\nthen\n    RETURN FALSE;\nend if;\nend loop;\n\nfor x in ( select count(*) cnt\nfrom dual\nwhere exists ( SELECT null FROM SRUBA WHERE ID_DOSTAWCY=:P401_ID_DOSTAWCY ) )\nloop\nif ( x.cnt = 1 )\nthen\n    RETURN FALSE;\nend if;\nend loop;\nEND;"
+       ,"Always Execute":false
+      }
+     ,"Error":{
+        "Error Message":"Nie mo\u017Cna usun\u0105\u0107 dostawcy gdy istniej\u0105 dostarczane \u015Bruby i dodatki"
+       ,"Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "When Button Pressed":"DELETE (31269640964414356)"
+      }
+    }
+  ]
+ ,"Processes":[
+    {
+      "id":"31268142392414354"
+     ,"Identification":{
+        "Name":"Initialize form Dod_os_pryw"
+       ,"Type":"Form - Initialization"
+       ,"Execution Chain":"None"
+       ,"Form Region":"Dostawca (82600165438926403)"
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Before Header"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+    }
+   ,{
+      "id":"31268594189414354"
+     ,"Identification":{
+        "Name":"Process form Dod_firm"
+       ,"Type":"Form - Automatic Row Processing (DML)"
+       ,"Execution Chain":"None"
+       ,"Form Region":"Dostawca (82600165438926403)"
+      }
+     ,"Settings":{
+        "Target Type":"Region Source"
+       ,"Prevent Lost Updates":true
+       ,"Lock Row":"Yes"
+       ,"Return Primary Key(s) after Insert":false
+      }
+     ,"Execution":{
+        "Sequence":10
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+    }
+   ,{
+      "id":"31271007638414357"
+     ,"Identification":{
+        "Name":"Close Dialog"
+       ,"Type":"Close Dialog"
+       ,"Execution Chain":"None"
+      }
+     ,"Execution":{
+        "Sequence":50
+       ,"Point":"Processing"
+       ,"Run Process":"Once Per Page Visit (default)"
+      }
+     ,"Error":{
+        "Display Location":"Inline in Notification"
+      }
+     ,"Server-side Condition":{
+        "Type":"Request is contained in Value"
+       ,"Value":"CREATE,SAVE,DELETE"
+      }
+    }
+  ]
+}

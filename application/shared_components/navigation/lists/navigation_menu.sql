@@ -1,0 +1,141 @@
+prompt --application/shared_components/navigation/lists/navigation_menu
+begin
+--   Manifest
+--     LIST: Navigation Menu
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2023.04.28'
+,p_release=>'23.1.5'
+,p_default_workspace_id=>8358547342345319
+,p_default_application_id=>120
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_WS151783'
+);
+wwv_flow_imp_shared.create_list(
+ p_id=>wwv_flow_imp.id(21537913166562520)
+,p_name=>'Navigation Menu'
+,p_list_status=>'PUBLIC'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(21834231225562760)
+,p_list_item_display_sequence=>100
+,p_list_item_link_text=>'Home'
+,p_list_item_link_target=>'f?p=&APP_ID.:1:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-home'
+,p_security_scheme=>wwv_flow_imp.id(21995650961848200)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(24080554400786394)
+,p_list_item_display_sequence=>300
+,p_list_item_link_text=>'Dostawcy'
+,p_list_item_link_target=>'f?p=&APP_ID.:40:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-truck'
+,p_security_scheme=>wwv_flow_imp.id(21995650961848200)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'40'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(24067151629770899)
+,p_list_item_display_sequence=>500
+,p_list_item_link_text=>unistr('\015Aruby')
+,p_list_item_link_target=>'f?p=&APP_ID.:30:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'sruba'
+,p_security_scheme=>wwv_flow_imp.id(21995650961848200)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'30'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(25611394131329480)
+,p_list_item_display_sequence=>600
+,p_list_item_link_text=>'Dodatki'
+,p_list_item_link_target=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'dodatek'
+,p_security_scheme=>wwv_flow_imp.id(21995650961848200)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'20'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(24099604121818599)
+,p_list_item_display_sequence=>700
+,p_list_item_link_text=>'Pracownicy'
+,p_list_item_link_target=>'f?p=&APP_ID.:60:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-id-card-o'
+,p_security_scheme=>wwv_flow_imp.id(21995221692843153)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'60'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(24110064367825350)
+,p_list_item_display_sequence=>800
+,p_list_item_link_text=>'Klienci'
+,p_list_item_link_target=>'f?p=&APP_ID.:70:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-users-alt'
+,p_security_scheme=>wwv_flow_imp.id(21995221692843153)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'70'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(24123632300062974)
+,p_list_item_display_sequence=>900
+,p_list_item_link_text=>'Osoby prywatne'
+,p_list_item_link_target=>'f?p=&APP_ID.:71:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-user'
+,p_parent_list_item_id=>wwv_flow_imp.id(24110064367825350)
+,p_security_scheme=>wwv_flow_imp.id(21995221692843153)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'71'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(24131422709074213)
+,p_list_item_display_sequence=>1000
+,p_list_item_link_text=>'Firmy'
+,p_list_item_link_target=>'f?p=&APP_ID.:72:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-suitcase'
+,p_parent_list_item_id=>wwv_flow_imp.id(24110064367825350)
+,p_security_scheme=>wwv_flow_imp.id(21995221692843153)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'72'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(65439316435211310)
+,p_list_item_display_sequence=>1110
+,p_list_item_link_text=>unistr('Zam\00F3wienia')
+,p_list_item_link_target=>'f?p=&APP_ID.:500:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-cart-full'
+,p_list_item_disp_cond_type=>'EXPRESSION'
+,p_list_item_disp_condition=>unistr(':APP_USER != ''go\015B\0107''')
+,p_list_item_disp_condition2=>'SQL'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'500'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(111591476058383806)
+,p_list_item_display_sequence=>1120
+,p_list_item_link_text=>unistr('Ryneczek \015Brubexu')
+,p_list_item_link_target=>'f?p=&APP_ID.:800:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_icon=>'fa-cards'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'800'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(160110688559651312)
+,p_list_item_display_sequence=>1130
+,p_list_item_link_text=>'Certyfikaty'
+,p_list_item_link_target=>'f?p=&APP_ID.:100:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'100'
+);
+wwv_flow_imp_shared.create_list_item(
+ p_id=>wwv_flow_imp.id(21961471029563026)
+,p_list_item_display_sequence=>10000
+,p_list_item_link_text=>'Administration'
+,p_list_item_link_target=>'f?p=&APP_ID.:10000:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-user-wrench'
+,p_list_item_disp_cond_type=>'NEVER'
+,p_security_scheme=>wwv_flow_imp.id(21826286636562751)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_imp.component_end;
+end;
+/
